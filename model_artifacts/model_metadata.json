@@ -1,12 +1,23 @@
 {
-  "model_name": "DermTrust-MobileNetV2-5Class-XAI",
+  "model_name": "DermTrust-MobileNetV2-XAI",
+  "evaluated_classes": [
+    "acne",
+    "psoriasis",
+    "vitiligo"
+  ],
   "classes": [
+    "acne",
+    "psoriasis",
+    "vitiligo"
+  ],
+  "target_disease_scope": [
     "acne",
     "melasma",
     "psoriasis",
     "ringworm",
     "vitiligo"
   ],
+  "input_size": 224,
   "input_tensor_shape": [
     1,
     224,
@@ -19,10 +30,14 @@
     7,
     1280
   ],
-  "quantization": "float32-weights-optimized",
-  "rejection_threshold": 0.6,
+  "input_mean": 0.0,
+  "input_std": 255.0,
+  "quantization": "int8-post-training-quantized",
+  "rejection_threshold": 0.60,
+  "max_entropy_threshold": 1.40,
   "metrics": {
-    "val_accuracy": 0.92,
-    "macro_f1": 0.9177
+    "test_accuracy": 0.7895,
+    "test_samples": 209,
+    "ood_rejection_rate": 1.00
   }
 }
