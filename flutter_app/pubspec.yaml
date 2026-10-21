@@ -1,0 +1,31 @@
+name: dermtrust
+description: "DermTrust: Offline-First, Explainable and Fairness-Aware Mobile Skin Analysis System"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  provider: ^6.1.2
+  tflite_flutter: ^0.11.0
+  image: ^4.2.0
+  image_picker: ^1.1.2
+  path_provider: ^2.1.4
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/models/dermtrust_classifier.tflite
+    - assets/models/dermtrust_cam.tflite
+    - assets/models/cam_weights.json
+    - assets/models/model_metadata.json

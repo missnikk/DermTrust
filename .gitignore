@@ -33,6 +33,9 @@ ENV/
 .pub-cache/
 .pub/
 /build/
+**/build/
+*.apk
+DermTrust_Android_Debug.apk
 
 # Android
 **/android/**/gradle-wrapper.jar
