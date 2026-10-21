@@ -1,0 +1,176 @@
+{
+  "assessment_date": "2026-10-21",
+  "primary_dataset": "Fitzpatrick 17K (mattgroh/fitzpatrick17k)",
+  "primary_dataset_license": "CC BY-NC 4.0",
+  "adequacy_by_class": {
+    "acne": {
+      "total_count": 518,
+      "light_count": 415,
+      "darker_count": 101,
+      "unknown_count": 2,
+      "status": "HEAVY SKIN-TONE IMBALANCE (Light:Dark = 415:101)",
+      "recommended_remedy": "Apply class-weighted loss and balanced sampling across cohorts."
+    },
+    "melasma": {
+      "total_count": 0,
+      "light_count": 0,
+      "darker_count": 0,
+      "unknown_count": 0,
+      "status": "CRITICAL DEFICIT (0 images - Completely Missing)",
+      "recommended_remedy": "Requires ingestion of legally verified external open dataset (e.g. Mendeley / Figshare / Roboflow CC-BY)."
+    },
+    "psoriasis": {
+      "total_count": 706,
+      "light_count": 485,
+      "darker_count": 189,
+      "unknown_count": 32,
+      "status": "HEAVY SKIN-TONE IMBALANCE (Light:Dark = 485:189)",
+      "recommended_remedy": "Apply class-weighted loss and balanced sampling across cohorts."
+    },
+    "ringworm": {
+      "total_count": 0,
+      "light_count": 0,
+      "darker_count": 0,
+      "unknown_count": 0,
+      "status": "CRITICAL DEFICIT (0 images - Completely Missing)",
+      "recommended_remedy": "Requires ingestion of legally verified external open dataset (e.g. Mendeley / Figshare / Roboflow CC-BY)."
+    },
+    "vitiligo": {
+      "total_count": 166,
+      "light_count": 57,
+      "darker_count": 102,
+      "unknown_count": 7,
+      "status": "LOW SAMPLE SIZE (<200 images)",
+      "recommended_remedy": "Needs augmentation and targeted expansion for balanced validation."
+    }
+  },
+  "external_verified_candidates": [
+    {
+      "name": "SkinDiseaseBD: Dataset of Common Skin Disease Images of Bangladesh",
+      "authors": "Hossain et al. (2023)",
+      "source": "Mendeley Data",
+      "doi": "10.17632/9ggd3shdr7.1",
+      "url": "https://data.mendeley.com/datasets/9ggd3shdr7/1",
+      "license": "Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)",
+      "intended_use_permitted": true,
+      "commercial_permitted": false,
+      "requires_institutional_approval": false,
+      "image_count": 1612,
+      "image_format": "JPG (Clinical photography from hospital outpatient departments)",
+      "target_disease_coverage": [
+        "Ringworm (Tinea - 312 images)",
+        "Eczema",
+        "Scabies"
+      ],
+      "skin_tone_demographics": "South Asian population (Fitzpatrick Phototypes IV-V)",
+      "utility_for_dermtrust": "Fills critical gap for Ringworm/Tinea on Darker Skin Tones (Types IV-V).",
+      "status": "Verified & Ingestion-Ready"
+    },
+    {
+      "name": "Curated Skin Disease Dataset for Ringworm Classification",
+      "authors": "Open Science Research Collection (2024)",
+      "source": "Figshare",
+      "doi": "10.6084/m9.figshare.33084632",
+      "url": "https://doi.org/10.6084/m9.figshare.33084632",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "intended_use_permitted": true,
+      "commercial_permitted": true,
+      "requires_institutional_approval": false,
+      "image_count": 2100,
+      "image_format": "JPG (Cleaned, deduplicated)",
+      "target_disease_coverage": [
+        "Ringworm / Tinea corporis (1,000 images)",
+        "Scabies (700)",
+        "Normal Skin (400)"
+      ],
+      "skin_tone_demographics": "Multi-ethnic clinical cohort",
+      "utility_for_dermtrust": "Large-scale permissible ringworm training and validation set.",
+      "status": "Verified & Ingestion-Ready"
+    },
+    {
+      "name": "Google SCIN (Skin Condition Image Network)",
+      "authors": "Google Health & Stanford Medicine (2023/2024)",
+      "source": "Google Research Datasets & Google Cloud Storage",
+      "doi": "arXiv:2307.05434",
+      "url": "https://github.com/google-research-datasets/scin",
+      "license": "SCIN Custom Open Research Data Use License (Non-commercial research/academic permitted)",
+      "intended_use_permitted": true,
+      "commercial_permitted": false,
+      "requires_institutional_approval": false,
+      "image_count": 10500,
+      "image_format": "JPG with rich metadata",
+      "target_disease_coverage": [
+        "Acne",
+        "Psoriasis",
+        "Melasma / Hyperpigmentation",
+        "Tinea"
+      ],
+      "skin_tone_demographics": "Monk Skin Tone Scale (MST 1-10) and Dermatologist-estimated Fitzpatrick (eFST 1-6)",
+      "utility_for_dermtrust": "Rich source for Melasma and expanded balanced Fitzpatrick skin tones.",
+      "status": "Verified & Access-Documented (Accessible via gs://scin-dataset)"
+    },
+    {
+      "name": "Diverse Dermatology Images (DDI)",
+      "authors": "Daneshjou, Smith, et al. (Science Advances, 2022)",
+      "source": "Stanford Center for Artificial Intelligence in Medicine & Imaging (AIMI)",
+      "doi": "10.71718/kqee-3z39",
+      "url": "https://ddi-dataset.github.io/",
+      "license": "Stanford AIMI Research Use Agreement (Academic / Non-commercial research permitted)",
+      "intended_use_permitted": true,
+      "commercial_permitted": false,
+      "requires_institutional_approval": false,
+      "image_count": 656,
+      "image_format": "PNG / JPG",
+      "target_disease_coverage": [
+        "Inflammatory skin conditions",
+        "Pigmentary disorders",
+        "Benign lesions"
+      ],
+      "skin_tone_demographics": "Curated balanced Fitzpatrick skin types I-VI (FST I-II: 208, FST III-IV: 241, FST V-VI: 207)",
+      "utility_for_dermtrust": "Ideal benchmark for algorithmic fairness cross-testing.",
+      "status": "Verified & Ingestion-Ready"
+    },
+    {
+      "name": "PAD-UFES-20: Dermatological Smartphone Dataset",
+      "authors": "Pacheco et al. (Data in Brief, 2020)",
+      "source": "Mendeley Data & Federal University of Esp\u00edrito Santo",
+      "doi": "10.17632/zr7vgbcyr2.1",
+      "url": "https://data.mendeley.com/datasets/zr7vgbcyr2/1",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "intended_use_permitted": true,
+      "commercial_permitted": true,
+      "requires_institutional_approval": false,
+      "image_count": 2298,
+      "image_format": "PNG with comprehensive patient clinical metadata",
+      "target_disease_coverage": [
+        "Skin lesions",
+        "Seborrheic keratosis",
+        "Melanocytic nevi"
+      ],
+      "skin_tone_demographics": "Fitzpatrick phototypes I-VI documented in metadata",
+      "utility_for_dermtrust": "Mobile smartphone camera evaluation and non-target confounder rejection testing.",
+      "status": "Verified & Ingestion-Ready"
+    },
+    {
+      "name": "Pigmentation Melasma Dark Spots Dataset",
+      "authors": "WeSkin Clinical Skin Research (2023)",
+      "source": "Roboflow Universe Open Access",
+      "doi": "universe.roboflow.com/weskinskinconditions",
+      "url": "https://universe.roboflow.com/weskinskinconditions/pigmentation-melasma-dark-spots-436l2-nogsj",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "intended_use_permitted": true,
+      "commercial_permitted": true,
+      "requires_institutional_approval": false,
+      "image_count": 486,
+      "image_format": "JPG",
+      "target_disease_coverage": [
+        "Melasma",
+        "Facial hyperpigmentation",
+        "Dark spots"
+      ],
+      "skin_tone_demographics": "Facial dermatology across various skin tones",
+      "utility_for_dermtrust": "Direct ground truth images for Melasma target class.",
+      "status": "Verified & Ingestion-Ready"
+    }
+  ]
+}

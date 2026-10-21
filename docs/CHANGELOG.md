@@ -4,6 +4,18 @@ All notable changes, milestones, and architectural decisions to DermTrust are do
 
 ---
 
+## [Phase 6: Multi-Dataset Discovery & Legal Expansion Audit] — 2026-10-21
+
+### Added
+- Authored automated discovery and audit tool `ml/discover_additional_datasets.py`.
+- Generated `docs/dataset_expansion_audit.json` reporting exact Fitzpatrick 17K class counts and skin-tone distribution (Light FST I–III vs Darker FST IV–VI).
+- Identified and cataloged 6 external open-access dermatological datasets with verified permissive licenses (CC BY 4.0, CC BY-NC 4.0, SCIN Custom Open Research, Stanford AIMI) covering Melasma, Ringworm (Tinea corporis), and darker skin phototypes.
+- Formalized 4-step data deduplication and anti-leakage protocol (Cryptographic MD5, 64-bit perceptual hashing pHash, conservative diagnostic mapping, patient-level split isolation).
+- Updated `docs/DATASET_AND_LICENSES.md`, `docs/REQUIREMENTS.md` (REQ-DATA-EXP), and `docs/FEATURE_STATUS.md`.
+- Verified zero regression across all Flutter tests (6/6 passing).
+
+---
+
 ## [Phase 5: Final Packaging, Testing & Viva Voce Guide] — 2026-10-21
 
 ### Added

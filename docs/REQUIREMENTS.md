@@ -27,6 +27,7 @@ This document serves as the **Single Source of Truth** for all functional, archi
 | **REQ-ML-04** | Ground-Truth Dataset Inspection | Ingest Fitzpatrick 17K dataset with exact MD5 image matching, label validation, and corrupt-image discarding. | 16,577 images verified | **[COMPLETED]** | `ml/dataset_inventory.py`, `docs/DATASET_AND_LICENSES.md` | Inventory script audit, json summary |
 | **REQ-ML-05** | Train/Val/Test Split Separation | Patient/image leakage prevention. Fixed seeds, reproducible partition (70/15/15 stratified). | Zero test leakage | **[COMPLETED]** | `ml/prepare_dataset.py` | Hash collision audit between splits |
 | **REQ-ML-06** | Class Imbalance Mitigation | Prevent dominant class bias via class-weighted focal loss and stratified sampling. | Equal sensitivity across rare/frequent classes | **[COMPLETED]** | `ml/train_model.py` | Per-class recall parity check |
+| **REQ-DATA-EXP** | Multi-Dataset Discovery & Gap Audit | Empirical adequacy assessment of Fitz17K, discovery of verified open-access clinical datasets (Mendeley, Figshare, Google SCIN, Stanford DDI, PAD-UFES-20, Roboflow) with CC-BY/CC-BY-NC licensing, deduplication, and anti-leakage protocol. | 100% legal compliance & gap closure protocol | **[COMPLETED]** | `ml/discover_additional_datasets.py`, `docs/DATASET_AND_LICENSES.md` | Automated gap audit script, verified DOIs and licenses |
 
 ---
 

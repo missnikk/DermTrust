@@ -13,6 +13,7 @@
 | **Data Engine** | Target Class Extraction & Counts | **[COMPLETED]** | Acne (518), Psoriasis (706), Vitiligo (166). |
 | **Data Engine** | Non-Target Confounders Indexed | **[COMPLETED]** | 1,199 confounder images (Eczema, Lichen Planus, etc.). |
 | **Data Engine** | Train/Val/Test Splitter | **[COMPLETED]** | Stratified split (70/15/15) with zero data leakage. |
+| **Data Engine** | Multi-Dataset Discovery & Gap Audit | **[COMPLETED]** | Fitz17K gap matrix documented; 6 open clinical datasets cataloged (CC-BY/CC-BY-NC) with DOIs & deduplication protocol. |
 | **AI Models** | 5-Class Target Disease Architecture | **[COMPLETED]** | Vitiligo, Melasma, Ringworm, Acne, Psoriasis registry. |
 | **AI Models** | MobileNetV2 Transfer Learning | **[COMPLETED]** | Spatial Attention + Focal Loss + Class Weighting. |
 | **AI Models** | Independent Test Evaluation | **[COMPLETED]** | **77.51% Accuracy**, **0.7198 Macro-F1** on 209 test images. |
