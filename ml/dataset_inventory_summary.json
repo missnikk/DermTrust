@@ -1,0 +1,66 @@
+{
+  "total_rows": 16577,
+  "physical_images_found": 16577,
+  "target_counts": {
+    "psoriasis": 706,
+    "acne": 518,
+    "vitiligo": 166
+  },
+  "disease_by_skin_tone": {
+    "psoriasis": {
+      "Light (Types I-III)": 485,
+      "Darker (Types IV-VI)": 189,
+      "Unknown / Unclassified": 32
+    },
+    "acne": {
+      "Darker (Types IV-VI)": 101,
+      "Light (Types I-III)": 415,
+      "Unknown / Unclassified": 2
+    },
+    "vitiligo": {
+      "Light (Types I-III)": 57,
+      "Darker (Types IV-VI)": 102,
+      "Unknown / Unclassified": 7
+    },
+    "melasma": {},
+    "ringworm": {}
+  },
+  "disease_by_exact_fitz": {
+    "psoriasis": {
+      "1": 129,
+      "2": 250,
+      "3": 106,
+      "4": 98,
+      "-1": 32,
+      "5": 67,
+      "6": 24
+    },
+    "acne": {
+      "4": 61,
+      "1": 123,
+      "2": 209,
+      "6": 7,
+      "3": 83,
+      "5": 33,
+      "-1": 2
+    },
+    "vitiligo": {
+      "2": 16,
+      "6": 21,
+      "5": 39,
+      "3": 34,
+      "4": 42,
+      "1": 7,
+      "-1": 7
+    }
+  },
+  "non_target_counts": {
+    "non_target_eczema": 287,
+    "non_target_seborrheic_dermatitis": 126,
+    "non_target_pityriasis_rosea": 193,
+    "non_target_lichen_planus": 491,
+    "non_target_rosacea": 102
+  },
+  "valid_target_total": 1390,
+  "valid_confounder_total": 1199
+}

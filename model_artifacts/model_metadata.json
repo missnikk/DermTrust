@@ -1,0 +1,28 @@
+{
+  "model_name": "DermTrust-MobileNetV2-5Class-XAI",
+  "classes": [
+    "acne",
+    "melasma",
+    "psoriasis",
+    "ringworm",
+    "vitiligo"
+  ],
+  "input_tensor_shape": [
+    1,
+    224,
+    224,
+    3
+  ],
+  "cam_feature_shape": [
+    1,
+    7,
+    7,
+    1280
+  ],
+  "quantization": "float32-weights-optimized",
+  "rejection_threshold": 0.6,
+  "metrics": {
+    "val_accuracy": 0.92,
+    "macro_f1": 0.9177
+  }
+}
