@@ -1,0 +1,210 @@
+import 'package:flutter/material.dart';
+import '../models/disease_info.dart';
+import '../utils/app_theme.dart';
+
+class DiseaseCard extends StatelessWidget {
+  final DiseaseInfo info;
+  final String? acneSeverity;
+
+  const DiseaseCard({super.key, required this.info, this.acneSeverity});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        // Category Header
+        Container(
+          padding: const EdgeInsets.all(14),
+          decoration: BoxDecoration(
+            color: AppTheme.surfaceElevated,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: AppTheme.surfaceBorder),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                info.category.toUpperCase(),
+                style: const TextStyle(
+                  color: AppTheme.accentCyan,
+                  fontSize: 11,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 0.8,
+                ),
+              ),
+              const SizedBox(height: 6),
+              Text(
+                info.displayName,
+                style: const TextStyle(
+                  color: AppTheme.textPrimary,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              if (acneSeverity != null) ...[
+                const SizedBox(height: 8),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: AppTheme.warningAmber.withOpacity(0.15),
+                    borderRadius: BorderRadius.circular(6),
+                    border: Border.all(color: AppTheme.warningAmber.withOpacity(0.4)),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(Icons.assessment_outlined, color: AppTheme.warningAmber, size: 14),
+                      const SizedBox(width: 6),
+                      Text(
+                        'Severity: $acneSeverity',
+                        style: const TextStyle(
+                          color: AppTheme.warningAmber,
+                          fontSize: 11,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+              const SizedBox(height: 8),
+              Text(
+                info.description,
+                style: const TextStyle(
+                  color: AppTheme.textSecondary,
+                  fontSize: 13,
+                  height: 1.45,
+                ),
+              ),
+            ],
+          ),
+        ),
+
+        const SizedBox(height: 12),
+
+        // Visual Hallmarks
+        _buildSectionCard(
+          title: 'Visual Hallmarks Detected by Model',
+          icon: Icons.checklist_rtl_rounded,
+          iconColor: AppTheme.primaryBlue,
+          content: Column(
+            children: info.visualHallmarks
+                .map((h) => _buildBulletPoint(h, Icons.circle, AppTheme.primaryBlue))
+                .toList(),
+          ),
+        ),
+
+        const SizedBox(height: 12),
+
+        // Clinically Recognized Subtypes
+        _buildSectionCard(
+          title: 'Clinically Recognized Subtypes',
+          icon: Icons.category_outlined,
+          iconColor: AppTheme.accentCyan,
+          content: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Subtypes must be clinically confirmed via in-person dermatological examination:',
+                style: TextStyle(color: AppTheme.textMuted, fontSize: 11, fontStyle: FontStyle.italic),
+              ),
+              const SizedBox(height: 6),
+              ...info.clinicallyRecognizedSubtypes
+                  .map((s) => _buildBulletPoint(s, Icons.arrow_right_rounded, AppTheme.accentCyan)),
+            ],
+          ),
+        ),
+
+        const SizedBox(height: 12),
+
+        // First Line Advice
+        _buildSectionCard(
+          title: 'Initial General Care Guidance',
+          icon: Icons.healing_outlined,
+          iconColor: AppTheme.successGreen,
+          content: Text(
+            info.firstLineAdvice,
+            style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13, height: 1.45),
+          ),
+        ),
+
+        const SizedBox(height: 12),
+
+        // Red Flags
+        _buildSectionCard(
+          title: 'When to Seek Urgent Medical Care',
+          icon: Icons.warning_amber_rounded,
+          iconColor: AppTheme.dangerRose,
+          content: Column(
+            children: info.redFlags
+                .map((r) => _buildBulletPoint(r, Icons.priority_high_rounded, AppTheme.dangerRose))
+                .toList(),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSectionCard({
+    required String title,
+    required IconData icon,
+    required Color iconColor,
+    required Widget content,
+  }) {
+    return Container(
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: AppTheme.surface,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: AppTheme.surfaceBorder),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(icon, color: iconColor, size: 16),
+              const SizedBox(width: 8),
+              Text(
+                title,
+                style: const TextStyle(
+                  color: AppTheme.textPrimary,
+                  fontSize: 13,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          content,
+        ],
+      ),
+    );
+  }
+
+  Widget _buildBulletPoint(String text, IconData icon, Color color) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 6),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 4, right: 8),
+            child: Icon(icon, size: 8, color: color),
+          ),
+          Expanded(
+            child: Text(
+              text,
+              style: const TextStyle(
+                color: AppTheme.textSecondary,
+                fontSize: 12,
+                height: 1.4,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
