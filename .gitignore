@@ -37,6 +37,11 @@ ENV/
 *.apk
 DermTrust_Android_Debug.apk
 
+# Dataset archives and external raw binaries
+ml/external_datasets/skindiseasebd/*.zip
+ml/external_datasets/skindiseasebd/extracted/
+ml/external_datasets/melasma_verified/
+
 # Android
 **/android/**/gradle-wrapper.jar
 **/android/.gradle

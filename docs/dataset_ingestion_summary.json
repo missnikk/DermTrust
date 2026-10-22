@@ -1,0 +1,39 @@
+{
+  "total_ingested_files": 4289,
+  "duplicates_purged": 16,
+  "valid_unique_images": 4273,
+  "target_disease_images": 2090,
+  "non_target_confounder_images": 2183,
+  "disease_breakdown": {
+    "psoriasis": 706,
+    "acne": 518,
+    "vitiligo": 478,
+    "ringworm": 316,
+    "melasma": 72
+  },
+  "skin_tone_breakdown": {
+    "Darker": 1092,
+    "Light": 957,
+    "Unknown": 41
+  },
+  "fitzpatrick_scale_breakdown": {
+    "5": 771,
+    "2": 475,
+    "4": 269,
+    "1": 259,
+    "3": 223,
+    "6": 52,
+    "Unknown": 41
+  },
+  "augmentation_breakdown": {
+    "original_images": 1440,
+    "augmented_copies": 650
+  },
+  "source_breakdown": {
+    "Fitzpatrick 17k Dataset (Groh et al., CVPR 2021)": 1390,
+    "SkinDiseaseBD (Mendeley Data DOI: 10.17632/9ggd3shdr7.3)": 628,
+    "Clinical Photography Melasma Cohort": 48,
+    "Wikimedia Commons Clinical Dermatology Archive": 20,
+    "Atlas Dermatologico (Freire da Silva)": 4
+  }
+}

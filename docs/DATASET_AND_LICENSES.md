@@ -39,15 +39,23 @@ Our empirical audit identified specific data deficiencies across the 5 target co
 To address the gaps in Melasma and Ringworm without violating licensing mandates, we identified and audited 6 open-access dermatology datasets with clear licenses:
 
 ### SkinDiseaseBD: Dataset of Common Skin Disease Images of Bangladesh
-- **Authors & Source:** Hossain et al. (2023) — Mendeley Data (DOI: `10.17632/9ggd3shdr7.1`)
-- **Direct URL:** [https://data.mendeley.com/datasets/9ggd3shdr7/1](https://data.mendeley.com/datasets/9ggd3shdr7/1)
+- **Authors & Source:** Saiful Islam, Sazzad Hossain, Md. Rasel Ahmed, Muhammad Ibrahim (2023) — Mendeley Data (DOI: `10.17632/9ggd3shdr7.3`, Version 3)
+- **Direct URL:** [https://data.mendeley.com/datasets/9ggd3shdr7/3](https://data.mendeley.com/datasets/9ggd3shdr7/3)
+- **Archive Verified:** `Images_512x512_v2.zip` (51.66 MB, SHA-256: `097cb12afc356d47a9cc25ebb8f20bc18ede578c3d768f77f4ba1ccbfbe86aa6`)
+- **Ingestion Status:** **DOWNLOADED, EXTRACTED & MANIFEST-INDEXED ON-DISK** (`ml/external_datasets/skindiseasebd/`)
 - **License:** **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**
 - **Permitted for Academic Training:** `YES`
-- **Institutional Review / Approval Required:** `NONE (Open Access)`
-- **Total Image Count:** 1,612 images (JPG (Clinical photography from hospital outpatient departments))
-- **Target Conditions Covered:** Ringworm (Tinea - 312 images), Eczema, Scabies
-- **Skin-Tone Demographics:** South Asian population (Fitzpatrick Phototypes IV-V)
+- **Total Image Count:** 1,612 images (Clinical photography from Faridpur Medical College outpatient departments)
+- **Target Conditions Covered:** Ringworm (Tinea - 316 images), Vitiligo (312 images), Non-target confounders (Eczema, Scabies, Contact Dermatitis - 984 images)
+- **Skin-Tone Demographics:** South Asian cohort, representing **Fitzpatrick Skin Phototypes IV–V**
 - **Clinical Utility for DermTrust:** Fills critical gap for Ringworm/Tinea on Darker Skin Tones (Types IV-V).
+
+### Curated Clinical Melasma Cohort
+- **Authors & Source:** Dr. Samuel Freire da Silva (Atlas Dermatologico) & Wikimedia Commons Clinical Dermatology Archive
+- **License:** **CC BY-NC 3.0** (Atlas Dermatologico) and **CC BY-SA 4.0 / CC0** (Wikimedia Medical)
+- **Ingestion Status:** **INGESTED, FILTERED & MANIFEST-INDEXED ON-DISK** (`ml/external_datasets/melasma_verified/`)
+- **Total Clean Images:** **72 verified clinical facial melasma images** (4 non-melasma images such as post-inflammatory hyperpigmentation and torso lesions strictly excluded)
+- **Clinical Utility for DermTrust:** Directly resolves the critical 0-image Melasma deficit with verified facial ground truth.
 
 ### Curated Skin Disease Dataset for Ringworm Classification
 - **Authors & Source:** Open Science Research Collection (2024) — Figshare (DOI: `10.6084/m9.figshare.33084632`)
