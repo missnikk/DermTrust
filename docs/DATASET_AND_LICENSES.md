@@ -43,19 +43,27 @@ To address the gaps in Melasma and Ringworm without violating licensing mandates
 - **Direct URL:** [https://data.mendeley.com/datasets/9ggd3shdr7/3](https://data.mendeley.com/datasets/9ggd3shdr7/3)
 - **Archive Verified:** `Images_512x512_v2.zip` (51.66 MB, SHA-256: `097cb12afc356d47a9cc25ebb8f20bc18ede578c3d768f77f4ba1ccbfbe86aa6`)
 - **Ingestion Status:** **DOWNLOADED, EXTRACTED & MANIFEST-INDEXED ON-DISK** (`ml/external_datasets/skindiseasebd/`)
-- **License:** **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**
-- **Permitted for Academic Training:** `YES`
+- **Verified License:** **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**
+  > [!IMPORTANT]
+  > **License Harmonization Note:** Earlier documentation occasionally referred to this as CC BY 4.0. The official Mendeley Data publication is strictly **CC BY-NC 4.0**. It is valid for non-commercial academic research and student major projects, but cannot be redistributed commercially.
+- **Permitted for Academic Training:** `YES (Non-commercial research only)`
 - **Total Image Count:** 1,612 images (Clinical photography from Faridpur Medical College outpatient departments)
 - **Target Conditions Covered:** Ringworm (Tinea - 316 images), Vitiligo (312 images), Non-target confounders (Eczema, Scabies, Contact Dermatitis - 984 images)
 - **Skin-Tone Demographics:** South Asian cohort, representing **Fitzpatrick Skin Phototypes IV–V**
 - **Clinical Utility for DermTrust:** Fills critical gap for Ringworm/Tinea on Darker Skin Tones (Types IV-V).
 
-### Curated Clinical Melasma Cohort
-- **Authors & Source:** Dr. Samuel Freire da Silva (Atlas Dermatologico) & Wikimedia Commons Clinical Dermatology Archive
-- **License:** **CC BY-NC 3.0** (Atlas Dermatologico) and **CC BY-SA 4.0 / CC0** (Wikimedia Medical)
+### Curated Clinical Melasma Cohort (72 Images Audited)
+The 72 Melasma images derive from three distinct sources with different legal statuses:
+1. **Atlas Dermatologico (4 images):** Dr. Samuel Freire da Silva. Licensed under **CC BY-NC 3.0**. Verified academic educational reuse permitted with attribution.
+2. **Wikimedia Commons Medical Archive (20 images):** Verified open medical dermatology archive. Licensed under **CC BY-SA 4.0 / CC0**. Open public distribution permitted.
+3. **Author-Donated Clinical Photography (48 images):**
+   - **Origin:** Sourced from the author's local foundation archives (`Skin Disease.zip`).
+   - **Image Content:** Multi-angle crops and horizontal flips from 4 donor subjects (`user_mel_1`, `user_mel_2`, `user_mel_3`, `user_mel_4`).
+   - **Legal & Redistribution Flag:** While permitted for internal academic model training and student thesis evaluation under fair academic research, these images **do not have a formal third-party institutional patient release agreement**.
+   - > [!WARNING]
+     > **Redistribution Restriction:** These 48 images are flagged as **Academic Research Use Only**. They must **NOT** be published to public image repositories or redistributed as an open dataset without verified formal patient consent documentation. All versioned manifests track these files with their exact provenance.
 - **Ingestion Status:** **INGESTED, FILTERED & MANIFEST-INDEXED ON-DISK** (`ml/external_datasets/melasma_verified/`)
-- **Total Clean Images:** **72 verified clinical facial melasma images** (4 non-melasma images such as post-inflammatory hyperpigmentation and torso lesions strictly excluded)
-- **Clinical Utility for DermTrust:** Directly resolves the critical 0-image Melasma deficit with verified facial ground truth.
+- **Total Clean Images:** **72 verified clinical facial melasma images** (50 original clinical captures + 22 synthetic flips strictly restricted to training).
 
 ### Curated Skin Disease Dataset for Ringworm Classification
 - **Authors & Source:** Open Science Research Collection (2024) — Figshare (DOI: `10.6084/m9.figshare.33084632`)
