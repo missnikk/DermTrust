@@ -1,0 +1,61 @@
+{
+  "evaluation_scope": "Full Population Census (Zero Subsampling)",
+  "total_images_in_manifest": 2183,
+  "total_evaluated_successfully": 2183,
+  "total_rejected": 877,
+  "total_accepted_as_target": 1306,
+  "overall_rejection_rate": 0.401740723774622,
+  "mean_confidence": 0.696470703361398,
+  "mean_entropy": 1.1607148061663022,
+  "per_condition_breakdown": {
+    "non_target_eczema": {
+      "total": 668,
+      "rejected": 292,
+      "rejection_rate": 0.437125748502994,
+      "mean_confidence": 0.6943212814495235,
+      "mean_entropy": 1.1748856926827642
+    },
+    "non_target_lichen_planus": {
+      "total": 491,
+      "rejected": 142,
+      "rejection_rate": 0.2892057026476578,
+      "mean_confidence": 0.7478623446039173,
+      "mean_entropy": 1.0034607912654667
+    },
+    "non_target_dermatitis": {
+      "total": 302,
+      "rejected": 106,
+      "rejection_rate": 0.3509933774834437,
+      "mean_confidence": 0.6861600165335547,
+      "mean_entropy": 1.2155889103448154
+    },
+    "non_target_scabies": {
+      "total": 301,
+      "rejected": 224,
+      "rejection_rate": 0.7441860465116279,
+      "mean_confidence": 0.5566787301404927,
+      "mean_entropy": 1.6166649502377177
+    },
+    "non_target_pityriasis_rosea": {
+      "total": 193,
+      "rejected": 56,
+      "rejection_rate": 0.29015544041450775,
+      "mean_confidence": 0.7365463905692718,
+      "mean_entropy": 1.0000285691837418
+    },
+    "non_target_seborrheic_dermatitis": {
+      "total": 126,
+      "rejected": 34,
+      "rejection_rate": 0.2698412698412698,
+      "mean_confidence": 0.7613978430865302,
+      "mean_entropy": 0.9199233049497245
+    },
+    "non_target_rosacea": {
+      "total": 102,
+      "rejected": 23,
+      "rejection_rate": 0.22549019607843138,
+      "mean_confidence": 0.7501795475973803,
+      "mean_entropy": 0.9184086217234532
+    }
+  }
+}

@@ -4,6 +4,35 @@ All notable changes, milestones, and architectural decisions to DermTrust are do
 
 ---
 
+## [Phase 8: Storage Optimization, OOD Census, Verified Release APK & Hardware Launch] — 2026-10-22
+
+### Added
+- **Storage Footprint Optimization:**
+  - Safely purged intermediate Gradle build artifacts (`1,031 MB`) and redundant root debug APK (`220 MB`).
+  - Total workspace footprint reduced from **1,507.99 MB (1.47 GB)** to **256.49 MB (0.25 GB)** — an **83% (1.25 GB) safe reduction** while strictly retaining all code, models, manifests, datasets, and docs.
+- **Full OOD Population Census Evaluation (`ml/evaluate_ood_census.py`):**
+  - Evaluated **all 2,183 images** from `ml/data/ood_5class_manifest.csv` with zero subsampling.
+  - Overall Rejection: **877 / 2,183 (40.17%)**; Mean Confounder Entropy = 1.161 bits (vs 0.764 on targets); Mean Confounder Confidence = 69.65% (vs 81.00% on targets).
+  - Saved full census breakdown to `docs/ood_rejection_census.json` and reconciled in `docs/MODEL_EVALUATION.md`.
+- **DIP & Grad-CAM Mathematical Verification (`ml/verify_dip_and_xai.py`):**
+  - DIP Laplacian variance operator verified: flat patch variance = 0.00, edge variance = 16003.00, deterministic $\tau=30.0$ threshold confirmed.
+  - Grad-CAM verified: Feature map tensor index 174 (`[1, 7, 7, 1280]`), prediction index 177 (`[1, 5]`), finite non-zero heatmap activations, class specificity L1 difference between Psoriasis and Ringworm = 79.944. Both PASSED.
+- **Optimized Android Release APK Compilation:**
+  - Configured ProGuard rules (`proguard-rules.pro`) keeping TFLite classes and suppressing Play Core deferred component warnings.
+  - Built split-per-ABI release packages:
+    - `app-arm64-v8a-release.apk`: **26.01 MB** (optimized for modern 64-bit ARM devices).
+    - `app-armeabi-v7a-release.apk`: **21.33 MB**.
+    - `app-x86_64-release.apk`: **29.06 MB**.
+    - Achieved an **88% APK package reduction** compared to the 216 MB unstripped debug build.
+- **Physical Hardware Verification (Samsung Galaxy M34 5G `RZCW9213D1N`):**
+  - Successfully installed `app-arm64-v8a-release.apk` via streamed ADB install.
+  - Launched `com.vesit.dermtrust.dermtrust/.MainActivity` with Impeller Vulkan backend.
+  - Confirmed live process running on device (PID: **31016**) with zero crashes.
+- **Automated Regression Testing:**
+  - Executed `flutter test`: **6/6 tests passed (100%)**.
+
+---
+
 ## [Phase 7: Verified 5-Class Retraining, Independent Evaluation & Device Deployment] — 2026-10-22
 
 ### Added

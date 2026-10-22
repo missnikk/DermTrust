@@ -46,7 +46,7 @@
     "test_accuracy": 0.8061224489795918,
     "macro_f1": 0.7179242635734909,
     "test_samples": 294,
-    "ood_rejection_rate": 0.43333333333333335,
+    "ood_rejection_rate": 0.401740723774622,
     "evaluation_date": "2026-10-22"
   }
 }

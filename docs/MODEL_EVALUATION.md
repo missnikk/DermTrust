@@ -4,7 +4,7 @@
 **Model Architecture:** MobileNetV2 ($\alpha=0.75$) + Spatial Attention + GlobalAveragePooling2D + Dense(5, softmax)  
 **Model Artifact:** `model_artifacts/dermtrust_classifier.tflite`  
 **Test Set Images (Strictly Partitioned, N=294):** Acne (72), Melasma (15), Psoriasis (100), Ringworm (45), Vitiligo (62)  
-**OOD Confounder Benchmark:** 300 non-target images (Eczema, Scabies, Contact Dermatitis, Lichen Planus)  
+**OOD Confounder Benchmark:** 2183 non-target images (Eczema, Scabies, Contact Dermatitis, Lichen Planus)  
 
 ## 1. Primary Diagnostic Metrics
 
@@ -15,7 +15,7 @@
 | **Weighted-F1 Score** | **0.7957** |
 | **Mean Target Confidence** | **81.00%** |
 | **Mean Target Predictive Entropy** | **0.764 bits** |
-| **OOD Confounder Rejection Rate (Outcome 6)** | **43.3%** |
+| **OOD Confounder Rejection Rate (Outcome 6)** | **40.2%** |
 
 ## 2. Per-Class Diagnostic Performance
 
@@ -41,7 +41,23 @@ Visualized in `docs/confusion_matrix.png`.
 
 ## 4. Rejection of Visually Similar Confounders (Outcome 6)
 
-The multi-tier DWH decision gate (calibrated $\tau_{conf} = 0.60, \tau_{entropy} = 1.40$) successfully rejected **43.3%** of out-of-distribution dermatology images without forcing classification into target conditions.
+The multi-tier DWH decision gate (calibrated $\tau_{conf} = 0.60, \tau_{entropy} = 1.40$) was evaluated across the full population census of **2183** out-of-distribution dermatology images without any subsampling.
+
+- **Overall Census Rejection Rate:** **40.17%** (877/2183 confounders safely intercepted)
+- **Mean Confounder Confidence:** 69.65%
+- **Mean Confounder Entropy:** 1.161 bits
+
+### Per-Condition OOD Interception Breakdown:
+
+| Non-Target Condition | Rejection Rate | Rejection Count | Mean Confidence | Mean Entropy |
+| :--- | :---: | :---: | :---: | :---: |
+| **Eczema** | **43.7%** | 292/668 | 69.4% | 1.17 bits |
+| **Lichen Planus** | **28.9%** | 142/491 | 74.8% | 1.00 bits |
+| **Dermatitis** | **35.1%** | 106/302 | 68.6% | 1.22 bits |
+| **Scabies** | **74.4%** | 224/301 | 55.7% | 1.62 bits |
+| **Pityriasis Rosea** | **29.0%** | 56/193 | 73.7% | 1.00 bits |
+| **Seborrheic Dermatitis** | **27.0%** | 34/126 | 76.1% | 0.92 bits |
+| **Rosacea** | **22.5%** | 23/102 | 75.0% | 0.92 bits |
 
 ## 5. Academic & Clinical Disclaimers
 

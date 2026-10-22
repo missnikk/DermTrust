@@ -8,8 +8,8 @@
   "mean_confidence": 0.8100421958837379,
   "mean_entropy": 0.7638396892988053,
   "target_false_rejection_rate": 0.18027210884353742,
-  "ood_confounders_tested": 300,
-  "ood_rejection_rate": 0.43333333333333335,
+  "ood_confounders_tested": 2183,
+  "ood_rejection_rate": 0.401740723774622,
   "confusion_matrix": [
     [
       65,

@@ -32,8 +32,9 @@ Evaluated on the untouched independent test set ($N = 294$ verified images) and 
 | **Light Skin Accuracy (FST I–III)** | **79.29%** | Evaluated on $N = 140$ light-skin test images |
 | **Darker Skin Accuracy (FST IV–VI)** | **82.67%** | Evaluated on $N = 150$ darker-skin test images |
 | **Skin-Tone Accuracy Disparity Gap** | **3.38%** | Historical dark-skin performance penalty eliminated |
-| **Non-Target Safe Rejection Rate** | **43.3%** | Intercepts visually similar confounders via calibrated DWH gate |
-| **Physical Mobile Hardware** | **Samsung Galaxy M34 5G** | Verified streamed installation via ADB (`RZCW9213D1N`, PID: 11180) |
+| **Non-Target Safe Rejection Rate** | **40.17% (877 / 2,183)** | Intercepts visually similar confounders via calibrated DWH gate (Full OOD Census) |
+| **Physical Mobile Hardware** | **Samsung Galaxy M34 5G** | Verified release install via ADB (`app-arm64-v8a-release.apk`, **26.01 MB**, PID: **31016**) |
+| **Repository Storage Footprint** | **256.49 MB** | Safely reduced by 83% (1.25 GB saved) from 1,507 MB without data/source loss |
 
 ### Per-Class Test Performance ($N=294$)
 

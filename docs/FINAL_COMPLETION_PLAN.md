@@ -89,3 +89,18 @@
    - Update `README.md`, `docs/MODEL_EVALUATION.md`, `docs/FAIRNESS_EVALUATION.md`, `docs/FEATURE_STATUS.md`, `docs/CHANGELOG.md`.
    - Record Git commit and check Git remote configuration.
    - Produce final completion report with 15-point checklist.
+
+---
+
+## 5. Execution & Verification Log
+
+| Step | Phase | Action Taken | Verified Outcome | Status |
+| :--- | :--- | :--- | :--- | :---: |
+| **1** | Storage Reduction | Removed redundant root debug APK (`220 MB`) and purged Gradle cache intermediates. | Project size reduced from **1,507.99 MB (1.47 GB)** to **256.49 MB (0.25 GB)** — an **83% (1.25 GB) safe reduction** with zero source or dataset loss. | **VERIFIED** |
+| **2** | Legal & Licensing Audit | Audited Fitzpatrick 17K, SkinDiseaseBD, and Melasma cohort. | 4,273 audited images. Reconciled DOIs, CC BY 4.0 licenses, fair use terms, and research vs redistribution constraints in `docs/DATASET_AND_LICENSES.md`. | **VERIFIED** |
+| **3** | OOD Rejection Census | Executed `ml/evaluate_ood_census.py` across **all 2,183 OOD confounders** (zero subsampling). | Full census: **40.17% rejection (877/2,183)**. Mean confounder entropy = 1.161 bits vs 0.764 bits on targets. Results saved in `docs/ood_rejection_census.json`. | **VERIFIED** |
+| **4** | Model Exploration | Evaluated balanced mini-batch candidate vs baseline model on untouched test set ($N=294$). | Baseline model proved superior (81.63% test accuracy, 80.61% TFLite, 0.7476 Macro-F1, 1.000 Melasma precision vs candidate 77.89% acc, 0.6517 Macro-F1). Canonical baseline retained per instructions. | **VERIFIED** |
+| **5** | DIP & XAI Alignment | Executed `ml/verify_dip_and_xai.py`. | DIP: Flat patch variance = 0.00, edge variance = 16003.00 ($\tau=30.0$ threshold verified). Grad-CAM: Feature map tensor 174, output 177, non-zero finite activations, class specificity L1 difference = 79.944. Both PASSED. | **VERIFIED** |
+| **6** | Release APK Build | Added ProGuard keep rules for TFLite and Play Core; built release APKs with split ABI. | Generated: `app-arm64-v8a-release.apk` (**26.01 MB**), `app-armeabi-v7a-release.apk` (21.33 MB), `app-x86_64-release.apk` (29.06 MB). Release footprint reduced by 88% vs debug build. | **VERIFIED** |
+| **7** | Physical Device Verification | Installed `app-arm64-v8a-release.apk` on Samsung Galaxy M34 5G (`RZCW9213D1N`). | Streamed install Success. Launched `MainActivity`. Confirmed live PID **31016** running Impeller Vulkan backend with 0 crashes. | **VERIFIED** |
+| **8** | Automated Testing | Executed `flutter test` across all unit and widget tests. | **6/6 tests passed (100%)** with 0 errors. | **VERIFIED** |
