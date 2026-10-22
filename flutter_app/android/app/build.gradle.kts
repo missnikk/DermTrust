@@ -8,7 +8,7 @@ plugins {
 android {
     namespace = "com.vesit.dermtrust.dermtrust"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -17,6 +17,12 @@ android {
 
     androidResources {
         noCompress += listOf("tflite")
+    }
+
+    packaging {
+        jniLibs {
+            keepDebugSymbols += "**/*.so"
+        }
     }
 
     kotlinOptions {

@@ -4,6 +4,42 @@ All notable changes, milestones, and architectural decisions to DermTrust are do
 
 ---
 
+## [Phase 7: Verified 5-Class Retraining, Independent Evaluation & Device Deployment] — 2026-10-22
+
+### Added
+- **Multi-Source Dataset Ingestion & Reconciliation:**
+  - Ingested 1,612 verified images from SkinDiseaseBD (Mendeley Data DOI:10.17632): 316 Ringworm, 312 Vitiligo, and 984 non-target confounders.
+  - Curated 72 verified Melasma images (Atlas Dermatologico, Wikimedia, clinical donor captures), explicitly isolating intra-donor variants into patient leakage groups.
+  - Reconciled with Fitzpatrick 17K into a unified manifest (`ml/data/unified_ingested_manifest.csv`) totaling 4,273 images (2,090 Target images + 2,183 OOD confounders).
+  - In the 5-class target corpus, Darker Skin (FST IV–VI) representation reached **52.2% (1,092 images)**, resolving the historical dark-skin underrepresentation gap.
+- **Stratified Group Partitioning (`ml/prepare_5class_dataset.py`):**
+  - Generated Train (1,503), Val (293), Test (294), and OOD Confounders (2,183) splits. Zero MD5 or leakage-group overlap across partitions.
+- **5-Class Retraining Pipeline (`ml/train_5class_model.py`):**
+  - MobileNetV2 ($\alpha=0.75$) with $7 \times 7$ Spatial Attention, Class-Weighted Focal Loss ($\alpha=0.25, \gamma=1.5$), and balanced class weighting ($w_{\text{melasma}} = 6.832$).
+  - Eliminated intermediate BatchNorm between GAP and Dense layer, restoring exact theoretical Grad-CAM equivalence ($\alpha_k^c \equiv w_k^c$).
+  - Monitored training across 15 epochs; reached **82.25% validation accuracy** at Epoch 14 (loss: 0.0951); restored best weights via EarlyStopping.
+- **TFLite Export & Model Synchronization (`ml/export_5class_model.py`):**
+  - Exported `dermtrust_classifier.tflite` (1.61 MB), dual-output `dermtrust_cam.tflite` (1.60 MB), `cam_weights.json` (0.34 MB), and `model_metadata.json`.
+  - Synchronized all artifacts directly to `flutter_app/assets/models/`.
+- **Independent Test Evaluation (`ml/evaluate_5class_model.py`):**
+  - Evaluated on strictly untouched test split ($N=294$): **80.61% Overall Accuracy**, **0.7179 Macro-F1**, **0.7957 Weighted-F1**, **81.00% Mean Confidence**, **0.764 bits Mean Entropy**.
+  - Evaluated on 300 OOD confounders: **43.3% safe non-target rejection rate** (Outcome 6).
+- **Fitzpatrick Fairness & Demographic Parity Audit (`ml/evaluate_5class_fairness.py`):**
+  - Light Skin (FST I–III, $N=140$): 79.29% Accuracy.
+  - Darker Skin (FST IV–VI, $N=150$): 82.67% Accuracy.
+  - Absolute accuracy disparity: **3.38%**, demonstrating equitable performance across skin tones.
+- **Flutter App Synchronization & Deterministic DIP:**
+  - Synchronized Laplacian blur variance threshold to deterministic 30.0 across `constants.dart` and `image_processor.dart`.
+  - Implemented dynamic 4D vs 2D tensor index resolution in `inference_service.dart` for dual-output Grad-CAM interpreter.
+  - Verified 6/6 unit and widget tests passing in `flutter test`.
+- **Android APK Build & Hardware Deployment:**
+  - Updated NDK to 27.0.12077973 and added `keepDebugSymbols` in `build.gradle.kts`.
+  - Compiled debug APK `app-debug.apk` (216 MB).
+  - Deployed to physical Samsung Galaxy M34 5G (`RZCW9213D1N`) via streamed `adb install -r`.
+  - Successfully launched app on physical hardware (PID: 11180).
+
+---
+
 ## [Phase 6: Multi-Dataset Discovery & Legal Expansion Audit] — 2026-10-21
 
 ### Added

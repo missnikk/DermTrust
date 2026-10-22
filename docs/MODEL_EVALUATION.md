@@ -1,38 +1,49 @@
-# DERMTRUST — MODEL EVALUATION REPORT
+# DERMTRUST — 5-CLASS MODEL SCIENTIFIC EVALUATION REPORT
 
-**Evaluation Date:** 2026-10-21  
-**Model Evaluated:** `dermtrust_classifier.tflite` (MobileNetV2 5-Class)  
-**Test Set Images:** 209 verified test images  
-**OOD Confounder Benchmark:** 200 non-target images  
+**Evaluation Date:** 2026-10-22  
+**Model Architecture:** MobileNetV2 ($\alpha=0.75$) + Spatial Attention + GlobalAveragePooling2D + Dense(5, softmax)  
+**Model Artifact:** `model_artifacts/dermtrust_classifier.tflite`  
+**Test Set Images (Strictly Partitioned, N=294):** Acne (72), Melasma (15), Psoriasis (100), Ringworm (45), Vitiligo (62)  
+**OOD Confounder Benchmark:** 300 non-target images (Eczema, Scabies, Contact Dermatitis, Lichen Planus)  
 
-## 1. Summary Metrics
+## 1. Primary Diagnostic Metrics
 
 | Metric | Value |
 | :--- | :---: |
-| **Overall Accuracy** | **77.51%** |
-| **Macro-F1 Score** | **0.7198** |
-| **Mean Prediction Confidence** | **91.33%** |
-| **Mean Predictive Entropy** | **0.328 bits** |
-| **OOD Rejection Rate** | **13.5%** |
+| **Overall Accuracy** | **80.61%** |
+| **Macro-F1 Score** | **0.7179** |
+| **Weighted-F1 Score** | **0.7957** |
+| **Mean Target Confidence** | **81.00%** |
+| **Mean Target Predictive Entropy** | **0.764 bits** |
+| **OOD Confounder Rejection Rate (Outcome 6)** | **43.3%** |
 
-## 2. Per-Class Performance Breakdown
+## 2. Per-Class Diagnostic Performance
 
-| Disease Class | Precision | Recall (Sensitivity) | F1-Score | Test Support |
+| Disease Class | Precision | Recall (Sensitivity) | F1-Score | Test Cohort Size |
 | :--- | :---: | :---: | :---: | :---: |
-| **Acne** | 0.650 | 1.000 | 0.788 | 78.0 |
-| **Psoriasis** | 0.937 | 0.698 | 0.800 | 106.0 |
-| **Vitiligo** | 1.000 | 0.400 | 0.571 | 25.0 |
+| **Acne** | 0.663 | 0.903 | 0.765 | 72 |
+| **Melasma** | 0.667 | 0.133 | 0.222 | 15 |
+| **Psoriasis** | 0.823 | 0.790 | 0.806 | 100 |
+| **Ringworm** | 0.938 | 1.000 | 0.968 | 45 |
+| **Vitiligo** | 0.939 | 0.742 | 0.829 | 62 |
 
-## 3. Confusion Matrix
+## 3. Multiclass Confusion Matrix
 
 ```
-[[78  0  0]
- [32 74  0]
- [10  5 10]]
+[[65  0  7  0  0]
+ [11  2  1  0  1]
+ [16  1 79  2  2]
+ [ 0  0  0 45  0]
+ [ 6  0  9  1 46]]
 ```
 
-Visual representation saved to `docs/confusion_matrix.png`.
+Visualized in `docs/confusion_matrix.png`.
 
-## 4. Non-Target Rejection (6th Logical Outcome)
+## 4. Rejection of Visually Similar Confounders (Outcome 6)
 
-The calibrated DWH decision gate ($	au_{conf} = 0.60, 	au_{entropy} = 1.40$) successfully rejected **13.5%** of visually similar non-target conditions (Eczema, Lichen Planus, Seborrheic Dermatitis), preventing false forced classification into target categories.
+The multi-tier DWH decision gate (calibrated $\tau_{conf} = 0.60, \tau_{entropy} = 1.40$) successfully rejected **43.3%** of out-of-distribution dermatology images without forcing classification into target conditions.
+
+## 5. Academic & Clinical Disclaimers
+
+> [!IMPORTANT]
+> DermTrust is designed as an educational, explainable decision-support tool. It is **not** a certified medical device and does not claim clinical diagnostic autonomy. Melasma test cohorts are small (N=15) and Ringworm cases are derived from outpatient photography in Bangladesh; clinical validation across diverse global populations is required before healthcare adoption.

@@ -20,18 +20,30 @@ Unlike commercial AI applications that rely on cloud APIs or force every uploade
 
 ## 2. Experimental Results on Independent Test Data
 
-Evaluated on the independent test set ($N = 209$ verified images) and out-of-distribution confounders ($N = 200$ images) derived from the Fitzpatrick 17K dataset:
+Evaluated on the untouched independent test set ($N = 294$ verified images) and out-of-distribution confounders ($N = 300$ images) derived from the reconciled multi-source dataset (Fitzpatrick 17K + SkinDiseaseBD + Melasma clinical captures):
 
-| Metric | Measured Value | Clinical Significance |
+| Metric | Measured Value | Clinical & Engineering Significance |
 | :--- | :---: | :--- |
-| **Overall Accuracy** | **77.51%** | Strong multiclass lesion classification on untouched test images |
-| **Macro-F1 Score** | **0.7198** | Balanced performance across rare and frequent classes |
-| **Mean Prediction Confidence** | **91.33%** | Well-calibrated Softmax probabilities |
-| **Mean Predictive Entropy** | **0.328 bits** | Sharp, definitive class probability distributions |
-| **Light Skin Accuracy (FST I–III)** | **79.59%** | Evaluated on $N = 147$ light-skin test images |
-| **Darker Skin Accuracy (FST IV–VI)** | **71.93%** | Evaluated on $N = 57$ darker-skin test images |
-| **Macro-F1 Disparity Gap ($|\Delta \text{F1}|$)** | **0.0332 (3.3%)** | Minimal algorithmic bias across skin phototypes |
-| **Non-Target Rejection Rate** | **Active (DWH Gate)** | Intercepts confounders and low-confidence inputs |
+| **Overall Multiclass Accuracy** | **80.61%** | Evaluated on strictly partitioned test set ($N=294$) across 5 conditions |
+| **Macro-F1 Score** | **0.7179** | Unweighted mean F1 balancing frequent and rare disease categories |
+| **Weighted-F1 Score** | **0.7957** | Class-frequency weighted harmonic performance |
+| **Mean Prediction Confidence** | **81.00%** | Calibrated Softmax output probability |
+| **Mean Predictive Entropy** | **0.764 bits** | Low uncertainty on true target clinical presentations |
+| **Light Skin Accuracy (FST I–III)** | **79.29%** | Evaluated on $N = 140$ light-skin test images |
+| **Darker Skin Accuracy (FST IV–VI)** | **82.67%** | Evaluated on $N = 150$ darker-skin test images |
+| **Skin-Tone Accuracy Disparity Gap** | **3.38%** | Historical dark-skin performance penalty eliminated |
+| **Non-Target Safe Rejection Rate** | **43.3%** | Intercepts visually similar confounders via calibrated DWH gate |
+| **Physical Mobile Hardware** | **Samsung Galaxy M34 5G** | Verified streamed installation via ADB (`RZCW9213D1N`, PID: 11180) |
+
+### Per-Class Test Performance ($N=294$)
+
+| Disease Class | Precision | Recall (Sensitivity) | F1-Score | Test Cohort Size | Primary Dataset Source |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **Acne Vulgaris** | 0.663 | 0.903 | 0.765 | 72 | Fitzpatrick 17K |
+| **Melasma** | 0.667 | 0.133 | 0.222 | 15 | Atlas Dermatologico / Clinical Donors |
+| **Psoriasis** | 0.823 | 0.790 | 0.806 | 100 | Fitzpatrick 17K |
+| **Ringworm (Tinea Corporis)** | 0.938 | 1.000 | 0.968 | 45 | SkinDiseaseBD (Mendeley Data DOI:10.17632) |
+| **Vitiligo** | 0.939 | 0.742 | 0.829 | 62 | Fitzpatrick 17K + SkinDiseaseBD |
 
 ---
 
@@ -87,26 +99,26 @@ User Input (Gallery / Camera)
 
 ---
 
-### Step 1: Run Python ML Pipeline
-To verify datasets, train, evaluate, and audit fairness:
+### Step 1: Run Python 5-Class ML Pipeline
+To ingest verified multi-source data, train, export TFLite models, evaluate test accuracy, and audit fairness:
 ```powershell
-# 1. Dataset inventory and physical file audit
-py -3.11 ml/dataset_inventory.py
+# 1. Multi-source dataset ingestion (Fitzpatrick 17K + SkinDiseaseBD + Melasma)
+py -3.11 ml/ingest_verified_datasets.py
 
-# 2. Stratified train/val/test split with zero leakage
-py -3.11 ml/prepare_dataset.py
+# 2. Stratified Group train/val/test split with zero leakage
+py -3.11 ml/prepare_5class_dataset.py
 
-# 3. Model training with Focal Loss and Spatial Attention
-py -3.11 ml/train_model.py
+# 3. 5-Class Model training with Focal Loss and Spatial Attention
+py -3.11 ml/train_5class_model.py
 
-# 4. Independent test evaluation and confusion matrix
-py -3.11 ml/evaluate_model.py
+# 4. Export optimized TFLite models and CAM weights
+py -3.11 ml/export_5class_model.py
 
-# 5. Skin-tone fairness disparity audit across Fitzpatrick cohorts
-py -3.11 ml/evaluate_fairness.py
+# 5. Independent test evaluation and multiclass confusion matrix
+py -3.11 ml/evaluate_5class_model.py
 
-# 6. Generate Grad-CAM heatmaps
-py -3.11 ml/explain_model.py
+# 6. Fitzpatrick skin-tone fairness audit across Light vs Darker cohorts
+py -3.11 ml/evaluate_5class_fairness.py
 ```
 
 ---

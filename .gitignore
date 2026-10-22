@@ -41,6 +41,7 @@ DermTrust_Android_Debug.apk
 ml/external_datasets/skindiseasebd/*.zip
 ml/external_datasets/skindiseasebd/extracted/
 ml/external_datasets/melasma_verified/
+ml/models/
 
 # Android
 **/android/**/gradle-wrapper.jar

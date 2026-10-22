@@ -1,0 +1,82 @@
+{
+  "evaluation_date": "2026-10-22",
+  "model_name": "DermTrust-MobileNetV2-5Class-XAI",
+  "total_test_samples": 294,
+  "overall_accuracy": 0.8061224489795918,
+  "macro_f1": 0.7179242635734909,
+  "weighted_f1": 0.7957148851866186,
+  "mean_confidence": 0.8100421958837379,
+  "mean_entropy": 0.7638396892988053,
+  "target_false_rejection_rate": 0.18027210884353742,
+  "ood_confounders_tested": 300,
+  "ood_rejection_rate": 0.43333333333333335,
+  "confusion_matrix": [
+    [
+      65,
+      0,
+      7,
+      0,
+      0
+    ],
+    [
+      11,
+      2,
+      1,
+      0,
+      1
+    ],
+    [
+      16,
+      1,
+      79,
+      2,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      45,
+      0
+    ],
+    [
+      6,
+      0,
+      9,
+      1,
+      46
+    ]
+  ],
+  "per_class_metrics": {
+    "acne": {
+      "precision": 0.6632653061224489,
+      "recall": 0.9027777777777778,
+      "f1-score": 0.7647058823529411,
+      "support": 72
+    },
+    "melasma": {
+      "precision": 0.6666666666666666,
+      "recall": 0.13333333333333333,
+      "f1-score": 0.2222222222222222,
+      "support": 15
+    },
+    "psoriasis": {
+      "precision": 0.8229166666666666,
+      "recall": 0.79,
+      "f1-score": 0.8061224489795918,
+      "support": 100
+    },
+    "ringworm": {
+      "precision": 0.9375,
+      "recall": 1.0,
+      "f1-score": 0.967741935483871,
+      "support": 45
+    },
+    "vitiligo": {
+      "precision": 0.9387755102040817,
+      "recall": 0.7419354838709677,
+      "f1-score": 0.8288288288288288,
+      "support": 62
+    }
+  }
+}
