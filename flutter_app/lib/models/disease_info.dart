@@ -22,7 +22,7 @@ class DiseaseInfo {
   static const Map<String, DiseaseInfo> registry = {
     'acne': DiseaseInfo(
       id: 'acne',
-      displayName: 'Acne Vulgaris',
+      displayName: 'Acne',
       category: 'Inflammatory Pilosebaceous Disorder',
       description:
           'A multifactorial inflammatory disease of the pilosebaceous units characterized by comedones, papules, pustules, and sometimes nodules or cysts.',
@@ -97,7 +97,7 @@ class DiseaseInfo {
     ),
     'ringworm': DiseaseInfo(
       id: 'ringworm',
-      displayName: 'Ringworm (Tinea Corporis)',
+      displayName: 'Ringworm',
       category: 'Superficial Dermatophyte Fungal Infection',
       description:
           'A contagious superficial fungal infection of glabrous skin caused by dermatophytes (Trichophyton, Microsporum, or Epidermophyton species).',

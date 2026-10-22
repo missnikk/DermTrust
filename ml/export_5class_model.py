@@ -26,8 +26,8 @@ def export_classifier_tflite(keras_model_path: Path, output_tflite_path: Path):
     print(f"Converting classifier to TFLite from: {keras_model_path}")
     model = tf.keras.models.load_model(str(keras_model_path), compile=False)
     converter = tf.lite.TFLiteConverter.from_keras_model(model)
-    # Default optimization (Float32 / hybrid dynamic quantization)
-    converter.optimizations = [tf.lite.Optimize.DEFAULT]
+    # Standard Float32 export without Optimize.DEFAULT dynamic quantization
+    # Ensures FULLY_CONNECTED op version 1 for 100% Android mobile TFLite runtime compatibility
     tflite_model = converter.convert()
     with open(output_tflite_path, "wb") as f:
         f.write(tflite_model)
@@ -40,7 +40,8 @@ def export_cam_tflite(cam_model_path: Path, output_tflite_path: Path):
     print(f"Converting CAM model to TFLite from: {cam_model_path}")
     cam_model = tf.keras.models.load_model(str(cam_model_path), compile=False)
     converter = tf.lite.TFLiteConverter.from_keras_model(cam_model)
-    converter.optimizations = [tf.lite.Optimize.DEFAULT]
+    # Standard Float32 export without Optimize.DEFAULT dynamic quantization
+    # Ensures FULLY_CONNECTED op version 1 for 100% Android mobile TFLite runtime compatibility
     tflite_model = converter.convert()
     with open(output_tflite_path, "wb") as f:
         f.write(tflite_model)

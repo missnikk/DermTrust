@@ -48,6 +48,19 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy {
+        force("org.tensorflow:tensorflow-lite:2.16.1")
+        force("org.tensorflow:tensorflow-lite-gpu:2.16.1")
+        force("org.tensorflow:tensorflow-lite-api:2.16.1")
+    }
+}
+
+dependencies {
+    implementation("org.tensorflow:tensorflow-lite:2.16.1")
+    implementation("org.tensorflow:tensorflow-lite-gpu:2.16.1")
+}
+
 flutter {
     source = "../.."
 }

@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../models/diagnosis_result.dart';
 import '../services/inference_service.dart';
 import '../utils/app_theme.dart';
 import 'results_screen.dart';

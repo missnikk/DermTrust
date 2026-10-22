@@ -43,10 +43,6 @@
   "max_entropy_threshold": 1.4,
   "min_blur_laplacian_variance": 30.0,
   "metrics": {
-    "test_accuracy": 0.8061224489795918,
-    "macro_f1": 0.7179242635734909,
-    "test_samples": 294,
-    "ood_rejection_rate": 0.401740723774622,
-    "evaluation_date": "2026-10-22"
+    "status": "pending_evaluation"
   }
 }

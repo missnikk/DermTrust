@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class AppConstants {
   static const String appName = 'DermTrust';
   static const String appTagline = 'Fairness-Evaluated, Explainable AI Skin Decision Support';

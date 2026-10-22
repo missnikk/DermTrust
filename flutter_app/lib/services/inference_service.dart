@@ -1,8 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
-import 'dart:typed_data';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:tflite_flutter/tflite_flutter.dart';
 import '../models/diagnosis_result.dart';
 import '../models/disease_info.dart';
@@ -19,6 +20,96 @@ class InferenceService {
   bool _isInitialized = false;
   bool get isInitialized => _isInitialized;
 
+  /// Extracts an asset file into the app's persistent storage to avoid
+  /// uncompressed APK mmap alignment issues in tflite_flutter.
+  Future<File> _extractAssetToFile(String assetPath) async {
+    Directory baseDir;
+    try {
+      baseDir = await getApplicationSupportDirectory();
+    } catch (_) {
+      baseDir = await getTemporaryDirectory();
+    }
+
+    final modelsDir = Directory('${baseDir.path}/models');
+    if (!await modelsDir.exists()) {
+      await modelsDir.create(recursive: true);
+    }
+
+    final fileName = assetPath.split('/').last;
+    final targetFile = File('${modelsDir.path}/$fileName');
+
+    final byteData = await rootBundle.load(assetPath);
+    final expectedLength = byteData.lengthInBytes;
+
+    if (await targetFile.exists() && (await targetFile.length()) == expectedLength) {
+      return targetFile;
+    }
+
+    // Crucial: Use exact offset and length to avoid buffer misalignment
+    final bytes = byteData.buffer.asUint8List(
+      byteData.offsetInBytes,
+      byteData.lengthInBytes,
+    );
+
+    final tempFile = File('${modelsDir.path}/$fileName.tmp');
+    await tempFile.writeAsBytes(bytes, flush: true);
+    if (await targetFile.exists()) {
+      await targetFile.delete();
+    }
+    await tempFile.rename(targetFile.path);
+
+    return targetFile;
+  }
+
+  /// Robust multi-strategy interpreter loader:
+  /// 1. File-based (page-aligned OS mmap via TfLiteModelCreateFromFile)
+  /// 2. Memory buffer with exact byte slice (TfLiteModelCreate)
+  /// 3. Standard fromAsset fallback
+  Future<Interpreter> _loadInterpreter(String assetPath) async {
+    // Strategy 1: Extract model to file and load with options (threads = 2)
+    try {
+      final file = await _extractAssetToFile(assetPath);
+      final options = InterpreterOptions()..threads = 2;
+      try {
+        final interpreter = Interpreter.fromFile(file, options: options);
+        debugPrint('InferenceService: Successfully loaded $assetPath via fromFile (threads=2)');
+        return interpreter;
+      } catch (e) {
+        debugPrint('InferenceService: fromFile with options failed for $assetPath: $e. Retrying without options...');
+        final interpreter = Interpreter.fromFile(file);
+        debugPrint('InferenceService: Successfully loaded $assetPath via fromFile (default options)');
+        return interpreter;
+      }
+    } catch (e1) {
+      debugPrint('InferenceService: File extraction/fromFile failed for $assetPath: $e1. Trying buffer...');
+    }
+
+    // Strategy 2: Load via exact buffer slice
+    try {
+      final byteData = await rootBundle.load(assetPath);
+      final bytes = byteData.buffer.asUint8List(
+        byteData.offsetInBytes,
+        byteData.lengthInBytes,
+      );
+      final options = InterpreterOptions()..threads = 2;
+      try {
+        final interpreter = Interpreter.fromBuffer(bytes, options: options);
+        debugPrint('InferenceService: Successfully loaded $assetPath via fromBuffer (threads=2)');
+        return interpreter;
+      } catch (e) {
+        final interpreter = Interpreter.fromBuffer(bytes);
+        debugPrint('InferenceService: Successfully loaded $assetPath via fromBuffer (default options)');
+        return interpreter;
+      }
+    } catch (e2) {
+      debugPrint('InferenceService: fromBuffer failed for $assetPath: $e2. Retrying via fromAsset...');
+    }
+
+    // Strategy 3: fromAsset fallback
+    final options = InterpreterOptions()..threads = 2;
+    return await Interpreter.fromAsset(assetPath, options: options);
+  }
+
   /// Loads TFLite models and JSON metadata from app assets into memory.
   Future<void> initialize() async {
     if (_isInitialized) return;
@@ -27,29 +118,33 @@ class InferenceService {
       // 1. Load Metadata
       final metaStr = await rootBundle.loadString(AppConstants.metadataAsset);
       _metadata = json.decode(metaStr) as Map<String, dynamic>;
-      _modelClasses = List<String>.from(_metadata?['classes'] ?? ['acne', 'psoriasis', 'vitiligo']);
+      _modelClasses = List<String>.from(
+        _metadata?['classes'] ?? ['acne', 'melasma', 'psoriasis', 'ringworm', 'vitiligo'],
+      );
 
       // 2. Load CAM Weights
-      final weightsStr = await rootBundle.loadString(AppConstants.camWeightsAsset);
-      _camWeightsData = json.decode(weightsStr);
+      try {
+        final weightsStr = await rootBundle.loadString(AppConstants.camWeightsAsset);
+        _camWeightsData = json.decode(weightsStr);
+      } catch (e) {
+        debugPrint('InferenceService: Warning loading CAM weights: $e');
+      }
 
-      // 3. Load TFLite Interpreters with CPU options
-      final options = InterpreterOptions()..threads = 2;
+      // 3. Load Primary Classifier Interpreter
+      _classifierInterpreter = await _loadInterpreter(AppConstants.classifierModelAsset);
 
-      _classifierInterpreter = await Interpreter.fromAsset(
-        AppConstants.classifierModelAsset,
-        options: options,
-      );
-
-      _camInterpreter = await Interpreter.fromAsset(
-        AppConstants.camModelAsset,
-        options: options,
-      );
+      // 4. Load CAM Interpreter (graceful degradation if CAM model fails to load)
+      try {
+        _camInterpreter = await _loadInterpreter(AppConstants.camModelAsset);
+      } catch (e) {
+        debugPrint('InferenceService: Grad-CAM interpreter unavailable: $e. Proceeding with classifier only.');
+        _camInterpreter = null;
+      }
 
       _isInitialized = true;
     } catch (e) {
-      // Allow fallback if asset loading encounters edge condition
       _isInitialized = false;
+      debugPrint('InferenceService initialization failed: $e');
       rethrow;
     }
   }
@@ -139,78 +234,87 @@ class InferenceService {
 
     // Tier 3 & 4: On-Device Grad-CAM Generation
     Uint8List? overlayBytes;
-    try {
-      // Dynamically identify feature map tensor [1, 7, 7, 1280] vs probability tensor [1, numClasses]
-      int featIdx = 0;
-      int probIdx = 1;
+    if (_camInterpreter != null) {
       try {
-        final outTensors = _camInterpreter!.getOutputTensors();
-        for (int i = 0; i < outTensors.length; i++) {
-          if (outTensors[i].shape.length == 4) {
-            featIdx = i;
-          } else if (outTensors[i].shape.length == 2) {
-            probIdx = i;
+        // Dynamically identify feature map tensor [1, 7, 7, 1280] vs probability tensor [1, numClasses]
+        int featIdx = 0;
+        int probIdx = 1;
+        try {
+          final outTensors = _camInterpreter!.getOutputTensors();
+          for (int i = 0; i < outTensors.length; i++) {
+            if (outTensors[i].shape.length == 4) {
+              featIdx = i;
+            } else if (outTensors[i].shape.length == 2) {
+              probIdx = i;
+            }
           }
-        }
-      } catch (_) {}
+        } catch (_) {}
 
-      final camOutputs = <int, Object>{};
-      camOutputs[probIdx] = List<List<double>>.filled(1, List<double>.filled(numClasses, 0.0));
-      camOutputs[featIdx] = List<List<List<List<double>>>>.filled(
-        1,
-        List<List<List<double>>>.filled(
+        final camOutputs = <int, Object>{};
+        camOutputs[probIdx] = List<List<double>>.generate(
+          1,
+          (_) => List<double>.filled(numClasses, 0.0),
+        );
+        camOutputs[featIdx] = List<List<List<List<double>>>>.generate(
+          1,
+          (_) => List<List<List<double>>>.generate(
+            7,
+            (_) => List<List<double>>.generate(
+              7,
+              (_) => List<double>.filled(1280, 0.0),
+            ),
+          ),
+        );
+
+        _camInterpreter!.runForMultipleInputs([inputTensor], camOutputs);
+        final dynamic featureMap = (camOutputs[featIdx] as dynamic)[0]; // [7, 7, 1280]
+
+        // Extract class weights
+        List<double> weights = [];
+        if (_camWeightsData is Map && _camWeightsData.containsKey('weights')) {
+          final allWeights = _camWeightsData['weights'] as List;
+          weights = List<double>.from(allWeights[maxIdx]);
+        } else if (_camWeightsData is Map && _camWeightsData.containsKey(predictedId)) {
+          weights = List<double>.from(_camWeightsData[predictedId]);
+        }
+
+        // Linear combination: CAM = ReLU(sum_k w_k * F_k)
+        final cam7x7 = List<List<double>>.generate(
           7,
-          List<List<double>>.filled(7, List<double>.filled(1280, 0.0)),
-        ),
-      );
+          (y) => List<double>.generate(7, (x) {
+            double sum = 0.0;
+            for (int k = 0; k < min(weights.length, 1280); k++) {
+              final double featVal = (featureMap[y][x][k] as num).toDouble();
+              sum += weights[k] * featVal;
+            }
+            return max(0.0, sum); // ReLU
+          }),
+        );
 
-      _camInterpreter!.runForMultipleInputs([inputTensor], camOutputs);
-      final dynamic featureMap = (camOutputs[featIdx] as dynamic)[0]; // [7, 7, 1280]
-
-      // Extract class weights
-      List<double> weights = [];
-      if (_camWeightsData is Map && _camWeightsData.containsKey('weights')) {
-        final allWeights = _camWeightsData['weights'] as List;
-        weights = List<double>.from(allWeights[maxIdx]);
-      } else if (_camWeightsData is Map && _camWeightsData.containsKey(predictedId)) {
-        weights = List<double>.from(_camWeightsData[predictedId]);
-      }
-
-      // Linear combination: CAM = ReLU(sum_k w_k * F_k)
-      final cam7x7 = List<List<double>>.generate(
-        7,
-        (y) => List<double>.generate(7, (x) {
-          double sum = 0.0;
-          for (int k = 0; k < min(weights.length, 1280); k++) {
-            final double featVal = (featureMap[y][x][k] as num).toDouble();
-            sum += weights[k] * featVal;
+        // Normalize 7x7 to [0, 1]
+        double minVal = double.infinity;
+        double maxVal = -double.infinity;
+        for (final row in cam7x7) {
+          for (final v in row) {
+            if (v < minVal) minVal = v;
+            if (v > maxVal) maxVal = v;
           }
-          return max(0.0, sum); // ReLU
-        }),
-      );
-
-      // Normalize 7x7 to [0, 1]
-      double minVal = double.infinity;
-      double maxVal = -double.infinity;
-      for (final row in cam7x7) {
-        for (final v in row) {
-          if (v < minVal) minVal = v;
-          if (v > maxVal) maxVal = v;
         }
+
+        final range = (maxVal - minVal > 1e-6) ? (maxVal - minVal) : 1.0;
+        final normCam7x7 = cam7x7
+            .map((row) => row.map((v) => (v - minVal) / range).toList())
+            .toList();
+
+        overlayBytes = ImageProcessor.createGradCamOverlay(
+          original: decodedImg,
+          heatmap7x7: normCam7x7,
+        );
+      } catch (e) {
+        debugPrint('InferenceService: CAM inference failed: $e');
+        // Fallback: Continue without overlay if CAM pass fails
+        overlayBytes = null;
       }
-
-      final range = (maxVal - minVal > 1e-6) ? (maxVal - minVal) : 1.0;
-      final normCam7x7 = cam7x7
-          .map((row) => row.map((v) => (v - minVal) / range).toList())
-          .toList();
-
-      overlayBytes = ImageProcessor.createGradCamOverlay(
-        original: decodedImg,
-        heatmap7x7: normCam7x7,
-      );
-    } catch (_) {
-      // Fallback: Continue without overlay if CAM pass fails
-      overlayBytes = null;
     }
 
     // Acne Severity Stage (if Acne detected)
