@@ -1,0 +1,77 @@
+{
+  "target_locked_test": {
+    "total": 294,
+    "raw_accuracy": 0.8163265306122449,
+    "dwh_rejected_pct": 16.666666666666664,
+    "per_class": {
+      "acne": {
+        "count": 72,
+        "raw_recall": 0.9166666666666666,
+        "gate_rejected_pct": 11.11111111111111
+      },
+      "melasma": {
+        "count": 15,
+        "raw_recall": 0.2,
+        "gate_rejected_pct": 40.0
+      },
+      "psoriasis": {
+        "count": 100,
+        "raw_recall": 0.8,
+        "gate_rejected_pct": 20.0
+      },
+      "ringworm": {
+        "count": 45,
+        "raw_recall": 1.0,
+        "gate_rejected_pct": 0.0
+      },
+      "vitiligo": {
+        "count": 62,
+        "raw_recall": 0.7419354838709677,
+        "gate_rejected_pct": 24.193548387096776
+      }
+    }
+  },
+  "unseen_fitzpatrick17k_nontarget": {
+    "total": 300,
+    "rejection_pct": 30.333333333333336,
+    "by_condition": {
+      "allergic contact dermatitis": {
+        "count": 100,
+        "rejected_pct": 31.0,
+        "false_acceptance_pct": 69.0
+      },
+      "folliculitis": {
+        "count": 100,
+        "rejected_pct": 23.0,
+        "false_acceptance_pct": 77.0
+      },
+      "melanoma": {
+        "count": 100,
+        "rejected_pct": 37.0,
+        "false_acceptance_pct": 63.0
+      }
+    }
+  },
+  "ood_manifest_nontarget": {
+    "total": 700,
+    "rejection_pct": 33.14285714285714,
+    "false_acceptance_pct": 66.85714285714286
+  },
+  "image_quality_stress_tests": {
+    "total": 200,
+    "rejection_by_type": {
+      "Blurry_Images (Gaussian radius=8)": {
+        "count": 100,
+        "rejection_pct": 93.0
+      },
+      "Low_Resolution_Images (<100px)": {
+        "count": 50,
+        "rejection_pct": 100.0
+      },
+      "Uniform_Blank_Images (Flat Patch)": {
+        "count": 50,
+        "rejection_pct": 100.0
+      }
+    }
+  }
+}
