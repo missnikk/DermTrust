@@ -23,7 +23,10 @@
 | **Flutter App** | Dark Medical UI Design System | **[COMPLETED]** | High-contrast clinical theme, responsive layouts, Jet-colormap Grad-CAM overlay. |
 | **Flutter App** | Digital Image Processing (DIP) | **[COMPLETED]** | Deterministic 2D Laplacian sharpness operator (variance threshold synchronized to 30.0), bilateral pixel normalization. |
 | **Storage** | Repository Optimization | **[COMPLETED]** | Project footprint reduced from 1,507 MB to **256.49 MB (83% reduction)** with zero source or dataset loss. |
-| **Testing** | Automated Test Suite | **[COMPLETED]** | `flutter test` executes with 6/6 tests passing (100%). |
+| **Testing** | Automated Test Suite | **[COMPLETED]** | `flutter test` executes with 15/15 unit and regression tests passing (100%), including rejection boundaries, bit-level entropy, and safety constraints. |
+| **Flutter App** | Clinical Differential Advisories | **[COMPLETED]** | Evidence-based advisories for all 5 conditions (Acne/Melasma facial pigmentation, Psoriasis plaque differential, Ringworm KOH fungal microscopy, Vitiligo Wood's lamp examination). |
+| **Flutter App** | Unsupported Claims Removed | **[COMPLETED]** | Categorical classifier strictly separated from clinical severity; unvalidated inflammatory staging heuristics completely removed. |
+| **Diagnostics** | Deep Failure Mechanism Audit | **[COMPLETED]** | 1280-dim GAP latent space cosine similarities, Grad-CAM core energy concentration (33.8% vs 18.4%), and ECE calibration (3.57%) evaluated on 14 user test images. |
 | **Deployment** | Android Release APK | **[COMPLETED]** | Built optimized release APKs with split-ABI (`app-arm64-v8a-release.apk`: **26.01 MB**, 88% reduction vs debug). |
 | **Device Test** | Physical Hardware Deployment | **[COMPLETED]** | Streamed install verified on Samsung Galaxy M34 5G (`RZCW9213D1N`). Release process running live (PID: **31016**). |
 | **Academic** | Viva Voce & Defense Notes | **[COMPLETED]** | Comprehensive documentation in `docs/VIVA_PREPARATION.md`, `docs/MODEL_EVALUATION.md`, `docs/FAIRNESS_EVALUATION.md`. |
