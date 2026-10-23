@@ -1,0 +1,345 @@
+{
+  "keras_accuracy": 0.7789115646258503,
+  "tflite_accuracy": 0.7789115646258503,
+  "parity_agreement": 294,
+  "max_diff": 8.761882781982422e-06,
+  "mean_diff": 4.1813868278950395e-07,
+  "classification_report": {
+    "acne": {
+      "precision": 0.6442307692307693,
+      "recall": 0.9305555555555556,
+      "f1-score": 0.7613636363636364,
+      "support": 72.0
+    },
+    "melasma": {
+      "precision": 0.4,
+      "recall": 0.13333333333333333,
+      "f1-score": 0.2,
+      "support": 15.0
+    },
+    "psoriasis": {
+      "precision": 0.7766990291262136,
+      "recall": 0.8,
+      "f1-score": 0.7881773399014779,
+      "support": 100.0
+    },
+    "ringworm": {
+      "precision": 0.9545454545454546,
+      "recall": 0.9333333333333333,
+      "f1-score": 0.9438202247191011,
+      "support": 45.0
+    },
+    "vitiligo": {
+      "precision": 1.0,
+      "recall": 0.6129032258064516,
+      "f1-score": 0.76,
+      "support": 62.0
+    },
+    "accuracy": 0.7789115646258503,
+    "macro avg": {
+      "precision": 0.7550950505804874,
+      "recall": 0.6820250896057348,
+      "f1-score": 0.690672240196843,
+      "support": 294.0
+    },
+    "weighted avg": {
+      "precision": 0.799350556978851,
+      "recall": 0.7789115646258503,
+      "f1-score": 0.7694824010907795,
+      "support": 294.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      67,
+      0,
+      5,
+      0,
+      0
+    ],
+    [
+      12,
+      2,
+      1,
+      0,
+      0
+    ],
+    [
+      17,
+      2,
+      80,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      3,
+      42,
+      0
+    ],
+    [
+      8,
+      1,
+      14,
+      1,
+      38
+    ]
+  ],
+  "subgroups": {
+    "Light": {
+      "count": 140,
+      "accuracy": 0.8,
+      "report": {
+        "acne": {
+          "precision": 0.75,
+          "recall": 0.9193548387096774,
+          "f1-score": 0.8260869565217391,
+          "support": 62.0
+        },
+        "melasma": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "psoriasis": {
+          "precision": 0.8709677419354839,
+          "recall": 0.8059701492537313,
+          "f1-score": 0.8372093023255814,
+          "support": 67.0
+        },
+        "ringworm": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "vitiligo": {
+          "precision": 1.0,
+          "recall": 0.09090909090909091,
+          "f1-score": 0.16666666666666666,
+          "support": 11.0
+        },
+        "accuracy": 0.8,
+        "macro avg": {
+          "precision": 0.5241935483870968,
+          "recall": 0.3632468157744999,
+          "f1-score": 0.3659925851027975,
+          "support": 140.0
+        },
+        "weighted avg": {
+          "precision": 0.8275345622119815,
+          "recall": 0.8,
+          "f1-score": 0.7795981992392508,
+          "support": 140.0
+        }
+      }
+    },
+    "Darker": {
+      "count": 150,
+      "accuracy": 0.7666666666666667,
+      "report": {
+        "acne": {
+          "precision": 0.37037037037037035,
+          "recall": 1.0,
+          "f1-score": 0.5405405405405406,
+          "support": 10.0
+        },
+        "melasma": {
+          "precision": 0.5,
+          "recall": 0.13333333333333333,
+          "f1-score": 0.21052631578947367,
+          "support": 15.0
+        },
+        "psoriasis": {
+          "precision": 0.631578947368421,
+          "recall": 0.8,
+          "f1-score": 0.7058823529411765,
+          "support": 30.0
+        },
+        "ringworm": {
+          "precision": 0.9545454545454546,
+          "recall": 0.9333333333333333,
+          "f1-score": 0.9438202247191011,
+          "support": 45.0
+        },
+        "vitiligo": {
+          "precision": 1.0,
+          "recall": 0.74,
+          "f1-score": 0.8505747126436781,
+          "support": 50.0
+        },
+        "accuracy": 0.7666666666666667,
+        "macro avg": {
+          "precision": 0.6912989544568492,
+          "recall": 0.7213333333333333,
+          "f1-score": 0.6502688293267941,
+          "support": 150.0
+        },
+        "weighted avg": {
+          "precision": 0.8207041171953453,
+          "recall": 0.7666666666666667,
+          "f1-score": 0.7649361098335083,
+          "support": 150.0
+        }
+      }
+    },
+    "Unknown": {
+      "count": 4,
+      "accuracy": 0.5,
+      "report": {
+        "acne": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "melasma": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "psoriasis": {
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.6666666666666666,
+          "support": 3.0
+        },
+        "ringworm": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "vitiligo": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "accuracy": 0.5,
+        "macro avg": {
+          "precision": 0.13333333333333333,
+          "recall": 0.13333333333333333,
+          "f1-score": 0.13333333333333333,
+          "support": 4.0
+        },
+        "weighted avg": {
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1-score": 0.5,
+          "support": 4.0
+        }
+      }
+    }
+  },
+  "melasma_samples": [
+    {
+      "image_id": "melasma_atlas_melasma_4330",
+      "pred_class": "acne",
+      "conf": 0.9754721522331238,
+      "is_augmented": false,
+      "source": "Atlas Dermatologico (Freire da Silva)"
+    },
+    {
+      "image_id": "melasma_chloasma_136372852",
+      "pred_class": "melasma",
+      "conf": 0.988163948059082,
+      "is_augmented": false,
+      "source": "Wikimedia Commons Clinical Dermatology Archive"
+    },
+    {
+      "image_id": "melasma_chloasma_36115150",
+      "pred_class": "acne",
+      "conf": 0.8638038039207458,
+      "is_augmented": false,
+      "source": "Wikimedia Commons Clinical Dermatology Archive"
+    },
+    {
+      "image_id": "melasma_user_mel_2_cheek",
+      "pred_class": "acne",
+      "conf": 0.9697068333625793,
+      "is_augmented": false,
+      "source": "Clinical Photography Melasma Cohort"
+    },
+    {
+      "image_id": "melasma_user_mel_2_cheek_flip",
+      "pred_class": "acne",
+      "conf": 0.9946396946907043,
+      "is_augmented": true,
+      "source": "Clinical Photography Melasma Cohort"
+    },
+    {
+      "image_id": "melasma_user_mel_2_forehead_temple",
+      "pred_class": "acne",
+      "conf": 0.9894899725914001,
+      "is_augmented": false,
+      "source": "Clinical Photography Melasma Cohort"
+    },
+    {
+      "image_id": "melasma_user_mel_2_forehead_temple_flip",
+      "pred_class": "acne",
+      "conf": 0.9802771210670471,
+      "is_augmented": true,
+      "source": "Clinical Photography Melasma Cohort"
+    },
+    {
+      "image_id": "melasma_user_mel_2_full_face",
+      "pred_class": "acne",
+      "conf": 0.9919010996818542,
+      "is_augmented": false,
+      "source": "Clinical Photography Melasma Cohort"
+    },
+    {
+      "image_id": "melasma_user_mel_2_full_face_flip",
+      "pred_class": "acne",
+      "conf": 0.9951211810112,
+      "is_augmented": true,
+      "source": "Clinical Photography Melasma Cohort"
+    },
+    {
+      "image_id": "melasma_user_mel_2_lower_cheek",
+      "pred_class": "melasma",
+      "conf": 0.8463054299354553,
+      "is_augmented": false,
+      "source": "Clinical Photography Melasma Cohort"
+    },
+    {
+      "image_id": "melasma_user_mel_2_lower_cheek_flip",
+      "pred_class": "acne",
+      "conf": 0.6810892820358276,
+      "is_augmented": true,
+      "source": "Clinical Photography Melasma Cohort"
+    },
+    {
+      "image_id": "melasma_user_mel_2_malar",
+      "pred_class": "acne",
+      "conf": 0.7972918152809143,
+      "is_augmented": false,
+      "source": "Clinical Photography Melasma Cohort"
+    },
+    {
+      "image_id": "melasma_user_mel_2_malar_flip",
+      "pred_class": "acne",
+      "conf": 0.5542203187942505,
+      "is_augmented": true,
+      "source": "Clinical Photography Melasma Cohort"
+    },
+    {
+      "image_id": "melasma_wiki_melasma_182168025_0501_Melasma.jpg",
+      "pred_class": "acne",
+      "conf": 0.6782225370407104,
+      "is_augmented": false,
+      "source": "Wikimedia Commons Clinical Dermatology Archive"
+    },
+    {
+      "image_id": "melasma_wiki_melasma_42094523_Photographic_atlas_of_the_diseases_",
+      "pred_class": "psoriasis",
+      "conf": 0.5247495770454407,
+      "is_augmented": false,
+      "source": "Wikimedia Commons Clinical Dermatology Archive"
+    }
+  ]
+}

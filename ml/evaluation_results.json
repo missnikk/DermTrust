@@ -1,0 +1,300 @@
+{
+  "test_5class_manifest.csv": {
+    "sample_count": 294,
+    "class_distribution": {
+      "psoriasis": 100,
+      "acne": 72,
+      "vitiligo": 62,
+      "ringworm": 45,
+      "melasma": 15
+    },
+    "keras_accuracy": 0.8163265306122449,
+    "tflite_accuracy": 0.8163265306122449,
+    "keras_report": {
+      "acne": {
+        "precision": 0.6534653465346535,
+        "recall": 0.9166666666666666,
+        "f1-score": 0.7630057803468208,
+        "support": 72.0
+      },
+      "melasma": {
+        "precision": 1.0,
+        "recall": 0.2,
+        "f1-score": 0.3333333333333333,
+        "support": 15.0
+      },
+      "psoriasis": {
+        "precision": 0.8333333333333334,
+        "recall": 0.8,
+        "f1-score": 0.8163265306122449,
+        "support": 100.0
+      },
+      "ringworm": {
+        "precision": 0.9782608695652174,
+        "recall": 1.0,
+        "f1-score": 0.989010989010989,
+        "support": 45.0
+      },
+      "vitiligo": {
+        "precision": 0.9583333333333334,
+        "recall": 0.7419354838709677,
+        "f1-score": 0.8363636363636363,
+        "support": 62.0
+      },
+      "accuracy": 0.8163265306122449,
+      "macro avg": {
+        "precision": 0.8846785765533076,
+        "recall": 0.731720430107527,
+        "f1-score": 0.7476080539334049,
+        "support": 294.0
+      },
+      "weighted avg": {
+        "precision": 0.8463307621800334,
+        "recall": 0.8163265306122449,
+        "f1-score": 0.8092826843749508,
+        "support": 294.0
+      }
+    },
+    "tflite_report": {
+      "acne": {
+        "precision": 0.6534653465346535,
+        "recall": 0.9166666666666666,
+        "f1-score": 0.7630057803468208,
+        "support": 72.0
+      },
+      "melasma": {
+        "precision": 1.0,
+        "recall": 0.2,
+        "f1-score": 0.3333333333333333,
+        "support": 15.0
+      },
+      "psoriasis": {
+        "precision": 0.8333333333333334,
+        "recall": 0.8,
+        "f1-score": 0.8163265306122449,
+        "support": 100.0
+      },
+      "ringworm": {
+        "precision": 0.9782608695652174,
+        "recall": 1.0,
+        "f1-score": 0.989010989010989,
+        "support": 45.0
+      },
+      "vitiligo": {
+        "precision": 0.9583333333333334,
+        "recall": 0.7419354838709677,
+        "f1-score": 0.8363636363636363,
+        "support": 62.0
+      },
+      "accuracy": 0.8163265306122449,
+      "macro avg": {
+        "precision": 0.8846785765533076,
+        "recall": 0.731720430107527,
+        "f1-score": 0.7476080539334049,
+        "support": 294.0
+      },
+      "weighted avg": {
+        "precision": 0.8463307621800334,
+        "recall": 0.8163265306122449,
+        "f1-score": 0.8092826843749508,
+        "support": 294.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        66,
+        0,
+        6,
+        0,
+        0
+      ],
+      [
+        11,
+        3,
+        1,
+        0,
+        0
+      ],
+      [
+        18,
+        0,
+        80,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        45,
+        0
+      ],
+      [
+        6,
+        0,
+        9,
+        1,
+        46
+      ]
+    ],
+    "parity_agreement": 294,
+    "mean_prob_diff": 4.106957476324169e-07,
+    "max_prob_diff": 8.64267349243164e-06,
+    "predicted_counts": {
+      "acne": 101,
+      "psoriasis": 96,
+      "vitiligo": 48,
+      "ringworm": 46,
+      "melasma": 3
+    }
+  },
+  "test_5class_manifest_v2.csv": {
+    "sample_count": 297,
+    "class_distribution": {
+      "psoriasis": 101,
+      "acne": 73,
+      "vitiligo": 72,
+      "ringworm": 44,
+      "melasma": 7
+    },
+    "keras_accuracy": 0.9292929292929293,
+    "tflite_accuracy": 0.9292929292929293,
+    "keras_report": {
+      "acne": {
+        "precision": 0.8536585365853658,
+        "recall": 0.958904109589041,
+        "f1-score": 0.9032258064516129,
+        "support": 73.0
+      },
+      "melasma": {
+        "precision": 0.8571428571428571,
+        "recall": 0.8571428571428571,
+        "f1-score": 0.8571428571428571,
+        "support": 7.0
+      },
+      "psoriasis": {
+        "precision": 0.9393939393939394,
+        "recall": 0.9207920792079208,
+        "f1-score": 0.93,
+        "support": 101.0
+      },
+      "ringworm": {
+        "precision": 0.9772727272727273,
+        "recall": 0.9772727272727273,
+        "f1-score": 0.9772727272727273,
+        "support": 44.0
+      },
+      "vitiligo": {
+        "precision": 0.9846153846153847,
+        "recall": 0.8888888888888888,
+        "f1-score": 0.9343065693430657,
+        "support": 72.0
+      },
+      "accuracy": 0.9292929292929293,
+      "macro avg": {
+        "precision": 0.9224166890020549,
+        "recall": 0.9206001324202869,
+        "f1-score": 0.9203895920420525,
+        "support": 297.0
+      },
+      "weighted avg": {
+        "precision": 0.9329567971105296,
+        "recall": 0.9292929292929293,
+        "f1-score": 0.9297493497093215,
+        "support": 297.0
+      }
+    },
+    "tflite_report": {
+      "acne": {
+        "precision": 0.8536585365853658,
+        "recall": 0.958904109589041,
+        "f1-score": 0.9032258064516129,
+        "support": 73.0
+      },
+      "melasma": {
+        "precision": 0.8571428571428571,
+        "recall": 0.8571428571428571,
+        "f1-score": 0.8571428571428571,
+        "support": 7.0
+      },
+      "psoriasis": {
+        "precision": 0.9393939393939394,
+        "recall": 0.9207920792079208,
+        "f1-score": 0.93,
+        "support": 101.0
+      },
+      "ringworm": {
+        "precision": 0.9772727272727273,
+        "recall": 0.9772727272727273,
+        "f1-score": 0.9772727272727273,
+        "support": 44.0
+      },
+      "vitiligo": {
+        "precision": 0.9846153846153847,
+        "recall": 0.8888888888888888,
+        "f1-score": 0.9343065693430657,
+        "support": 72.0
+      },
+      "accuracy": 0.9292929292929293,
+      "macro avg": {
+        "precision": 0.9224166890020549,
+        "recall": 0.9206001324202869,
+        "f1-score": 0.9203895920420525,
+        "support": 297.0
+      },
+      "weighted avg": {
+        "precision": 0.9329567971105296,
+        "recall": 0.9292929292929293,
+        "f1-score": 0.9297493497093215,
+        "support": 297.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        70,
+        0,
+        3,
+        0,
+        0
+      ],
+      [
+        1,
+        6,
+        0,
+        0,
+        0
+      ],
+      [
+        7,
+        0,
+        93,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        43,
+        0
+      ],
+      [
+        4,
+        0,
+        3,
+        1,
+        64
+      ]
+    ],
+    "parity_agreement": 297,
+    "mean_prob_diff": 3.6957098359380325e-07,
+    "max_prob_diff": 8.64267349243164e-06,
+    "predicted_counts": {
+      "psoriasis": 99,
+      "acne": 82,
+      "vitiligo": 65,
+      "ringworm": 44,
+      "melasma": 7
+    }
+  }
+}
