@@ -129,6 +129,64 @@ class DiseaseCard extends StatelessWidget {
           ),
         ),
 
+        if (info.id == 'acne' || info.id == 'melasma') ...[
+          const SizedBox(height: 12),
+          Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: const Color(0xFF1E293B),
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: const Color(0xFF334155)),
+            ),
+            child: const Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Icon(Icons.lightbulb_outline_rounded, color: AppTheme.warningAmber, size: 16),
+                SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    'Clinical Note: Facial hyperpigmentation (such as melasma) and post-inflammatory pigmentation from acne can share visual characteristics in clinical photography. An in-person dermatological assessment is recommended for definitive differentiation.',
+                    style: TextStyle(
+                      color: Color(0xFFCBD5E1),
+                      fontSize: 11,
+                      height: 1.35,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+
+        if (info.id == 'psoriasis') ...[
+          const SizedBox(height: 12),
+          Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: const Color(0xFF1E293B),
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: const Color(0xFF334155)),
+            ),
+            child: const Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Icon(Icons.lightbulb_outline_rounded, color: AppTheme.warningAmber, size: 16),
+                SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    'Clinical Note: Other scaly or inflammatory conditions (such as eczema or contact dermatitis) can present visual plaque features similar to psoriasis. In-person clinical examination is necessary for differential diagnosis.',
+                    style: TextStyle(
+                      color: Color(0xFFCBD5E1),
+                      fontSize: 11,
+                      height: 1.35,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+
         const SizedBox(height: 12),
 
         // Red Flags

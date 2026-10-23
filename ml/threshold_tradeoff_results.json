@@ -1,0 +1,261 @@
+{
+  "validation_target_stats": {
+    "count": 293,
+    "mean_conf": 0.8469834363297798,
+    "median_conf": 0.9041851162910461,
+    "mean_entropy": 0.6517749428749084,
+    "median_entropy": 0.5653003454208374
+  },
+  "ood_stats": {
+    "count": 700,
+    "mean_conf": 0.723583944269589,
+    "median_conf": 0.7548406720161438,
+    "mean_entropy": 1.0348844528198242,
+    "median_entropy": 1.0472919940948486
+  },
+  "current_threshold_per_class": {
+    "acne": {
+      "total": 74,
+      "rejected": 1,
+      "false_rejection_pct": 1.3513513513513513
+    },
+    "melasma": {
+      "total": 13,
+      "rejected": 5,
+      "false_rejection_pct": 38.46153846153847
+    },
+    "psoriasis": {
+      "total": 100,
+      "rejected": 14,
+      "false_rejection_pct": 14.000000000000002
+    },
+    "ringworm": {
+      "total": 45,
+      "rejected": 0,
+      "false_rejection_pct": 0.0
+    },
+    "vitiligo": {
+      "total": 61,
+      "rejected": 14,
+      "false_rejection_pct": 22.950819672131146
+    }
+  },
+  "sweep": [
+    {
+      "conf_threshold": 0.5,
+      "entropy_threshold": 1.2,
+      "target_false_rejection_pct": 16.38225255972696,
+      "ood_false_acceptance_pct": 62.71428571428571
+    },
+    {
+      "conf_threshold": 0.5,
+      "entropy_threshold": 1.3,
+      "target_false_rejection_pct": 12.627986348122866,
+      "ood_false_acceptance_pct": 69.71428571428572
+    },
+    {
+      "conf_threshold": 0.5,
+      "entropy_threshold": 1.4,
+      "target_false_rejection_pct": 9.215017064846416,
+      "ood_false_acceptance_pct": 73.71428571428571
+    },
+    {
+      "conf_threshold": 0.5,
+      "entropy_threshold": 1.5,
+      "target_false_rejection_pct": 6.825938566552901,
+      "ood_false_acceptance_pct": 78.42857142857143
+    },
+    {
+      "conf_threshold": 0.55,
+      "entropy_threshold": 1.2,
+      "target_false_rejection_pct": 16.723549488054605,
+      "ood_false_acceptance_pct": 61.142857142857146
+    },
+    {
+      "conf_threshold": 0.55,
+      "entropy_threshold": 1.3,
+      "target_false_rejection_pct": 12.969283276450511,
+      "ood_false_acceptance_pct": 67.0
+    },
+    {
+      "conf_threshold": 0.55,
+      "entropy_threshold": 1.4,
+      "target_false_rejection_pct": 9.897610921501707,
+      "ood_false_acceptance_pct": 70.42857142857143
+    },
+    {
+      "conf_threshold": 0.55,
+      "entropy_threshold": 1.5,
+      "target_false_rejection_pct": 8.532423208191126,
+      "ood_false_acceptance_pct": 73.42857142857143
+    },
+    {
+      "conf_threshold": 0.6,
+      "entropy_threshold": 1.2,
+      "target_false_rejection_pct": 17.747440273037544,
+      "ood_false_acceptance_pct": 59.285714285714285
+    },
+    {
+      "conf_threshold": 0.6,
+      "entropy_threshold": 1.3,
+      "target_false_rejection_pct": 14.334470989761092,
+      "ood_false_acceptance_pct": 64.14285714285714
+    },
+    {
+      "conf_threshold": 0.6,
+      "entropy_threshold": 1.4,
+      "target_false_rejection_pct": 11.604095563139932,
+      "ood_false_acceptance_pct": 66.85714285714286
+    },
+    {
+      "conf_threshold": 0.6,
+      "entropy_threshold": 1.5,
+      "target_false_rejection_pct": 10.580204778156997,
+      "ood_false_acceptance_pct": 68.85714285714286
+    },
+    {
+      "conf_threshold": 0.65,
+      "entropy_threshold": 1.2,
+      "target_false_rejection_pct": 19.453924914675767,
+      "ood_false_acceptance_pct": 57.99999999999999
+    },
+    {
+      "conf_threshold": 0.65,
+      "entropy_threshold": 1.3,
+      "target_false_rejection_pct": 16.38225255972696,
+      "ood_false_acceptance_pct": 61.285714285714285
+    },
+    {
+      "conf_threshold": 0.65,
+      "entropy_threshold": 1.4,
+      "target_false_rejection_pct": 14.675767918088736,
+      "ood_false_acceptance_pct": 62.857142857142854
+    },
+    {
+      "conf_threshold": 0.65,
+      "entropy_threshold": 1.5,
+      "target_false_rejection_pct": 14.675767918088736,
+      "ood_false_acceptance_pct": 64.0
+    },
+    {
+      "conf_threshold": 0.7,
+      "entropy_threshold": 1.2,
+      "target_false_rejection_pct": 21.501706484641637,
+      "ood_false_acceptance_pct": 55.42857142857143
+    },
+    {
+      "conf_threshold": 0.7,
+      "entropy_threshold": 1.3,
+      "target_false_rejection_pct": 20.13651877133106,
+      "ood_false_acceptance_pct": 56.99999999999999
+    },
+    {
+      "conf_threshold": 0.7,
+      "entropy_threshold": 1.4,
+      "target_false_rejection_pct": 19.453924914675767,
+      "ood_false_acceptance_pct": 57.714285714285715
+    },
+    {
+      "conf_threshold": 0.7,
+      "entropy_threshold": 1.5,
+      "target_false_rejection_pct": 19.453924914675767,
+      "ood_false_acceptance_pct": 57.714285714285715
+    },
+    {
+      "conf_threshold": 0.75,
+      "entropy_threshold": 1.2,
+      "target_false_rejection_pct": 23.208191126279864,
+      "ood_false_acceptance_pct": 50.857142857142854
+    },
+    {
+      "conf_threshold": 0.75,
+      "entropy_threshold": 1.3,
+      "target_false_rejection_pct": 22.866894197952217,
+      "ood_false_acceptance_pct": 51.0
+    },
+    {
+      "conf_threshold": 0.75,
+      "entropy_threshold": 1.4,
+      "target_false_rejection_pct": 22.866894197952217,
+      "ood_false_acceptance_pct": 51.0
+    },
+    {
+      "conf_threshold": 0.75,
+      "entropy_threshold": 1.5,
+      "target_false_rejection_pct": 22.866894197952217,
+      "ood_false_acceptance_pct": 51.0
+    },
+    {
+      "conf_threshold": 0.8,
+      "entropy_threshold": 1.2,
+      "target_false_rejection_pct": 29.01023890784983,
+      "ood_false_acceptance_pct": 41.285714285714285
+    },
+    {
+      "conf_threshold": 0.8,
+      "entropy_threshold": 1.3,
+      "target_false_rejection_pct": 29.01023890784983,
+      "ood_false_acceptance_pct": 41.285714285714285
+    },
+    {
+      "conf_threshold": 0.8,
+      "entropy_threshold": 1.4,
+      "target_false_rejection_pct": 29.01023890784983,
+      "ood_false_acceptance_pct": 41.285714285714285
+    },
+    {
+      "conf_threshold": 0.8,
+      "entropy_threshold": 1.5,
+      "target_false_rejection_pct": 29.01023890784983,
+      "ood_false_acceptance_pct": 41.285714285714285
+    },
+    {
+      "conf_threshold": 0.85,
+      "entropy_threshold": 1.2,
+      "target_false_rejection_pct": 37.883959044368595,
+      "ood_false_acceptance_pct": 33.285714285714285
+    },
+    {
+      "conf_threshold": 0.85,
+      "entropy_threshold": 1.3,
+      "target_false_rejection_pct": 37.883959044368595,
+      "ood_false_acceptance_pct": 33.285714285714285
+    },
+    {
+      "conf_threshold": 0.85,
+      "entropy_threshold": 1.4,
+      "target_false_rejection_pct": 37.883959044368595,
+      "ood_false_acceptance_pct": 33.285714285714285
+    },
+    {
+      "conf_threshold": 0.85,
+      "entropy_threshold": 1.5,
+      "target_false_rejection_pct": 37.883959044368595,
+      "ood_false_acceptance_pct": 33.285714285714285
+    },
+    {
+      "conf_threshold": 0.9,
+      "entropy_threshold": 1.2,
+      "target_false_rejection_pct": 49.829351535836174,
+      "ood_false_acceptance_pct": 22.57142857142857
+    },
+    {
+      "conf_threshold": 0.9,
+      "entropy_threshold": 1.3,
+      "target_false_rejection_pct": 49.829351535836174,
+      "ood_false_acceptance_pct": 22.57142857142857
+    },
+    {
+      "conf_threshold": 0.9,
+      "entropy_threshold": 1.4,
+      "target_false_rejection_pct": 49.829351535836174,
+      "ood_false_acceptance_pct": 22.57142857142857
+    },
+    {
+      "conf_threshold": 0.9,
+      "entropy_threshold": 1.5,
+      "target_false_rejection_pct": 49.829351535836174,
+      "ood_false_acceptance_pct": 22.57142857142857
+    }
+  ]
+}
