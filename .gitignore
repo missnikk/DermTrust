@@ -49,6 +49,7 @@ ml/models/
 **/android/.gradle
 **/android/captures/
 test_failures/
+user_test_images/
 **/android/gradlew
 **/android/gradlew.bat
 **/android/local.properties

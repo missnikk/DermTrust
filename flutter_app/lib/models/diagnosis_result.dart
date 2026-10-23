@@ -44,7 +44,7 @@ class DiagnosisResult {
     return DiagnosisResult(
       isRecognized: false,
       predictedDiseaseId: null,
-      predictedDisplayName: 'Non-Target / Not Recognized',
+      predictedDisplayName: 'Non-Target / Uncertain',
       confidence: confidence,
       entropy: entropy,
       classProbabilities: classProbabilities,

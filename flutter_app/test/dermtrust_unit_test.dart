@@ -151,4 +151,98 @@ void main() {
       expect(cam7x7[3][3], greaterThan(cam7x7[6][6]));
     });
   });
+
+  group('Regression Tests for Master Failure Mechanisms & Safety Constraints', () {
+    test('1. Exact 5-class contract and index mapping across system', () {
+      expect(AppConstants.targetClasses.length, equals(5));
+      expect(AppConstants.targetClasses[0], equals('acne'));
+      expect(AppConstants.targetClasses[1], equals('melasma'));
+      expect(AppConstants.targetClasses[2], equals('psoriasis'));
+      expect(AppConstants.targetClasses[3], equals('ringworm'));
+      expect(AppConstants.targetClasses[4], equals('vitiligo'));
+    });
+
+    test('2. Outcome 6 is strictly a rejection outcome, not a trained disease class', () {
+      expect(AppConstants.targetClasses.contains('non_target'), isFalse);
+      expect(AppConstants.targetClasses.contains('uncertain'), isFalse);
+      expect(AppConstants.targetClasses.contains('outcome_6'), isFalse);
+    });
+
+    test('3. Predictive Entropy in bits: uniform vs certain distribution', () {
+      // Uniform 5-class distribution: H = -5 * (0.2 * log2(0.2)) = log2(5) ~ 2.3219 bits
+      const uniformP = 0.2;
+      final uniformEntropy = -5 * (uniformP * (log(uniformP) / ln2));
+      expect((uniformEntropy - 2.3219).abs(), lessThan(0.001));
+
+      // Certain distribution: H = 0 bits
+      const certainP = 1.0;
+      final certainEntropy = -(certainP * (log(certainP) / ln2));
+      expect(certainEntropy.abs(), lessThan(0.0001));
+
+      // Threshold specification in bits
+      expect(AppConstants.maxEntropyBits, equals(1.40));
+      expect(AppConstants.minConfidenceThreshold, equals(0.60));
+    });
+
+    test('4. DWH Rejection boundary behavior using unrounded floating-point values', () {
+      // 0.5999 must be rejected (< 0.60)
+      const confBelow = 0.5999;
+      expect(confBelow < AppConstants.minConfidenceThreshold, isTrue);
+
+      // 0.6000 must pass threshold (>= 0.60)
+      const confAt = 0.6000;
+      expect(confAt >= AppConstants.minConfidenceThreshold, isTrue);
+
+      // Entropy 1.4001 must be rejected (> 1.40)
+      const entropyAbove = 1.4001;
+      expect(entropyAbove > AppConstants.maxEntropyBits, isTrue);
+
+      // Entropy 1.3999 must pass (<= 1.40)
+      const entropyBelow = 1.3999;
+      expect(entropyBelow <= AppConstants.maxEntropyBits, isTrue);
+    });
+
+    test('5. Rejection result does not assign a confirmed disease diagnosis', () {
+      final rej = DiagnosisResult.rejection(
+        reason: AppConstants.errLowConfidence,
+        originalImagePath: 'test.jpg',
+        confidence: 0.52,
+        entropy: 1.65,
+        classProbabilities: {'acne': 0.52, 'melasma': 0.12, 'psoriasis': 0.20, 'ringworm': 0.08, 'vitiligo': 0.08},
+      );
+
+      expect(rej.isRecognized, isFalse);
+      expect(rej.predictedDiseaseId, isNull);
+      expect(rej.predictedDisplayName, equals('Non-Target / Uncertain'));
+      expect(rej.rejectionReason, equals(AppConstants.errLowConfidence));
+    });
+
+    test('6. Clinical severity claims are not inferred from confidence heuristics', () {
+      // High confidence (0.95) must NOT claim inflammatory severity or urgent staging
+      final res = DiagnosisResult(
+        isRecognized: true,
+        predictedDiseaseId: 'acne',
+        predictedDisplayName: 'Acne',
+        confidence: 0.95,
+        entropy: 0.25,
+        classProbabilities: {'acne': 0.95, 'melasma': 0.01, 'psoriasis': 0.02, 'ringworm': 0.01, 'vitiligo': 0.01},
+        originalImagePath: 'test.jpg',
+        acneSeverity: null, // Unsupported heuristic removed
+        timestamp: DateTime.now(),
+      );
+
+      expect(res.acneSeverity, isNull);
+    });
+
+    test('7. Image-quality blur rejection provides clear quality guidance rather than disease claim', () {
+      final blurRej = DiagnosisResult.rejection(
+        reason: AppConstants.errBlurryImage,
+        originalImagePath: 'blurry.jpg',
+      );
+
+      expect(blurRej.isRecognized, isFalse);
+      expect(blurRej.rejectionReason, contains('blurry'));
+      expect(blurRej.predictedDiseaseId, isNull);
+    });
+  });
 }

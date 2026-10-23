@@ -317,17 +317,9 @@ class InferenceService {
       }
     }
 
-    // Acne Severity Stage (if Acne detected)
-    String? severity;
-    if (predictedId == 'acne') {
-      if (maxConf > 0.85) {
-        severity = 'Moderate to Severe (High Inflammatory Activation)';
-      } else if (maxConf > 0.70) {
-        severity = 'Mild to Moderate (Papular/Comedonal)';
-      } else {
-        severity = 'Mild / Early-Stage';
-      }
-    }
+    // Clinical note: The model is a 5-class categorical classifier and does not predict
+    // disease severity or inflammatory staging. Subtype evaluation requires clinical exam.
+    const String? severity = null;
 
     return DiagnosisResult(
       isRecognized: true,

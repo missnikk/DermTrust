@@ -32,7 +32,9 @@ class ImageProcessor {
         );
       }
 
-      if (image.width < 100 || image.height < 100) {
+      final orientedImage = img.bakeOrientation(image);
+
+      if (orientedImage.width < 100 || orientedImage.height < 100) {
         return const ImageValidationResult(
           isValid: false,
           errorMessage: 'Image resolution is too low (<100px) to distinguish clinical lesion morphology.',
@@ -41,19 +43,19 @@ class ImageProcessor {
       }
 
       // Check Blur using Laplacian Variance on downscaled grayscale
-      final blurScore = computeLaplacianVariance(image);
+      final blurScore = computeLaplacianVariance(orientedImage);
       if (blurScore < AppConstants.minBlurLaplacianVariance) {
         return ImageValidationResult(
           isValid: false,
           errorMessage: 'Image appears excessively blurry (Laplacian variance: ${blurScore.toStringAsFixed(1)} < ${AppConstants.minBlurLaplacianVariance.toStringAsFixed(0)}). Please capture a well-focused image.',
-          decodedImage: image,
+          decodedImage: orientedImage,
           blurScore: blurScore,
         );
       }
 
       return ImageValidationResult(
         isValid: true,
-        decodedImage: image,
+        decodedImage: orientedImage,
         blurScore: blurScore,
       );
     } catch (e) {
