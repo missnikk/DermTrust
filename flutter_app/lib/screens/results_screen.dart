@@ -184,12 +184,20 @@ class ResultsScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'MODEL PROBABILITY DISTRIBUTION',
+            'MODEL CONFIDENCE DISTRIBUTION',
             style: TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.bold,
               letterSpacing: 0.8,
               color: AppTheme.textMuted,
+            ),
+          ),
+          const SizedBox(height: 4),
+          const Text(
+            'Uncalibrated model output across the 5 target classes (not diagnostic probabilities).',
+            style: TextStyle(
+              fontSize: 11,
+              color: AppTheme.textSecondary,
             ),
           ),
           const SizedBox(height: 10),

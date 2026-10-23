@@ -1,0 +1,161 @@
+{
+  "evaluation_dataset": "val_5class_manifest_v3.csv (N=273, 100% natural clinical)",
+  "baseline_model": "C:\\Users\\nikit\\OneDrive\\Desktop\\DERMTRUST\\ml\\models\\dermtrust_mobilenetv2_5class.keras",
+  "candidate_model": "C:\\Users\\nikit\\OneDrive\\Desktop\\DERMTRUST\\ml\\models\\experiments\\candidate_v3_best.keras",
+  "baseline_metrics": {
+    "accuracy": 0.7142857142857143,
+    "macro_f1": 0.6312375720599255,
+    "weighted_f1": 0.6840882176606199,
+    "per_class": {
+      "acne": {
+        "precision": 0.7326732673267327,
+        "recall": 0.9866666666666667,
+        "f1": 0.8409090909090909,
+        "support": 75
+      },
+      "melasma": {
+        "precision": 0.6666666666666666,
+        "recall": 0.5,
+        "f1": 0.5714285714285714,
+        "support": 8
+      },
+      "psoriasis": {
+        "precision": 0.680327868852459,
+        "recall": 0.8736842105263158,
+        "f1": 0.7649769585253456,
+        "support": 95
+      },
+      "ringworm": {
+        "precision": 0.8095238095238095,
+        "recall": 0.34,
+        "f1": 0.4788732394366197,
+        "support": 50
+      },
+      "vitiligo": {
+        "precision": 0.7391304347826086,
+        "recall": 0.37777777777777777,
+        "f1": 0.5,
+        "support": 45
+      }
+    },
+    "confusion_matrix": [
+      [
+        74,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        4,
+        2,
+        0,
+        1
+      ],
+      [
+        8,
+        1,
+        83,
+        0,
+        3
+      ],
+      [
+        9,
+        1,
+        21,
+        17,
+        2
+      ],
+      [
+        9,
+        0,
+        15,
+        4,
+        17
+      ]
+    ]
+  },
+  "candidate_metrics": {
+    "accuracy": 0.673992673992674,
+    "macro_f1": 0.5023656064926519,
+    "weighted_f1": 0.6148290986632728,
+    "per_class": {
+      "acne": {
+        "precision": 0.7157894736842105,
+        "recall": 0.9066666666666666,
+        "f1": 0.8,
+        "support": 75
+      },
+      "melasma": {
+        "precision": 0.5,
+        "recall": 0.125,
+        "f1": 0.2,
+        "support": 8
+      },
+      "psoriasis": {
+        "precision": 0.6767676767676768,
+        "recall": 0.7052631578947368,
+        "f1": 0.6907216494845361,
+        "support": 95
+      },
+      "ringworm": {
+        "precision": 0.6133333333333333,
+        "recall": 0.92,
+        "f1": 0.736,
+        "support": 50
+      },
+      "vitiligo": {
+        "precision": 1.0,
+        "recall": 0.044444444444444446,
+        "f1": 0.0851063829787234,
+        "support": 45
+      }
+    },
+    "confusion_matrix": [
+      [
+        68,
+        0,
+        6,
+        1,
+        0
+      ],
+      [
+        2,
+        1,
+        1,
+        4,
+        0
+      ],
+      [
+        9,
+        0,
+        67,
+        19,
+        0
+      ],
+      [
+        2,
+        0,
+        2,
+        46,
+        0
+      ],
+      [
+        14,
+        1,
+        23,
+        5,
+        2
+      ]
+    ]
+  },
+  "gates": {
+    "gate_macro_f1": false,
+    "gate_accuracy": false,
+    "gate_no_collapse": true,
+    "gate_melasma": false,
+    "all_gates_passed": false
+  },
+  "action_taken": "RETAINED_BASELINE_PRODUCTION_ASSETS"
+}

@@ -137,7 +137,7 @@ class _GradCamViewerState extends State<GradCamViewer> {
             padding: const EdgeInsets.all(12),
             child: Text(
               _showHeatmap && hasCam
-                  ? 'Red and yellow regions highlight the morphological features that most strongly steered the model toward the prediction of ${widget.diseaseName}.'
+                  ? 'Red and yellow regions highlight the morphological features that most strongly steered the model toward the prediction of ${widget.diseaseName}. This visual explanation reflects network activation, not clinical proof of pathology.'
                   : 'Viewing raw optical input image without activation heatmap overlay.',
               style: const TextStyle(
                 color: AppTheme.textSecondary,
