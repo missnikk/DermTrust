@@ -1,0 +1,205 @@
+{
+  "inter_class_similarities": [
+    [
+      1.0,
+      0.7398933172225952,
+      0.8117822408676147,
+      0.7703287601470947,
+      0.7962101697921753
+    ],
+    [
+      0.7398933172225952,
+      1.0,
+      0.7728999853134155,
+      0.7874953746795654,
+      0.7983304262161255
+    ],
+    [
+      0.8117822408676147,
+      0.7728999853134155,
+      1.0,
+      0.8541837930679321,
+      0.8877364993095398
+    ],
+    [
+      0.7703287601470947,
+      0.7874953746795654,
+      0.8541837930679321,
+      1.0,
+      0.8480066061019897
+    ],
+    [
+      0.7962101697921753,
+      0.7983304262161255,
+      0.8877364993095398,
+      0.8480066061019897,
+      1.0
+    ]
+  ],
+  "failure_samples": [
+    {
+      "file": "IMG-20261023-WA0013.jpg",
+      "description": "Melasma (user reported)",
+      "predicted": "acne",
+      "confidence": 0.9557114243507385,
+      "probabilities": {
+        "acne": 0.9557114243507385,
+        "melasma": 0.024719705805182457,
+        "psoriasis": 0.013270199298858643,
+        "ringworm": 0.0012025315081700683,
+        "vitiligo": 0.005096208769828081
+      },
+      "cosine_similarities": {
+        "acne": 0.7344167232513428,
+        "melasma": 0.6150146126747131,
+        "psoriasis": 0.5769949555397034,
+        "ringworm": 0.5443888306617737,
+        "vitiligo": 0.607966423034668
+      }
+    },
+    {
+      "file": "IMG-20261023-WA0022.jpg",
+      "description": "Melasma (user reported)",
+      "predicted": "acne",
+      "confidence": 0.9955501556396484,
+      "probabilities": {
+        "acne": 0.9955501556396484,
+        "melasma": 0.0024902166333049536,
+        "psoriasis": 0.0011842310195788741,
+        "ringworm": 0.00023720051103737205,
+        "vitiligo": 0.0005382851813919842
+      },
+      "cosine_similarities": {
+        "acne": 0.7516257166862488,
+        "melasma": 0.6429111957550049,
+        "psoriasis": 0.6190608143806458,
+        "ringworm": 0.6128026247024536,
+        "vitiligo": 0.6811798214912415
+      }
+    },
+    {
+      "file": "melasma_sample_1.jpg",
+      "description": "Melasma face sample",
+      "predicted": "acne",
+      "confidence": 0.6790430545806885,
+      "probabilities": {
+        "acne": 0.6790430545806885,
+        "melasma": 0.315931111574173,
+        "psoriasis": 0.0028712742496281862,
+        "ringworm": 0.0008230784442275763,
+        "vitiligo": 0.0013315273681655526
+      },
+      "cosine_similarities": {
+        "acne": 0.7358485460281372,
+        "melasma": 0.6570208668708801,
+        "psoriasis": 0.5516175031661987,
+        "ringworm": 0.5714460611343384,
+        "vitiligo": 0.557360827922821
+      }
+    },
+    {
+      "file": "IMG-20261023-WA0023.jpg",
+      "description": "Mild Acne (2-5 spots)",
+      "predicted": "acne",
+      "confidence": 0.5093473196029663,
+      "probabilities": {
+        "acne": 0.5093473196029663,
+        "melasma": 0.1546408236026764,
+        "psoriasis": 0.2702116370201111,
+        "ringworm": 0.011796139180660248,
+        "vitiligo": 0.05400402471423149
+      },
+      "cosine_similarities": {
+        "acne": 0.5651160478591919,
+        "melasma": 0.5101541876792908,
+        "psoriasis": 0.5162678360939026,
+        "ringworm": 0.45572787523269653,
+        "vitiligo": 0.5481120347976685
+      }
+    },
+    {
+      "file": "IMG-20261023-WA0017.jpg",
+      "description": "Ringworm/Psoriasis ambiguous",
+      "predicted": "psoriasis",
+      "confidence": 0.46552330255508423,
+      "probabilities": {
+        "acne": 0.20816415548324585,
+        "melasma": 0.0405060276389122,
+        "psoriasis": 0.46552330255508423,
+        "ringworm": 0.2783919870853424,
+        "vitiligo": 0.007414510007947683
+      },
+      "cosine_similarities": {
+        "acne": 0.4980272948741913,
+        "melasma": 0.5038679838180542,
+        "psoriasis": 0.5962759256362915,
+        "ringworm": 0.5467424392700195,
+        "vitiligo": 0.47374454140663147
+      }
+    },
+    {
+      "file": "IMG-20261023-WA0021.jpg",
+      "description": "Ringworm/Psoriasis ambiguous",
+      "predicted": "psoriasis",
+      "confidence": 0.43051159381866455,
+      "probabilities": {
+        "acne": 0.012050705961883068,
+        "melasma": 0.15272511541843414,
+        "psoriasis": 0.43051159381866455,
+        "ringworm": 0.36946502327919006,
+        "vitiligo": 0.03524746000766754
+      },
+      "cosine_similarities": {
+        "acne": 0.4592604637145996,
+        "melasma": 0.5452306270599365,
+        "psoriasis": 0.5991491079330444,
+        "ringworm": 0.6195328235626221,
+        "vitiligo": 0.627081036567688
+      }
+    },
+    {
+      "file": "IMG-20261023-WA0024.jpg",
+      "description": "Vitiligo hand",
+      "predicted": "vitiligo",
+      "confidence": 0.2839144170284271,
+      "probabilities": {
+        "acne": 0.19433587789535522,
+        "melasma": 0.26218879222869873,
+        "psoriasis": 0.2512798011302948,
+        "ringworm": 0.008281076326966286,
+        "vitiligo": 0.2839144170284271
+      },
+      "cosine_similarities": {
+        "acne": 0.48620885610580444,
+        "melasma": 0.5246800780296326,
+        "psoriasis": 0.529752254486084,
+        "ringworm": 0.4635699391365051,
+        "vitiligo": 0.5923759937286377
+      }
+    },
+    {
+      "file": "test_vitiligo_dl.jpg",
+      "description": "Vitiligo (DL)",
+      "predicted": "psoriasis",
+      "confidence": 0.6617922782897949,
+      "probabilities": {
+        "acne": 0.01567351445555687,
+        "melasma": 0.050643838942050934,
+        "psoriasis": 0.6617922782897949,
+        "ringworm": 0.006077123805880547,
+        "vitiligo": 0.2658132314682007
+      },
+      "cosine_similarities": {
+        "acne": 0.4153152406215668,
+        "melasma": 0.42807263135910034,
+        "psoriasis": 0.5389066338539124,
+        "ringworm": 0.40253573656082153,
+        "vitiligo": 0.5450087785720825
+      }
+    }
+  ],
+  "mean_core_energy_ratio": 0.33793607335214026,
+  "validation_ece": 0.035679650896645224,
+  "validation_mean_confidence": 0.8469834327697754,
+  "validation_accuracy": 0.8225255972696246
+}

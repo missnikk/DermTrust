@@ -187,6 +187,64 @@ class DiseaseCard extends StatelessWidget {
           ),
         ],
 
+        if (info.id == 'ringworm') ...[
+          const SizedBox(height: 12),
+          Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: const Color(0xFF1E293B),
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: const Color(0xFF334155)),
+            ),
+            child: const Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Icon(Icons.lightbulb_outline_rounded, color: AppTheme.warningAmber, size: 16),
+                SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    'Clinical Note: Tinea corporis (ringworm) shares annular erythematous scaling borders with plaque psoriasis and nummular eczema. In-person direct potassium hydroxide (KOH) microscopy is clinically indicated to confirm fungal etiology.',
+                    style: TextStyle(
+                      color: Color(0xFFCBD5E1),
+                      fontSize: 11,
+                      height: 1.35,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+
+        if (info.id == 'vitiligo') ...[
+          const SizedBox(height: 12),
+          Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: const Color(0xFF1E293B),
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: const Color(0xFF334155)),
+            ),
+            child: const Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Icon(Icons.lightbulb_outline_rounded, color: AppTheme.warningAmber, size: 16),
+                SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    'Clinical Note: Depigmented macules on lighter skin phototypes (Fitzpatrick I-II) exhibit reduced optical contrast in digital photography. Wood\'s lamp dermatoscopy and clinical evaluation are recommended to differentiate vitiligo from post-inflammatory hypopigmentation or pityriasis alba.',
+                    style: TextStyle(
+                      color: Color(0xFFCBD5E1),
+                      fontSize: 11,
+                      height: 1.35,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+
         const SizedBox(height: 12),
 
         // Red Flags
