@@ -1,0 +1,716 @@
+[
+  {
+    "filename": "IMG-20261023-WA0012.jpg",
+    "relative_path": "test_failures\\WhatsApp\\IMG-20261023-WA0012.jpg",
+    "dimensions": [
+      1600,
+      1060
+    ],
+    "blur_score": 159.9071502685547,
+    "keras_tflite_max_diff": 1.2516975402832031e-06,
+    "top_class": "acne",
+    "top_confidence": 0.9298529624938965,
+    "top2_class": "psoriasis",
+    "top2_confidence": 0.052123233675956726,
+    "margin": 0.8777297288179398,
+    "entropy": 0.43622201681137085,
+    "gate_outcome": "ACCEPTED",
+    "gate_reason": "Accepted: acne (93.0%)",
+    "probabilities": {
+      "acne": 0.9298529624938965,
+      "melasma": 0.015753034502267838,
+      "psoriasis": 0.052123233675956726,
+      "ringworm": 0.0013036131858825684,
+      "vitiligo": 0.0009672199375927448
+    },
+    "cam_peak": [
+      1,
+      2
+    ],
+    "cam_centroid": [
+      2.35,
+      2.02
+    ],
+    "cam_dist_from_center": 1.17
+  },
+  {
+    "filename": "IMG-20261023-WA0013.jpg",
+    "relative_path": "test_failures\\WhatsApp\\IMG-20261023-WA0013.jpg",
+    "dimensions": [
+      1000,
+      667
+    ],
+    "blur_score": 147.1678009033203,
+    "keras_tflite_max_diff": 1.1920928955078125e-07,
+    "top_class": "acne",
+    "top_confidence": 0.955711305141449,
+    "top2_class": "melasma",
+    "top2_confidence": 0.0247197262942791,
+    "margin": 0.9309915788471699,
+    "entropy": 0.3276449739933014,
+    "gate_outcome": "ACCEPTED",
+    "gate_reason": "Accepted: acne (95.6%)",
+    "probabilities": {
+      "acne": 0.955711305141449,
+      "melasma": 0.0247197262942791,
+      "psoriasis": 0.01327022910118103,
+      "ringworm": 0.0012025336036458611,
+      "vitiligo": 0.00509621761739254
+    },
+    "cam_peak": [
+      3,
+      4
+    ],
+    "cam_centroid": [
+      2.53,
+      3.23
+    ],
+    "cam_dist_from_center": 0.52
+  },
+  {
+    "filename": "IMG-20261023-WA0014.jpg",
+    "relative_path": "test_failures\\WhatsApp\\IMG-20261023-WA0014.jpg",
+    "dimensions": [
+      936,
+      702
+    ],
+    "blur_score": 402.4264221191406,
+    "keras_tflite_max_diff": 2.384185791015625e-07,
+    "top_class": "psoriasis",
+    "top_confidence": 0.9272652268409729,
+    "top2_class": "vitiligo",
+    "top2_confidence": 0.03177989646792412,
+    "margin": 0.8954853303730488,
+    "entropy": 0.5089753866195679,
+    "gate_outcome": "ACCEPTED",
+    "gate_reason": "Accepted: psoriasis (92.7%)",
+    "probabilities": {
+      "acne": 0.020395515486598015,
+      "melasma": 0.012129832059144974,
+      "psoriasis": 0.9272652268409729,
+      "ringworm": 0.008429440669715405,
+      "vitiligo": 0.03177989646792412
+    },
+    "cam_peak": [
+      1,
+      2
+    ],
+    "cam_centroid": [
+      2.62,
+      2.78
+    ],
+    "cam_dist_from_center": 0.44
+  },
+  {
+    "filename": "IMG-20261023-WA0015.jpg",
+    "relative_path": "test_failures\\WhatsApp\\IMG-20261023-WA0015.jpg",
+    "dimensions": [
+      474,
+      428
+    ],
+    "blur_score": 398.2940673828125,
+    "keras_tflite_max_diff": 2.384185791015625e-07,
+    "top_class": "psoriasis",
+    "top_confidence": 0.9741985201835632,
+    "top2_class": "ringworm",
+    "top2_confidence": 0.01425113994628191,
+    "margin": 0.9599473802372813,
+    "entropy": 0.21149808168411255,
+    "gate_outcome": "ACCEPTED",
+    "gate_reason": "Accepted: psoriasis (97.4%)",
+    "probabilities": {
+      "acne": 0.0075438437052071095,
+      "melasma": 0.0005330019630491734,
+      "psoriasis": 0.9741985201835632,
+      "ringworm": 0.01425113994628191,
+      "vitiligo": 0.003473492106422782
+    },
+    "cam_peak": [
+      2,
+      4
+    ],
+    "cam_centroid": [
+      2.88,
+      2.62
+    ],
+    "cam_dist_from_center": 0.39
+  },
+  {
+    "filename": "IMG-20261023-WA0016.jpg",
+    "relative_path": "test_failures\\WhatsApp\\IMG-20261023-WA0016.jpg",
+    "dimensions": [
+      1500,
+      1500
+    ],
+    "blur_score": 242.89260864257812,
+    "keras_tflite_max_diff": 1.7881393432617188e-07,
+    "top_class": "psoriasis",
+    "top_confidence": 0.9763606786727905,
+    "top2_class": "vitiligo",
+    "top2_confidence": 0.012501847930252552,
+    "margin": 0.963858830742538,
+    "entropy": 0.20019274950027466,
+    "gate_outcome": "ACCEPTED",
+    "gate_reason": "Accepted: psoriasis (97.6%)",
+    "probabilities": {
+      "acne": 0.002201555296778679,
+      "melasma": 0.0022083441726863384,
+      "psoriasis": 0.9763606786727905,
+      "ringworm": 0.0067275650799274445,
+      "vitiligo": 0.012501847930252552
+    },
+    "cam_peak": [
+      2,
+      1
+    ],
+    "cam_centroid": [
+      3.04,
+      2.68
+    ],
+    "cam_dist_from_center": 0.32
+  },
+  {
+    "filename": "IMG-20261023-WA0017.jpg",
+    "relative_path": "test_failures\\WhatsApp\\IMG-20261023-WA0017.jpg",
+    "dimensions": [
+      1002,
+      564
+    ],
+    "blur_score": 163.33213806152344,
+    "keras_tflite_max_diff": 1.1324882507324219e-06,
+    "top_class": "psoriasis",
+    "top_confidence": 0.465523362159729,
+    "top2_class": "ringworm",
+    "top2_confidence": 0.2783908545970917,
+    "margin": 0.18713250756263733,
+    "entropy": 1.7382453680038452,
+    "gate_outcome": "REJECTED_LOW_CONFIDENCE",
+    "gate_reason": "Low confidence: 46.6% < 60%",
+    "probabilities": {
+      "acne": 0.20816504955291748,
+      "melasma": 0.040506184101104736,
+      "psoriasis": 0.465523362159729,
+      "ringworm": 0.2783908545970917,
+      "vitiligo": 0.007414564024657011
+    },
+    "cam_peak": [
+      5,
+      4
+    ],
+    "cam_centroid": [
+      3.46,
+      3.53
+    ],
+    "cam_dist_from_center": 0.7
+  },
+  {
+    "filename": "IMG-20261023-WA0018.jpg",
+    "relative_path": "test_failures\\WhatsApp\\IMG-20261023-WA0018.jpg",
+    "dimensions": [
+      1125,
+      750
+    ],
+    "blur_score": 267.2296142578125,
+    "keras_tflite_max_diff": 1.9073486328125e-06,
+    "top_class": "acne",
+    "top_confidence": 0.7590147852897644,
+    "top2_class": "psoriasis",
+    "top2_confidence": 0.16376186907291412,
+    "margin": 0.5952529162168503,
+    "entropy": 1.0929579734802246,
+    "gate_outcome": "ACCEPTED",
+    "gate_reason": "Accepted: acne (75.9%)",
+    "probabilities": {
+      "acne": 0.7590147852897644,
+      "melasma": 0.015133230946958065,
+      "psoriasis": 0.16376186907291412,
+      "ringworm": 0.05764096602797508,
+      "vitiligo": 0.004449136555194855
+    },
+    "cam_peak": [
+      1,
+      4
+    ],
+    "cam_centroid": [
+      2.22,
+      2.54
+    ],
+    "cam_dist_from_center": 0.91
+  },
+  {
+    "filename": "IMG-20261023-WA0019.jpg",
+    "relative_path": "test_failures\\WhatsApp\\IMG-20261023-WA0019.jpg",
+    "dimensions": [
+      1500,
+      1125
+    ],
+    "blur_score": 238.93023681640625,
+    "keras_tflite_max_diff": 2.0265579223632812e-06,
+    "top_class": "ringworm",
+    "top_confidence": 0.6491732597351074,
+    "top2_class": "psoriasis",
+    "top2_confidence": 0.2644107937812805,
+    "margin": 0.3847624659538269,
+    "entropy": 1.2605613470077515,
+    "gate_outcome": "ACCEPTED",
+    "gate_reason": "Accepted: ringworm (64.9%)",
+    "probabilities": {
+      "acne": 0.07776452600955963,
+      "melasma": 0.008179272525012493,
+      "psoriasis": 0.2644107937812805,
+      "ringworm": 0.6491732597351074,
+      "vitiligo": 0.0004721622390206903
+    },
+    "cam_peak": [
+      3,
+      2
+    ],
+    "cam_centroid": [
+      3.08,
+      2.78
+    ],
+    "cam_dist_from_center": 0.23
+  },
+  {
+    "filename": "IMG-20261023-WA0020.jpg",
+    "relative_path": "test_failures\\WhatsApp\\IMG-20261023-WA0020.jpg",
+    "dimensions": [
+      474,
+      266
+    ],
+    "blur_score": 280.2804260253906,
+    "keras_tflite_max_diff": 2.205371856689453e-06,
+    "top_class": "ringworm",
+    "top_confidence": 0.842628002166748,
+    "top2_class": "psoriasis",
+    "top2_confidence": 0.12948301434516907,
+    "margin": 0.713144987821579,
+    "entropy": 0.7686113119125366,
+    "gate_outcome": "ACCEPTED",
+    "gate_reason": "Accepted: ringworm (84.3%)",
+    "probabilities": {
+      "acne": 0.01751122809946537,
+      "melasma": 0.008028822019696236,
+      "psoriasis": 0.12948301434516907,
+      "ringworm": 0.842628002166748,
+      "vitiligo": 0.0023488900624215603
+    },
+    "cam_peak": [
+      3,
+      2
+    ],
+    "cam_centroid": [
+      3.28,
+      2.82
+    ],
+    "cam_dist_from_center": 0.33
+  },
+  {
+    "filename": "IMG-20261023-WA0021.jpg",
+    "relative_path": "test_failures\\WhatsApp\\IMG-20261023-WA0021.jpg",
+    "dimensions": [
+      474,
+      315
+    ],
+    "blur_score": 173.06666564941406,
+    "keras_tflite_max_diff": 9.238719940185547e-07,
+    "top_class": "psoriasis",
+    "top_confidence": 0.430510938167572,
+    "top2_class": "ringworm",
+    "top2_confidence": 0.3694659471511841,
+    "margin": 0.06104499101638794,
+    "entropy": 1.7151540517807007,
+    "gate_outcome": "REJECTED_LOW_CONFIDENCE",
+    "gate_reason": "Low confidence: 43.1% < 60%",
+    "probabilities": {
+      "acne": 0.01205072458833456,
+      "melasma": 0.1527249962091446,
+      "psoriasis": 0.430510938167572,
+      "ringworm": 0.3694659471511841,
+      "vitiligo": 0.03524738922715187
+    },
+    "cam_peak": [
+      3,
+      2
+    ],
+    "cam_centroid": [
+      2.96,
+      2.92
+    ],
+    "cam_dist_from_center": 0.09
+  },
+  {
+    "filename": "IMG-20261023-WA0022.jpg",
+    "relative_path": "test_failures\\WhatsApp\\IMG-20261023-WA0022.jpg",
+    "dimensions": [
+      474,
+      474
+    ],
+    "blur_score": 51.87465286254883,
+    "keras_tflite_max_diff": 2.384185791015625e-07,
+    "top_class": "acne",
+    "top_confidence": 0.9955499172210693,
+    "top2_class": "melasma",
+    "top2_confidence": 0.002490261336788535,
+    "margin": 0.9930596558842808,
+    "entropy": 0.04816029220819473,
+    "gate_outcome": "ACCEPTED",
+    "gate_reason": "Accepted: acne (99.6%)",
+    "probabilities": {
+      "acne": 0.9955499172210693,
+      "melasma": 0.002490261336788535,
+      "psoriasis": 0.0011842605890706182,
+      "ringworm": 0.00023720476019661874,
+      "vitiligo": 0.000538297405000776
+    },
+    "cam_peak": [
+      3,
+      3
+    ],
+    "cam_centroid": [
+      2.54,
+      2.47
+    ],
+    "cam_dist_from_center": 0.7
+  },
+  {
+    "filename": "IMG-20261023-WA0023.jpg",
+    "relative_path": "test_failures\\WhatsApp\\IMG-20261023-WA0023.jpg",
+    "dimensions": [
+      1458,
+      773
+    ],
+    "blur_score": 296.9475402832031,
+    "keras_tflite_max_diff": 1.1324882507324219e-06,
+    "top_class": "acne",
+    "top_confidence": 0.509348452091217,
+    "top2_class": "psoriasis",
+    "top2_confidence": 0.2702111303806305,
+    "margin": 0.23913732171058655,
+    "entropy": 1.72525954246521,
+    "gate_outcome": "REJECTED_LOW_CONFIDENCE",
+    "gate_reason": "Low confidence: 50.9% < 60%",
+    "probabilities": {
+      "acne": 0.509348452091217,
+      "melasma": 0.1546405851840973,
+      "psoriasis": 0.2702111303806305,
+      "ringworm": 0.011796081438660622,
+      "vitiligo": 0.054003771394491196
+    },
+    "cam_peak": [
+      1,
+      3
+    ],
+    "cam_centroid": [
+      1.93,
+      3.35
+    ],
+    "cam_dist_from_center": 1.13
+  },
+  {
+    "filename": "IMG-20261023-WA0024.jpg",
+    "relative_path": "test_failures\\WhatsApp\\IMG-20261023-WA0024.jpg",
+    "dimensions": [
+      1600,
+      1066
+    ],
+    "blur_score": 518.0414428710938,
+    "keras_tflite_max_diff": 2.294778823852539e-06,
+    "top_class": "vitiligo",
+    "top_confidence": 0.283916711807251,
+    "top2_class": "melasma",
+    "top2_confidence": 0.2621878385543823,
+    "margin": 0.021728873252868652,
+    "entropy": 2.0393624305725098,
+    "gate_outcome": "REJECTED_LOW_CONFIDENCE",
+    "gate_reason": "Low confidence: 28.4% < 60%",
+    "probabilities": {
+      "acne": 0.19433540105819702,
+      "melasma": 0.2621878385543823,
+      "psoriasis": 0.2512788474559784,
+      "ringworm": 0.008281178772449493,
+      "vitiligo": 0.283916711807251
+    },
+    "cam_peak": [
+      1,
+      2
+    ],
+    "cam_centroid": [
+      2.44,
+      2.58
+    ],
+    "cam_dist_from_center": 0.7
+  },
+  {
+    "filename": "IMG-20261023-WA0025.jpg",
+    "relative_path": "test_failures\\WhatsApp\\IMG-20261023-WA0025.jpg",
+    "dimensions": [
+      1500,
+      1000
+    ],
+    "blur_score": 196.40744018554688,
+    "keras_tflite_max_diff": 5.364418029785156e-07,
+    "top_class": "acne",
+    "top_confidence": 0.8133722543716431,
+    "top2_class": "psoriasis",
+    "top2_confidence": 0.10346732288599014,
+    "margin": 0.7099049314856529,
+    "entropy": 0.9773575663566589,
+    "gate_outcome": "ACCEPTED",
+    "gate_reason": "Accepted: acne (81.3%)",
+    "probabilities": {
+      "acne": 0.8133722543716431,
+      "melasma": 0.015690021216869354,
+      "psoriasis": 0.10346732288599014,
+      "ringworm": 0.009615497663617134,
+      "vitiligo": 0.05785488337278366
+    },
+    "cam_peak": [
+      3,
+      2
+    ],
+    "cam_centroid": [
+      3.03,
+      2.27
+    ],
+    "cam_dist_from_center": 0.73
+  },
+  {
+    "filename": "Girls-face-close-up-with-vitiligo.jpg",
+    "relative_path": "test_failures\\Girls-face-close-up-with-vitiligo.jpg",
+    "dimensions": [
+      3300,
+      4096
+    ],
+    "blur_score": 463.3534240722656,
+    "keras_tflite_max_diff": 2.7567148208618164e-06,
+    "top_class": "acne",
+    "top_confidence": 0.5775462985038757,
+    "top2_class": "vitiligo",
+    "top2_confidence": 0.21322207152843475,
+    "margin": 0.364324226975441,
+    "entropy": 1.4657974243164062,
+    "gate_outcome": "REJECTED_LOW_CONFIDENCE",
+    "gate_reason": "Low confidence: 57.8% < 60%",
+    "probabilities": {
+      "acne": 0.5775462985038757,
+      "melasma": 0.009011548943817616,
+      "psoriasis": 0.1994621902704239,
+      "ringworm": 0.0007578288204967976,
+      "vitiligo": 0.21322207152843475
+    },
+    "cam_peak": [
+      2,
+      4
+    ],
+    "cam_centroid": [
+      2.35,
+      2.87
+    ],
+    "cam_dist_from_center": 0.66
+  },
+  {
+    "filename": "melasma_sample_1.jpg",
+    "relative_path": "test_failures\\melasma_sample_1.jpg",
+    "dimensions": [
+      424,
+      416
+    ],
+    "blur_score": 982.4537963867188,
+    "keras_tflite_max_diff": 2.384185791015625e-07,
+    "top_class": "acne",
+    "top_confidence": 0.6790428161621094,
+    "top2_class": "melasma",
+    "top2_confidence": 0.3159312307834625,
+    "margin": 0.36311158537864685,
+    "entropy": 0.9497721791267395,
+    "gate_outcome": "ACCEPTED",
+    "gate_reason": "Accepted: acne (67.9%)",
+    "probabilities": {
+      "acne": 0.6790428161621094,
+      "melasma": 0.3159312307834625,
+      "psoriasis": 0.0028713156934827566,
+      "ringworm": 0.0008230953826569021,
+      "vitiligo": 0.0013315294636413455
+    },
+    "cam_peak": [
+      1,
+      1
+    ],
+    "cam_centroid": [
+      2.06,
+      2.0
+    ],
+    "cam_dist_from_center": 1.37
+  },
+  {
+    "filename": "melasma_sample_2.jpg",
+    "relative_path": "test_failures\\melasma_sample_2.jpg",
+    "dimensions": [
+      399,
+      454
+    ],
+    "blur_score": 39.956459045410156,
+    "keras_tflite_max_diff": 2.980232238769531e-07,
+    "top_class": "melasma",
+    "top_confidence": 0.9653686881065369,
+    "top2_class": "psoriasis",
+    "top2_confidence": 0.011677107773721218,
+    "margin": 0.9536915803328156,
+    "entropy": 0.28325504064559937,
+    "gate_outcome": "ACCEPTED",
+    "gate_reason": "Accepted: melasma (96.5%)",
+    "probabilities": {
+      "acne": 0.007238376419991255,
+      "melasma": 0.9653686881065369,
+      "psoriasis": 0.011677107773721218,
+      "ringworm": 0.011221837252378464,
+      "vitiligo": 0.004493985790759325
+    },
+    "cam_peak": [
+      1,
+      3
+    ],
+    "cam_centroid": [
+      3.16,
+      2.67
+    ],
+    "cam_dist_from_center": 0.37
+  },
+  {
+    "filename": "test_acne2.jpg",
+    "relative_path": "test_failures\\test_acne2.jpg",
+    "dimensions": [
+      903,
+      1657
+    ],
+    "blur_score": 387.6798400878906,
+    "keras_tflite_max_diff": 1.1920928955078125e-07,
+    "top_class": "acne",
+    "top_confidence": 0.9777600169181824,
+    "top2_class": "melasma",
+    "top2_confidence": 0.014275215566158295,
+    "margin": 0.9634848013520241,
+    "entropy": 0.1843576580286026,
+    "gate_outcome": "ACCEPTED",
+    "gate_reason": "Accepted: acne (97.8%)",
+    "probabilities": {
+      "acne": 0.9777600169181824,
+      "melasma": 0.014275215566158295,
+      "psoriasis": 0.004897227045148611,
+      "ringworm": 0.00048385869013145566,
+      "vitiligo": 0.00258370372466743
+    },
+    "cam_peak": [
+      3,
+      4
+    ],
+    "cam_centroid": [
+      2.61,
+      3.21
+    ],
+    "cam_dist_from_center": 0.44
+  },
+  {
+    "filename": "test_melasma.png",
+    "relative_path": "test_failures\\test_melasma.png",
+    "dimensions": [
+      764,
+      563
+    ],
+    "blur_score": 82.24712371826172,
+    "keras_tflite_max_diff": 6.146728992462158e-07,
+    "top_class": "acne",
+    "top_confidence": 0.873534619808197,
+    "top2_class": "psoriasis",
+    "top2_confidence": 0.062126852571964264,
+    "margin": 0.8114077672362328,
+    "entropy": 0.7660789489746094,
+    "gate_outcome": "ACCEPTED",
+    "gate_reason": "Accepted: acne (87.4%)",
+    "probabilities": {
+      "acne": 0.873534619808197,
+      "melasma": 0.03592901676893234,
+      "psoriasis": 0.062126852571964264,
+      "ringworm": 0.01305006816983223,
+      "vitiligo": 0.015359485521912575
+    },
+    "cam_peak": [
+      1,
+      4
+    ],
+    "cam_centroid": [
+      2.2,
+      3.79
+    ],
+    "cam_dist_from_center": 1.12
+  },
+  {
+    "filename": "test_psoriasis.png",
+    "relative_path": "test_failures\\test_psoriasis.png",
+    "dimensions": [
+      766,
+      518
+    ],
+    "blur_score": 313.9068908691406,
+    "keras_tflite_max_diff": 2.5033950805664062e-06,
+    "top_class": "psoriasis",
+    "top_confidence": 0.7922632694244385,
+    "top2_class": "ringworm",
+    "top2_confidence": 0.1384722739458084,
+    "margin": 0.6537909954786301,
+    "entropy": 0.996433675289154,
+    "gate_outcome": "ACCEPTED",
+    "gate_reason": "Accepted: psoriasis (79.2%)",
+    "probabilities": {
+      "acne": 0.05052421987056732,
+      "melasma": 0.016401084139943123,
+      "psoriasis": 0.7922632694244385,
+      "ringworm": 0.1384722739458084,
+      "vitiligo": 0.0023392182774841785
+    },
+    "cam_peak": [
+      2,
+      4
+    ],
+    "cam_centroid": [
+      2.51,
+      3.06
+    ],
+    "cam_dist_from_center": 0.5
+  },
+  {
+    "filename": "test_vitiligo_dl.jpg",
+    "relative_path": "test_failures\\test_vitiligo_dl.jpg",
+    "dimensions": [
+      1289,
+      1600
+    ],
+    "blur_score": 141.92591857910156,
+    "keras_tflite_max_diff": 2.682209014892578e-07,
+    "top_class": "psoriasis",
+    "top_confidence": 0.6617924571037292,
+    "top2_class": "vitiligo",
+    "top2_confidence": 0.2658129632472992,
+    "margin": 0.39597949385643005,
+    "entropy": 1.2588937282562256,
+    "gate_outcome": "ACCEPTED",
+    "gate_reason": "Accepted: psoriasis (66.2%)",
+    "probabilities": {
+      "acne": 0.01567365601658821,
+      "melasma": 0.05064382776618004,
+      "psoriasis": 0.6617924571037292,
+      "ringworm": 0.006077087949961424,
+      "vitiligo": 0.2658129632472992
+    },
+    "cam_peak": [
+      3,
+      1
+    ],
+    "cam_centroid": [
+      2.02,
+      2.49
+    ],
+    "cam_dist_from_center": 1.11
+  }
+]

@@ -48,6 +48,7 @@ ml/models/
 **/android/**/gradle-wrapper.jar
 **/android/.gradle
 **/android/captures/
+test_failures/
 **/android/gradlew
 **/android/gradlew.bat
 **/android/local.properties
