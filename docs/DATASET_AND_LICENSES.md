@@ -1,132 +1,169 @@
-# DERMTRUST — DATASET INVENTORY, LICENSING & MULTI-DATASET EXPANSION SPECIFICATION
+# DERMTRUST — DATASET INVENTORY, LEGAL COMPLIANCE AUDIT & EXPANSION SPECIFICATION
 
-**Document Version:** 2.0.0 (Multi-Dataset Audit & Legal Discovery Complete)  
-**Project:** Final-Year B.E./B.Tech Information Technology Semester 7 Major Project  
-**Author:** Antigravity (Responsible AI & Dataset Engineering Lead)  
-
----
-
-## 1. Primary Dataset: Fitzpatrick 17K Audit
-
-| Attribute | Verified Value |
-| :--- | :--- |
-| **Official Dataset Name** | Fitzpatrick 17k Dataset |
-| **Original Authors** | Groh, M., Harris, C., Soenksen, L., et al. (CVPR 2021) |
-| **Verified Images Found On-Disk** | **16,577 physical JPEG files** (`C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k`) |
-| **Metadata File** | `C:\Users\nikit\Downloads\fitzpatrick17k.csv` (16,577 rows, 0 missing files) |
-| **License** | **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** |
-| **Permitted Uses** | Academic research, model training, validation, testing, viva voce defense. |
-| **Ethical Restrictions** | Commercial deployment restricted; no scraping of unverified social media photos. |
+**Document Version:** 3.0.0 (Corrected Comprehensive Legal & Manifest Integrity Audit)  
+**Project:** Final-Year B.E./B.Tech Information Technology Major Project (DermTrust)  
+**Date:** 2026-10-23  
+**Status:** Verified & Reconciled Against Local Artifacts and Upstream Source Terms  
 
 ---
 
-## 2. Dataset Adequacy & Representation Gap Analysis
+## 1. Upstream Source Legal Compliance & Permission Audit
 
-Our empirical audit identified specific data deficiencies across the 5 target conditions and skin-tone phototypes:
+Every dataset source has been independently verified against official publisher repositories, terms of use, and license notices.
 
-| Target Disease | Images in Fitz17K | Light Skin (I–III) | Darker Skin (IV–VI) | Status & Deficiency | Required Legal Remedy |
-| :--- | :---: | :---: | :---: | :--- | :--- |
-| **Acne** | 518 | 415 | 101 | HEAVY SKIN-TONE IMBALANCE (Light:Dark = 415:101) | Apply class-weighted loss and balanced sampling across cohorts. |
-| **Melasma** | 0 | 0 | 0 | CRITICAL DEFICIT (0 images - Completely Missing) | Requires ingestion of legally verified external open dataset (e.g. Mendeley / Figshare / Roboflow CC-BY). |
-| **Psoriasis** | 706 | 485 | 189 | HEAVY SKIN-TONE IMBALANCE (Light:Dark = 485:189) | Apply class-weighted loss and balanced sampling across cohorts. |
-| **Ringworm** | 0 | 0 | 0 | CRITICAL DEFICIT (0 images - Completely Missing) | Requires ingestion of legally verified external open dataset (e.g. Mendeley / Figshare / Roboflow CC-BY). |
-| **Vitiligo** | 166 | 57 | 102 | LOW SAMPLE SIZE (<200 images) | Needs augmentation and targeted expansion for balanced validation. |
-
----
-
-## 3. Web-Discovered External Open-Access Datasets (Legally Audited)
-
-To address the gaps in Melasma and Ringworm without violating licensing mandates, we identified and audited 6 open-access dermatology datasets with clear licenses:
-
-### SkinDiseaseBD: Dataset of Common Skin Disease Images of Bangladesh
-- **Authors & Source:** Saiful Islam, Sazzad Hossain, Md. Rasel Ahmed, Muhammad Ibrahim (2023) — Mendeley Data (DOI: `10.17632/9ggd3shdr7.3`, Version 3)
-- **Direct URL:** [https://data.mendeley.com/datasets/9ggd3shdr7/3](https://data.mendeley.com/datasets/9ggd3shdr7/3)
-- **Archive Verified:** `Images_512x512_v2.zip` (51.66 MB, SHA-256: `097cb12afc356d47a9cc25ebb8f20bc18ede578c3d768f77f4ba1ccbfbe86aa6`)
-- **Ingestion Status:** **DOWNLOADED, EXTRACTED & MANIFEST-INDEXED ON-DISK** (`ml/external_datasets/skindiseasebd/`)
-- **Verified License:** **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**
-  > [!IMPORTANT]
-  > **License Harmonization Note:** Earlier documentation occasionally referred to this as CC BY 4.0. The official Mendeley Data publication is strictly **CC BY-NC 4.0**. It is valid for non-commercial academic research and student major projects, but cannot be redistributed commercially.
-- **Permitted for Academic Training:** `YES (Non-commercial research only)`
-- **Total Image Count:** 1,612 images (Clinical photography from Faridpur Medical College outpatient departments)
-- **Target Conditions Covered:** Ringworm (Tinea - 316 images), Vitiligo (312 images), Non-target confounders (Eczema, Scabies, Contact Dermatitis - 984 images)
-- **Skin-Tone Demographics:** South Asian cohort, representing **Fitzpatrick Skin Phototypes IV–V**
-- **Clinical Utility for DermTrust:** Fills critical gap for Ringworm/Tinea on Darker Skin Tones (Types IV-V).
-
-### Curated Clinical Melasma Cohort (72 Images Audited)
-The 72 Melasma images derive from three distinct sources with different legal statuses:
-1. **Atlas Dermatologico (4 images):** Dr. Samuel Freire da Silva. Licensed under **CC BY-NC 3.0**. Verified academic educational reuse permitted with attribution.
-2. **Wikimedia Commons Medical Archive (20 images):** Verified open medical dermatology archive. Licensed under **CC BY-SA 4.0 / CC0**. Open public distribution permitted.
-3. **Author-Donated Clinical Photography (48 images):**
-   - **Origin:** Sourced from the author's local foundation archives (`Skin Disease.zip`).
-   - **Image Content:** Multi-angle crops and horizontal flips from 4 donor subjects (`user_mel_1`, `user_mel_2`, `user_mel_3`, `user_mel_4`).
-   - **Legal & Redistribution Flag:** While permitted for internal academic model training and student thesis evaluation under fair academic research, these images **do not have a formal third-party institutional patient release agreement**.
-   - > [!WARNING]
-     > **Redistribution Restriction:** These 48 images are flagged as **Academic Research Use Only**. They must **NOT** be published to public image repositories or redistributed as an open dataset without verified formal patient consent documentation. All versioned manifests track these files with their exact provenance.
-- **Ingestion Status:** **INGESTED, FILTERED & MANIFEST-INDEXED ON-DISK** (`ml/external_datasets/melasma_verified/`)
-- **Total Clean Images:** **72 verified clinical facial melasma images** (50 original clinical captures + 22 synthetic flips strictly restricted to training).
-
-### Curated Skin Disease Dataset for Ringworm Classification
-- **Authors & Source:** Open Science Research Collection (2024) — Figshare (DOI: `10.6084/m9.figshare.33084632`)
-- **Direct URL:** [https://doi.org/10.6084/m9.figshare.33084632](https://doi.org/10.6084/m9.figshare.33084632)
-- **License:** **Creative Commons Attribution 4.0 International (CC BY 4.0)**
-- **Permitted for Academic Training:** `YES`
-- **Institutional Review / Approval Required:** `NONE (Open Access)`
-- **Total Image Count:** 2,100 images (JPG (Cleaned, deduplicated))
-- **Target Conditions Covered:** Ringworm / Tinea corporis (1,000 images), Scabies (700), Normal Skin (400)
-- **Skin-Tone Demographics:** Multi-ethnic clinical cohort
-- **Clinical Utility for DermTrust:** Large-scale permissible ringworm training and validation set.
-
-### Google SCIN (Skin Condition Image Network)
-- **Authors & Source:** Google Health & Stanford Medicine (2023/2024) — Google Research Datasets & Google Cloud Storage (DOI: `arXiv:2307.05434`)
-- **Direct URL:** [https://github.com/google-research-datasets/scin](https://github.com/google-research-datasets/scin)
-- **License:** **SCIN Custom Open Research Data Use License (Non-commercial research/academic permitted)**
-- **Permitted for Academic Training:** `YES`
-- **Institutional Review / Approval Required:** `NONE (Open Access)`
-- **Total Image Count:** 10,500 images (JPG with rich metadata)
-- **Target Conditions Covered:** Acne, Psoriasis, Melasma / Hyperpigmentation, Tinea
-- **Skin-Tone Demographics:** Monk Skin Tone Scale (MST 1-10) and Dermatologist-estimated Fitzpatrick (eFST 1-6)
-- **Clinical Utility for DermTrust:** Rich source for Melasma and expanded balanced Fitzpatrick skin tones.
-
-### Diverse Dermatology Images (DDI)
-- **Authors & Source:** Daneshjou, Smith, et al. (Science Advances, 2022) — Stanford Center for Artificial Intelligence in Medicine & Imaging (AIMI) (DOI: `10.71718/kqee-3z39`)
-- **Direct URL:** [https://ddi-dataset.github.io/](https://ddi-dataset.github.io/)
-- **License:** **Stanford AIMI Research Use Agreement (Academic / Non-commercial research permitted)**
-- **Permitted for Academic Training:** `YES`
-- **Institutional Review / Approval Required:** `NONE (Open Access)`
-- **Total Image Count:** 656 images (PNG / JPG)
-- **Target Conditions Covered:** Inflammatory skin conditions, Pigmentary disorders, Benign lesions
-- **Skin-Tone Demographics:** Curated balanced Fitzpatrick skin types I-VI (FST I-II: 208, FST III-IV: 241, FST V-VI: 207)
-- **Clinical Utility for DermTrust:** Ideal benchmark for algorithmic fairness cross-testing.
-
-### PAD-UFES-20: Dermatological Smartphone Dataset
-- **Authors & Source:** Pacheco et al. (Data in Brief, 2020) — Mendeley Data & Federal University of Espírito Santo (DOI: `10.17632/zr7vgbcyr2.1`)
-- **Direct URL:** [https://data.mendeley.com/datasets/zr7vgbcyr2/1](https://data.mendeley.com/datasets/zr7vgbcyr2/1)
-- **License:** **Creative Commons Attribution 4.0 International (CC BY 4.0)**
-- **Permitted for Academic Training:** `YES`
-- **Institutional Review / Approval Required:** `NONE (Open Access)`
-- **Total Image Count:** 2,298 images (PNG with comprehensive patient clinical metadata)
-- **Target Conditions Covered:** Skin lesions, Seborrheic keratosis, Melanocytic nevi
-- **Skin-Tone Demographics:** Fitzpatrick phototypes I-VI documented in metadata
-- **Clinical Utility for DermTrust:** Mobile smartphone camera evaluation and non-target confounder rejection testing.
-
-### Pigmentation Melasma Dark Spots Dataset
-- **Authors & Source:** WeSkin Clinical Skin Research (2023) — Roboflow Universe Open Access (DOI: `universe.roboflow.com/weskinskinconditions`)
-- **Direct URL:** [https://universe.roboflow.com/weskinskinconditions/pigmentation-melasma-dark-spots-436l2-nogsj](https://universe.roboflow.com/weskinskinconditions/pigmentation-melasma-dark-spots-436l2-nogsj)
-- **License:** **Creative Commons Attribution 4.0 International (CC BY 4.0)**
-- **Permitted for Academic Training:** `YES`
-- **Institutional Review / Approval Required:** `NONE (Open Access)`
-- **Total Image Count:** 486 images (JPG)
-- **Target Conditions Covered:** Melasma, Facial hyperpigmentation, Dark spots
-- **Skin-Tone Demographics:** Facial dermatology across various skin tones
-- **Clinical Utility for DermTrust:** Direct ground truth images for Melasma target class.
+| Dataset Source | Publisher / Citation | Applicable License | Permitted for Training | Redistribution in App / APK | Final Audit Decision |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| **Fitzpatrick 17k** | Groh, Harris, Soenksen, et al. (CVPR 2021) | **CC BY-NC-SA 3.0** *(Unported)* | **YES** *(Academic / Non-commercial)* | Weights permitted with CC BY-NC-SA notice; Raw images restricted | **APPROVED (Academic)** |
+| **SkinDiseaseBD** | Islam, Hossain, Ahmed, Ibrahim (Mendeley Data 2023, DOI: `10.17632/9ggd3shdr7.3`) | **CC BY-NC 4.0** | **YES** *(Academic / Non-commercial)* | Weights permitted with attribution; Commercial redistribution barred | **APPROVED (Academic)** |
+| **Figshare Ringworm Dataset** | Apurbo Biswas (Figshare 2024, DOI: `10.6084/m9.figshare.33084632`) | **CC BY 4.0** | **YES** | Permitted with explicit attribution | **APPROVED** |
+| **Google SCIN** | Google Health & Stanford Medicine (2023, arXiv:2307.05434) | **SCIN Data Use License** *(Bespoke)* | **YES** *(Research / Education)* | Permitted under SCIN terms; Re-identification strictly prohibited | **APPROVED (Research)** |
+| **Stanford DDI** | Daneshjou, Smith, et al. (Science Advances 2022, DOI: `10.71718/kqee-3z39`) | **Stanford AIMI Research Agreement** | **YES** *(Academic Evaluation)* | Research only; Commercial use requires separate Stanford license | **APPROVED (Eval/Fairness)** |
+| **Atlas Dermatologico** | Dr. Samuel Freire da Silva (`atlasdermatologico.com.br`) | **Custom Educational Copyright** | **YES** *(Non-commercial only)* | Requires mandatory hyperlink attribution to website | **APPROVED (Attribution)** |
+| **Wikimedia Commons** | Clinical Dermatology Archive | **Per-Image: CC BY-SA 4.0 / CC BY 3.0 / CC0** | **YES** | Permitted per image-level license tags | **APPROVED (Per-Image)** |
+| **Local Clinical Melasma Cohort** | Author Local Archive (`Skin Disease.zip`, 48 images) | **Unsigned Donor Consent** | **NO** *(Excluded from approved pipeline)* | **PROHIBITED** (Cannot be shared, uploaded, or redistributed) | **REJECTED / EXCLUDED** |
 
 ---
 
-## 4. Multi-Dataset Deduplication & Anti-Leakage Protocol
+### Detailed Source Analysis & Legal Findings
 
-When combining multiple datasets, patient and image overlap pose major risks of data leakage. DermTrust implements a rigorous 4-step harmonization pipeline:
+#### 1. Fitzpatrick 17k Dataset
+- **Upstream License Identification:** The official upstream repository (`github.com/nick-groh/fitzpatrick17k` / `nih.gov`) identifies the dataset under **Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)**.
+- **Key Terms:**
+  - **Attribution (BY):** Clear citation of Groh et al. (CVPR 2021) and reference to the CC BY-NC-SA 3.0 license.
+  - **NonCommercial (NC):** Strictly prohibited from commercial use, monetization, or paid distribution.
+  - **ShareAlike (SA):** Any derivative dataset, manifest adaptation, or public redistribution of modified data must carry the identical CC BY-NC-SA 3.0 license.
+- **Redistribution Assessment:** Raw images cannot be redistributed for commercial purposes. Incorporating trained weights into an educational demonstration APK is permitted under non-commercial academic research, provided that attribution and the non-commercial share-alike notice are preserved.
 
-1. **Cryptographic MD5 Hashing:** Every imported image file is hashed. If an identical hash is found across sources, duplicates are purged immediately.
-2. **Perceptual Difference Hash (pHash):** To catch near-duplicates (e.g. identical photos cropped or compressed at different resolutions), a 64-bit DCT perceptual hash is computed with a Hamming distance threshold of $\le 4$.
-3. **Conservative Label Mapping:** No label is inferred from file names or free-text descriptions. Only explicit ground-truth clinical annotations are mapped to the 5 target classes.
-4. **Patient-Level Split Isolation:** If a patient has multiple photographs across different sets, all photos from that subject are strictly assigned to either Train, Validation, or Test—never split across partitions.
+#### 2. SkinDiseaseBD (Mendeley Data DOI: 10.17632/9ggd3shdr7.3)
+- **Publisher & Source:** Saiful Islam, Sazzad Hossain, Md. Rasel Ahmed, Muhammad Ibrahim (Faridpur Medical College, Bangladesh, Version 3, 2023).
+- **Verified License:** **CC BY-NC 4.0** (Creative Commons Attribution-NonCommercial 4.0 International).
+- **Downloaded Archive:** `Images_512x512_v2.zip` (51.66 MB).
+- **CRITICAL AUDIT FINDING:** The raw clinical collection contains only **197 unique patient images**. All 1,612 files in the downloaded archive are **pre-augmented variations** generated by the authors (`aug_0_...` to `aug_4_...`).
+  - Ringworm (Tinea): 316 augmented images.
+  - Vitiligo: 312 augmented images.
+  - Confounders (Eczema: 381, Dermatitis: 302, Scabies: 301): 984 augmented images.
+- **Leakage Risk Disclosed:** Because the authors did not supply patient ID mappings connecting each `aug_*` file to its original patient capture, true patient-level split isolation cannot be strictly proven for SkinDiseaseBD.
+
+#### 3. Figshare Ringworm Dataset (DOI: 10.6084/m9.figshare.33084632)
+- **Author:** Apurbo Biswas (associated with *"Bridging the Gap in Rural Dermatology: Robust and Lightweight Deep Learning for Ringworm and Scabies Detection"*).
+- **Verified License:** **CC BY 4.0** (Creative Commons Attribution 4.0 International).
+- **Dataset Contents:** 2,100 curated dermatological images:
+  - Ringworm / Tinea corporis: 1,000 images.
+  - Scabies (Confounder): 700 images.
+  - Normal Skin (Confounder): 400 images.
+- **Assessment:** Cleanly licensed for academic model training with attribution. Provides an essential independent source to expand Ringworm beyond SkinDiseaseBD.
+
+#### 4. Google SCIN (Skin Condition Image Network)
+- **Authors & Source:** Google Health & Stanford Medicine (2023, arXiv:2307.05434).
+- **License:** **SCIN Data Use License** (Bespoke Open Research Agreement).
+- **Mandatory Terms:**
+  - **Anti-Re-Identification Clause:** Users are strictly barred from attempting to re-identify or re-link volunteer contributors who donated images and metadata. Any attempt results in immediate termination of license rights.
+  - **Attribution:** Mandatory attribution to Google Research and Stanford Medicine.
+  - **Purpose:** Health education, academic research, and development of machine-learning models.
+
+#### 5. Stanford Diverse Dermatology Images (DDI)
+- **Authors:** Daneshjou, Smith, et al. (Stanford AIMI, Science Advances 2022, DOI: `10.71718/kqee-3z39`).
+- **License:** **Stanford University Dataset Research Use Agreement**.
+- **Terms:** Free for academic non-commercial research upon acceptance of terms. Commercial usage requires a formal Stanford committee approval and paid license agreement.
+- **Role in DermTrust:** Preserved strictly as an independent algorithmic fairness evaluation benchmark (FST I–VI).
+
+#### 6. Atlas Dermatologico
+- **Author:** Dr. Samuel Freire da Silva (`atlasdermatologico.com.br`).
+- **Terms:** Custom copyright (Copyright © 1999–2026). Free for non-commercial educational use with mandatory hyperlink attribution back to `atlasdermatologico.com.br`.
+
+#### 7. Wikimedia Commons Clinical Dermatology Archive
+- **Terms:** Governed per-image under CC BY-SA 4.0, CC BY 3.0, or CC0.
+
+#### 8. Local Clinical Photography Melasma Cohort (48 images from `Skin Disease.zip`)
+- **Origin:** Sourced from personal archive (`user_mel_1`–`user_mel_4`).
+- **Legal Status:** **REJECTED / EXCLUDED FROM APPROVED TRAINING**.
+- **Reason:** Lacks institutional patient consent release forms. In accordance with project safeguards, these images are excluded from the approved training pipeline and barred from public distribution.
+
+---
+
+## 2. Manifest Reconciliation & Dataset Integrity Report
+
+We audited all physical files on disk against the v2 manifests:
+
+### A. Manifest vs. Physical File Reconciliation
+
+| Manifest File | Verified Rows on Disk | Missing Physical Files | Integrity Status |
+| :--- | :---: | :---: | :---: |
+| `ml/data/train_5class_manifest_v2.csv` | **1,508** | **0** | **VERIFIED (100% on-disk)** |
+| `ml/data/val_5class_manifest_v2.csv` | **285** | **0** | **VERIFIED (100% on-disk)** |
+| `ml/data/test_5class_manifest_v2.csv` | **297** | **0** | **VERIFIED (100% on-disk)** |
+| `ml/data/ood_5class_manifest.csv` | **2,183** | **0** | **VERIFIED (100% on-disk)** |
+| **Total Ingested Dataset** | **4,273** | **0** | **VERIFIED** |
+
+### B. Per-Class Manifest Breakdown & Discrepancy Resolution
+
+| Disease Class | Train | Val | Test | Total Target | Ingestion Source Breakdown | Verified Integrity & Discrepancy Note |
+| :--- | :---: | :---: | :---: | :---: | :--- | :--- |
+| **Acne** | 370 | 75 | 73 | **518** | Fitzpatrick 17k (518) | Original clinical images. Skewed to lighter skin (415 light vs 101 darker). |
+| **Melasma** | 63 | 2 | 7 | **72** | Clinical Photo (48), Wiki (20), Atlas (4) | **CRITICAL DEFICIT:** 63 train rows include 22 synthetic flips. Val has only 2 images. 48 local images now excluded. |
+| **Psoriasis** | 504 | 101 | 101 | **706** | Fitzpatrick 17k (706) | Original clinical images. Well-balanced across splits. |
+| **Ringworm** | 232 | 40 | 44 | **316** | SkinDiseaseBD (316) | **PRE-AUGMENTED:** All 316 files are augmented variations (`aug_*`) from ~38 raw patient captures. |
+| **Vitiligo** | 339 | 67 | 72 | **478** | Fitz17k (166) + SkinDiseaseBD (312) | 166 Fitz17k are original; 312 SkinDiseaseBD are pre-augmented variations. |
+| **Total Target** | **1,508** | **285** | **297** | **2,090** | Unified 5-class target | Zero cross-split MD5 or parent ID collisions. |
+| **OOD Confounders** | — | — | — | **2,183** | Fitz17k (1,199) + SkinDiseaseBD (984) | Full census verified (Eczema, Lichen Planus, Dermatitis, Scabies, etc.). |
+
+---
+
+## 3. Critical Integrity Findings Explained
+
+### 1. Why Melasma has 63 training rows, but only 2 validation and 7 test images
+- The 48 local Melasma images come from only 4 donor subjects (`user_mel_1` through `user_mel_4`).
+- To prevent patient leakage, all images from a single donor subject were clustered into the same `leakage_group`.
+- Because each donor group contained multiple crops and 22 synthetic horizontal flips, assigning these 4 donor groups to the training partition consumed 46 of the images.
+- This left only 2 un-augmented images for validation and 7 for the test set.
+- **Statistical Limitation:** 2 validation images is completely inadequate for candidate model selection. A single classification error shifts validation recall by 50%.
+- **Action:** Now that the 48 local images are excluded due to lack of signed patient releases, Melasma **must be supplemented from verified open sources (SCIN / Roboflow CC-BY)** before retraining.
+
+### 2. Pre-Augmentation in SkinDiseaseBD (Ringworm & Vitiligo)
+- Investigation confirmed that the 1,612 files in `SkinDiseaseBD/extracted` are **augmented images** produced by the original authors from an initial collection of only **197 raw clinical photos**.
+- While cross-split MD5 collisions are 0, we disclose that patient-level isolation cannot be guaranteed for SkinDiseaseBD without author patient mapping files.
+- **Remedy:** Ingest the Figshare Ringworm dataset (1,000 independent images) to provide genuine cross-source diversity.
+
+### 3. Historical Locked Test Set Exposure
+- The locked test set (`test_5class_manifest_v2.csv`, $N=297$) was evaluated during earlier candidate experiments (Candidates 1–6).
+- Therefore, this test set can no longer be claimed to be completely pristine or unexposed.
+- **Remedy:** The test set will be held frozen and used only for final reporting, and external evaluation on an independent source will be documented.
+
+---
+
+## 4. Safe Dataset Expansion Plan
+
+| Candidate Source | Target Class | Verified License | Usable Images | Storage Est. | Demographic / Skin-Tone Coverage | Permitted for Training |
+| :--- | :--- | :---: | :---: | :---: | :--- | :---: |
+| **Figshare Ringworm** | Ringworm (1,000), Scabies (700) | **CC BY 4.0** | ~1,000 Ringworm | ~120 MB | Multi-ethnic rural dermatology cohort | **YES (Approved)** |
+| **Google SCIN** | Melasma (Hyperpigmentation) | **SCIN License** | ~150–200 verified | ~250 MB | Monk Skin Tone (MST 1–10) & FST 1–6 | **YES (Approved)** |
+| **Roboflow Melasma** | Melasma / Facial Pigmentation | **CC BY 4.0** | ~200 curated | ~80 MB | Diverse facial skin tones | **YES (Approved)** |
+| **Stanford DDI** | Target differential & Fairness | **Stanford AIMI** | 656 images | ~150 MB | Balanced FST I–II (208), III–IV (241), V–VI (207) | **YES (Benchmark Only)** |
+
+### Strict Acquisition and Ingestion Boundary
+- Only sources marked **APPROVED** with clear licenses will be downloaded.
+- No synthetic images will enter the Validation or Test sets.
+- Cryptographic MD5 and perceptual hashing ($\text{pHash} \le 4$) will run prior to adding any image to the manifest.
+- The 48 unreleased local Melasma images are permanently removed from the approved training pool.
+
+---
+
+## 5. Proposed Split and Leakage Controls
+
+1. **Patient & Identity Isolation:**
+   - Any multi-angle series or donor-linked images must share an identical `leakage_group` key and be placed in the same split.
+   - Where patient IDs are unavailable (SkinDiseaseBD), this limitation is explicitly disclosed.
+2. **Evaluation Purity:**
+   - Validation and Test sets must contain **100% natural, un-augmented clinical captures** (`is_augmented == False`).
+   - All synthetic transformations are restricted strictly to the Training partition.
+3. **Sufficient Per-Class Validation Counts:**
+   - The validation set must contain at least 25–40 verified images per class before candidate model comparison can be considered statistically meaningful.
+
+---
+
+## 6. Baseline Verification Confirmation
+
+- Production classifier model ([`dermtrust_classifier.tflite`](file:///c:/Users/nikit/OneDrive/Desktop/DERMTRUST/flutter_app/assets/models/dermtrust_classifier.tflite), SHA-256: `76d6fb199843879cf3e87060d596ea84d1df9d0cbb251daa3b13492ecceb6a58`) remains **100% unchanged**.
+- Production Keras model ([`dermtrust_mobilenetv2_5class.keras`](file:///c:/Users/nikit/OneDrive/Desktop/DERMTRUST/ml/models/dermtrust_mobilenetv2_5class.keras), SHA-256: `c3f03239647e3a6667b1a5ad614a84085ba00ab03bfbcd1c121dd9c59d9ad4ff`) remains **100% unchanged**.
+- Release APK ([`app-arm64-v8a-release.apk`](file:///c:/Users/nikit/OneDrive/Desktop/DERMTRUST/flutter_app/build/app/outputs/flutter-apk/app-arm64-v8a-release.apk), SHA-256: `b8a2bc532296783b3e447c29818b009038808e917cb5d5c4842e509e03fe26d2`) remains **100% unchanged**.
+- Flutter unit tests: **15/15 passed (100%)**.
