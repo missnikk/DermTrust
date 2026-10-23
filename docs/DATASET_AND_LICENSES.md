@@ -167,3 +167,35 @@ We audited all physical files on disk against the v2 manifests:
 - Production Keras model ([`dermtrust_mobilenetv2_5class.keras`](file:///c:/Users/nikit/OneDrive/Desktop/DERMTRUST/ml/models/dermtrust_mobilenetv2_5class.keras), SHA-256: `c3f03239647e3a6667b1a5ad614a84085ba00ab03bfbcd1c121dd9c59d9ad4ff`) remains **100% unchanged**.
 - Release APK ([`app-arm64-v8a-release.apk`](file:///c:/Users/nikit/OneDrive/Desktop/DERMTRUST/flutter_app/build/app/outputs/flutter-apk/app-arm64-v8a-release.apk), SHA-256: `b8a2bc532296783b3e447c29818b009038808e917cb5d5c4842e509e03fe26d2`) remains **100% unchanged**.
 - Flutter unit tests: **15/15 passed (100%)**.
+
+---
+
+## 7. Phase 3 Controlled Acquisition & Candidate Manifest Audit Log (2026-10-23)
+
+### A. Downloaded Artifacts & Provenance Verification
+1. **Figshare Ringworm Dataset (`SkinDiseaseDataset_2100.zip`):**
+   - Direct DOI: `10.6084/m9.figshare.33084632.v1`
+   - Archive Size: **87,052,645 bytes (83.02 MB)** | SHA-256: `6b4c738ce3eb23bcd60e69ea97b67fcf7d183fbdd7dad73f3b8dac035969df04`
+   - License: **CC BY 4.0** (Apurbo Biswas, 2026)
+   - Stored in: `ml/external_datasets/figshare_ringworm/`
+2. **Google SCIN Melasma Cohort:**
+   - Source: Google Cloud Storage bucket `gs://dx-scin-public-data/dataset/images/`
+   - Verified Cases: 5 cases containing **9 confirmed Melasma clinical images** (810x1080 resolution)
+   - License: **SCIN Data Use License** (Anti-reidentification strictly enforced)
+   - Stored in: `ml/external_datasets/scin_melasma/`
+
+### B. Forensic Deduplication & Integrity Audit Results
+- **Total Candidate Files Audited:** **2,109 files**
+- **Approved Target Images:** **706 files**
+  - **Ringworm:** **697 images** (291 natural captures, 406 pre-augmented)
+  - **Melasma:** **9 images** (100% natural clinical captures from 5 unique SCIN donor cases)
+- **Excluded Files:** **1,403 files**
+  - **Cross-Source Collision:** **274 Figshare Ringworm images** are exact bit-for-bit duplicates of SkinDiseaseBD (`ml/external_datasets/skindiseasebd/`). Purged to prevent data contamination.
+  - **Internal Duplicates:** **29 images** within Figshare Ringworm. Purged.
+  - **Label Conflicts in Reserve Classes:** **698 Scabies images** (including mislabeled Psoriasis images like `Psoriasis-penis-16_jpg.rf...`) held in reserve.
+  - **Quality Exclusions:** **395 Normal Skin images** (including celebrity face recognition crops like `caiyilin`, `baobeier`) held in reserve.
+
+### C. Versioned Manifest Artifacts Created
+- Candidate Expansion Manifest: [`ml/data/candidate_expansion_manifest.csv`](file:///c:/Users/nikit/OneDrive/Desktop/DERMTRUST/ml/data/candidate_expansion_manifest.csv) (2,109 auditable rows with cryptographic MD5, SHA-256, and approval flags).
+- Audit Summary Log: [`ml/data/acquisition_and_deduplication_audit.json`](file:///c:/Users/nikit/OneDrive/Desktop/DERMTRUST/ml/data/acquisition_and_deduplication_audit.json).
+
