@@ -1,0 +1,131 @@
+{
+  "manifest_hashes": {
+    "train_v3_2": "8060d6fac3ab3204660d3845a18643277872f809b779973069f11a0be2200d50",
+    "val_v3_2": "ba34ad128930d20bcf00152fbaf4c1c502069ae2f05380a0510698deab8e5c57",
+    "test_locked": "2253ef6ab4db66369573d1f343eacf30d4febec0e3c9c4e584d9f9a9d52814bc"
+  },
+  "protected_production_files": {
+    "Baseline Keras Model": {
+      "exists": true,
+      "intact": true,
+      "hash": "c3f03239647e3a6667b1a5ad614a84085ba00ab03bfbcd1c121dd9c59d9ad4ff"
+    },
+    "Baseline Classifier TFLite": {
+      "exists": true,
+      "intact": true,
+      "hash": "76d6fb199843879cf3e87060d596ea84d1df9d0cbb251daa3b13492ecceb6a58"
+    },
+    "Baseline CAM TFLite": {
+      "exists": true,
+      "intact": true,
+      "hash": "1c28705ac3122a17b3ca58bd10fd91e7c9b162ea67a0c33b45c6f3b002fb5d3d"
+    },
+    "Baseline CAM Weights JSON": {
+      "exists": true,
+      "intact": true,
+      "hash": "338f5365980edbe7a60b3582f02bd3a8f8155dd77c50e5b9c53d578a6b5cd104"
+    },
+    "Release APK": {
+      "exists": true,
+      "intact": true,
+      "hash": "9a258d3e1ba9660f504ef936fd5095e56f83aee12b6b1368efd517b9c84647f4"
+    }
+  },
+  "partition_totals": {
+    "train_total": 2577,
+    "train_natural": 1544,
+    "train_pre_augmented": 1033,
+    "val_total": 300,
+    "val_natural": 300,
+    "val_pre_augmented": 0
+  },
+  "class_counts": {
+    "train": {
+      "ringworm": 962,
+      "psoriasis": 611,
+      "acne": 443,
+      "vitiligo": 433,
+      "melasma": 128
+    },
+    "val": {
+      "psoriasis": 95,
+      "acne": 75,
+      "ringworm": 50,
+      "vitiligo": 45,
+      "melasma": 35
+    },
+    "train_pre_augmented_by_class": {
+      "ringworm": 721,
+      "vitiligo": 312
+    },
+    "val_pre_augmented_by_class": {}
+  },
+  "sources": {
+    "train": {
+      "acne | Fitzpatrick 17k Dataset (Groh et al., CVPR 2021)": 443,
+      "melasma | Atlas Dermatologico (Freire da Silva)": 4,
+      "melasma | Google SCIN (Ward et al. 2024, JAMA Netw Open / arXiv:2307.05434)": 6,
+      "melasma | MEMI-DS (Zhai et al. 2025, DOI: 10.6084/m9.figshare.29209229)": 104,
+      "melasma | Wikimedia Commons Clinical Dermatology Archive": 14,
+      "psoriasis | Fitzpatrick 17k Dataset (Groh et al., CVPR 2021)": 611,
+      "ringworm | Figshare (Biswas 2026, DOI: 10.6084/m9.figshare.33084632)": 646,
+      "ringworm | SkinDiseaseBD (Mendeley Data DOI: 10.17632/9ggd3shdr7.3)": 316,
+      "vitiligo | Fitzpatrick 17k Dataset (Groh et al., CVPR 2021)": 121,
+      "vitiligo | SkinDiseaseBD (Mendeley Data DOI: 10.17632/9ggd3shdr7.3)": 312
+    },
+    "val": {
+      "acne | Fitzpatrick 17k Dataset (Groh et al., CVPR 2021)": 75,
+      "melasma | Google SCIN (Ward et al. 2024, JAMA Netw Open / arXiv:2307.05434)": 2,
+      "melasma | MEMI-DS (Zhai et al. 2025, DOI: 10.6084/m9.figshare.29209229)": 27,
+      "melasma | Wikimedia Commons Clinical Dermatology Archive": 6,
+      "psoriasis | Fitzpatrick 17k Dataset (Groh et al., CVPR 2021)": 95,
+      "ringworm | Figshare (Biswas 2026, DOI: 10.6084/m9.figshare.33084632)": 50,
+      "vitiligo | Fitzpatrick 17k Dataset (Groh et al., CVPR 2021)": 45
+    }
+  },
+  "skin_tone_distributions": {
+    "train": {
+      "acne | Darker": 86,
+      "acne | Light": 355,
+      "acne | Unknown": 2,
+      "melasma | Darker": 18,
+      "melasma | FST1": 2,
+      "melasma | FST5": 2,
+      "melasma | Intermediate (FST III-IV, Asian cohort)": 104,
+      "melasma | Unknown": 2,
+      "psoriasis | Darker": 165,
+      "psoriasis | Light": 421,
+      "psoriasis | Unknown": 25,
+      "ringworm | Darker": 316,
+      "ringworm | Unknown (Multi-ethnic)": 646,
+      "vitiligo | Darker": 385,
+      "vitiligo | Light": 42,
+      "vitiligo | Unknown": 6
+    },
+    "val": {
+      "acne | Darker": 15,
+      "acne | Light": 60,
+      "melasma | Darker": 6,
+      "melasma | Intermediate (FST III-IV, Asian cohort)": 27,
+      "melasma | Unknown": 2,
+      "psoriasis | Darker": 24,
+      "psoriasis | Light": 64,
+      "psoriasis | Unknown": 7,
+      "ringworm | Unknown (Multi-ethnic)": 50,
+      "vitiligo | Darker": 29,
+      "vitiligo | Light": 15,
+      "vitiligo | Unknown": 1
+    }
+  },
+  "integrity_checks": {
+    "cross_split_group_collisions": 0,
+    "cross_split_group_collision_details": [],
+    "cross_split_md5_collisions": 0,
+    "cross_split_sha256_collisions": 0,
+    "regression_images_in_train": 0,
+    "regression_images_in_val": 0,
+    "all_train_files_exist": true,
+    "all_val_files_exist": true,
+    "val_pre_augmented_is_zero": true
+  }
+}

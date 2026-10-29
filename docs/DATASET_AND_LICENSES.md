@@ -14,6 +14,7 @@ Every dataset source has been independently verified against official publisher 
 | Dataset Source | Publisher / Citation | Applicable License | Permitted for Training | Redistribution in App / APK | Final Audit Decision |
 | :--- | :--- | :---: | :---: | :---: | :---: |
 | **Fitzpatrick 17k** | Groh, Harris, Soenksen, et al. (CVPR 2021) | **CC BY-NC-SA 3.0** *(Unported)* | **YES** *(Academic / Non-commercial)* | Weights permitted with CC BY-NC-SA notice; Raw images restricted | **APPROVED (Academic)** |
+| **MEMI-DS (Melasma)** | Zhai, et al. (Figshare 2025, DOI: `10.6084/m9.figshare.29209229.v1`) | **CC BY 4.0** | **YES** | Weights permitted with citation; 100% natural clinical photographs | **APPROVED** |
 | **SkinDiseaseBD** | Islam, Hossain, Ahmed, Ibrahim (Mendeley Data 2023, DOI: `10.17632/9ggd3shdr7.3`) | **CC BY-NC 4.0** | **YES** *(Academic / Non-commercial)* | Weights permitted with attribution; Commercial redistribution barred | **APPROVED (Academic)** |
 | **Figshare Ringworm Dataset** | Apurbo Biswas (Figshare 2024, DOI: `10.6084/m9.figshare.33084632`) | **CC BY 4.0** | **YES** | Permitted with explicit attribution | **APPROVED** |
 | **Google SCIN** | Google Health & Stanford Medicine (2023, arXiv:2307.05434) | **SCIN Data Use License** *(Bespoke)* | **YES** *(Research / Education)* | Permitted under SCIN terms; Re-identification strictly prohibited | **APPROVED (Research)** |
@@ -34,7 +35,15 @@ Every dataset source has been independently verified against official publisher 
   - **ShareAlike (SA):** Any derivative dataset, manifest adaptation, or public redistribution of modified data must carry the identical CC BY-NC-SA 3.0 license.
 - **Redistribution Assessment:** Raw images cannot be redistributed for commercial purposes. Incorporating trained weights into an educational demonstration APK is permitted under non-commercial academic research, provided that attribution and the non-commercial share-alike notice are preserved.
 
-#### 2. SkinDiseaseBD (Mendeley Data DOI: 10.17632/9ggd3shdr7.3)
+#### 2. MEMI-DS Melasma Dataset (Figshare DOI: 10.6084/m9.figshare.29209229.v1)
+- **Authors & Source:** Y. Zhai, et al. (2025). *"MEMI-DS: A High-Quality Clinical Dataset for Melasma Examination and Research"*.
+- **Verified License:** **CC BY 4.0** (Creative Commons Attribution 4.0 International).
+- **Dataset Contents:** Curated multi-patient clinical photographs of confirmed Melasma cases (FST III–IV East Asian demographic).
+- **Ingestion Audit:** 63 independent patient cases yielding **131 usable clinical photographs** (104 allocated to train, 27 to validation).
+- **Integrity Status:** 100% natural, un-augmented clinical photographs. Zero synthetic flips or crop duplicates crossing split boundaries.
+- **Attribution:** Direct citation of Zhai et al. (2025) and DOI `10.6084/m9.figshare.29209229`.
+
+#### 3. SkinDiseaseBD (Mendeley Data DOI: 10.17632/9ggd3shdr7.3)
 - **Publisher & Source:** Saiful Islam, Sazzad Hossain, Md. Rasel Ahmed, Muhammad Ibrahim (Faridpur Medical College, Bangladesh, Version 3, 2023).
 - **Verified License:** **CC BY-NC 4.0** (Creative Commons Attribution-NonCommercial 4.0 International).
 - **Downloaded Archive:** `Images_512x512_v2.zip` (51.66 MB).
@@ -198,4 +207,55 @@ We audited all physical files on disk against the v2 manifests:
 ### C. Versioned Manifest Artifacts Created
 - Candidate Expansion Manifest: [`ml/data/candidate_expansion_manifest.csv`](file:///c:/Users/nikit/OneDrive/Desktop/DERMTRUST/ml/data/candidate_expansion_manifest.csv) (2,109 auditable rows with cryptographic MD5, SHA-256, and approval flags).
 - Audit Summary Log: [`ml/data/acquisition_and_deduplication_audit.json`](file:///c:/Users/nikit/OneDrive/Desktop/DERMTRUST/ml/data/acquisition_and_deduplication_audit.json).
+
+---
+
+## 8. Exp 8 Data Integrity Remediation: V3.1 Manifest Release (2026-10-23)
+
+### A. Root Cause Tracing & Identified Collisions
+1. **SCIN Case `-3986995536806137754`:** Two photos from the same clinical case (`-5195598708424329883.png` in train and `-5764637704090046026.png` in val) were split across partitions due to an arbitrary `_{md5hash[:8]}` suffix appended to `leakage_group`.
+2. **Figshare Ringworm Derivative:** `aug_0_afp20080515p1415-f2.jpg` in train was a pre-augmented derivative of `afp20080515p1415-f2.jpg` in val.
+
+### B. Remediation Strategy & Artifact Locking
+- Both colliding training entries were removed from the training partition, preserving the 100% natural clinical validation cohort ($N = 273$) completely unchanged.
+- True clinical case groups were restored without hash suffixes.
+- Historical manifests (`train_5class_manifest_v3.csv`, `val_5class_manifest_v3.csv`, and locked test manifest) remain untouched.
+- New versioned manifests locked:
+  - `ml/data/train_5class_manifest_v3_1.csv` (2,473 rows) | SHA-256: `82ee1dc3e15391535343d863ec709570499509605d6b6520004ece355196915c`
+  - `ml/data/val_5class_manifest_v3_1.csv` (273 rows) | SHA-256: `5d94cdae0a1f994e161ae1d94d5359d686388e1e9fd5660f6bbe83c385dfa86c`
+  - Machine-readable audit: `ml/data/exp8_collision_audit.json`
+- **Audit Verdict:** 0 patient group collisions, 0 physical SHA-256 collisions, 0 derivative stem collisions.
+- **Decision:** `DATA SPLIT REMEDIATION VERIFIED — READY FOR EXPERIMENT DESIGN REVIEW`.
+
+---
+
+## 9. V3.2 Manifest Release & Comprehensive Census Audit (2026-10-24)
+
+### A. Manifest File Reconciliation & Physical Integrity
+Audited via `ml/audit_dataset_licenses.py` with full on-disk path resolution and bit-for-bit SHA-256 verification. Machine-readable audit saved to `ml/data/dataset_license_audit.json`.
+
+| Manifest File | Verified On Disk | Missing Files | Pre-Augmented Rows | Natural Clinical Photos | Primary Data Sources |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| `ml/data/train_5class_manifest_v3_2.csv` | **2,577** | **0** | **1,033** | **1,544** | Fitz17k (1,175), Figshare (646), SkinDiseaseBD (628), MEMI-DS (104), Wiki (14), SCIN (6), Atlas (4) |
+| `ml/data/val_5class_manifest_v3_2.csv` | **300** | **0** | **0 (0.0%)** | **300 (100%)** | Fitz17k (215), Figshare (50), MEMI-DS (27), Wiki (6), SCIN (2) |
+| `ml/data/test_5class_manifest.csv` | **294** | **0** | **88** | **206** | Fitz17k (196), SkinDiseaseBD (83), Clinical Photo (10), Wiki (4), Atlas (1) |
+| `ml/data/ood_5class_manifest.csv` | **2,183** | **0** | **984** | **1,199** | Fitz17k (1,199), SkinDiseaseBD (984) |
+| **Total Ingested Dataset Census** | **5,354** | **0** | **2,105** | **3,249** | Complete 0-missing-file verification |
+
+### B. V3.2 Class Breakdown by Split
+
+| Disease Class | Train V3.2 | Val V3.2 (100% Natural) | Locked Test | Total Target | Ingestion Notes |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **Acne** | 443 | 75 | 72 | 590 | Fitzpatrick 17k |
+| **Melasma** | 128 | 35 | 15 | 178 | MEMI-DS (131 natural), SCIN (8), Wiki (20), Atlas (5) |
+| **Psoriasis** | 611 | 95 | 100 | 806 | Fitzpatrick 17k |
+| **Ringworm** | 962 | 50 | 45 | 1,057 | Figshare Biswas (696), SkinDiseaseBD (316 pre-aug) |
+| **Vitiligo** | 433 | 45 | 62 | 540 | Fitz17k (166), SkinDiseaseBD (312 pre-aug), Wiki (4) |
+| **Total Target** | **2,577** | **300** | **294** | **3,171** | Zero cross-split leakage groups |
+
+### C. Evaluation Purity & Pre-Augmentation Quarantine
+1. **Validation Purity:** `val_5class_manifest_v3_2.csv` ($N = 300$) contains **0 pre-augmented images (100% natural clinical captures)**. Pre-augmented variations (`aug_*`) from SkinDiseaseBD and Figshare are strictly quarantined to `train_5class_manifest_v3_2.csv` ($N = 1,033$).
+2. **Patient Leakage Isolation:** All multi-angle captures and donor patient cases (including MEMI-DS patient groups `P001`–`P063` and SCIN case clusters) are assigned atomically to a single split partition via `leakage_group`. Cross-partition leakage checks confirm **0 overlap** across all manifests.
+
+
 

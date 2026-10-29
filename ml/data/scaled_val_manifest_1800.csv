@@ -1,0 +1,271 @@
+local_path,verified_label,skin_tone,fitzpatrick_scale,ita_angle,source_dataset,license
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\066ac502986da8fcbfecd1b2e1756962.jpg,vitiligo,Darker,6,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\melasma_face_12267487.jpg,melasma,Darker,5,10.7,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a199b3d2956018f8d8bf6c57fb2fca59.jpg,vitiligo,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\fa9d0b0dbf1029f4bd1d3c07c536f417.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\0_FU-ringworm (38).jpg,ringworm,Darker,5,14.2,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\e0a744ce149aab3e25b7185b72730dc7.jpg,vitiligo,Light,1,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\fec412dd3ceaaa55dd66abe28dedfb56.jpg,psoriasis,Light,1,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\74df53d12210f742427d83c8d4192094.jpg,acne,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\4e3fa37ac5747130c2afdf3437d639e0.jpg,psoriasis,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\t-scabies-18_jpg.rf.1a2206be65b244092f75e83b64571ad1.jpg,not_recognised,Light,2,38.6,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\100_FU-ringworm (59).jpg,ringworm,Light,2,35.9,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\3493941ada3b6fdc44f3546b22f20d50.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\08b0eba886204474a543ce5a14309f7e.jpg,psoriasis,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\d1fb87ee7ee50f997cd6497dd90d6bbb.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\d1fb87ee7ee50f997cd6497dd90d6bbb.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-122_jpg.rf.89b91f36485f66d49d64f5dabd6ebcfb.jpg,not_recognised,Light,2,40.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\chloasma_136372852.jpg,melasma,Light,3,46.3,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\27b90df80041990f4aa15c5d0b1c5746.jpg,acne,Light,3,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\ec606ef48434d84816fcf3dd1c7306e9.jpg,vitiligo,Light,3,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\eafc07725a92381f3f0767fb5091a16c.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\f228b0ed53a49770f269da5f3ee131c5.jpg,vitiligo,Darker,6,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\d54d1eea9f3272b93442ef9d6aca0a5a.jpg,psoriasis,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\cff57f580c3e942c1d4fe32771503888.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\f9b583f8b15f43dfbb280eb74408e1dd.jpg,vitiligo,Darker,6,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\scabies-151_jpg.rf.e5f6e7035c132efe7c9ea77a6d787f71.jpg,not_recognised,Darker,5,-1.3,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\scabies-112.jpg,not_recognised,Darker,5,-47.5,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\0_FU-ringworm (38).jpg,ringworm,Darker,5,14.2,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\398772c942db8356a718b2f964289af5.jpg,vitiligo,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\chloasma_136372852.jpg,melasma,Light,3,46.3,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-122_jpg.rf.89b91f36485f66d49d64f5dabd6ebcfb.jpg,not_recognised,Light,2,40.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\0be7804d07b504138d889211ad7829e0.jpg,psoriasis,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\e8f4bd75a9b59b22a469dec07a404d85.jpg,acne,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\092de552d0b10d7a2ab55c4227cbf665.jpg,psoriasis,Light,1,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\862d0d4096cacb124d4e0df53c32b0e0.jpg,acne,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\8f04cf235f73d01c0c767f0c36277c86.jpg,acne,Light,1,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\c65b8f69304d46d61d4dbf8e7021c3c8.jpg,psoriasis,Light,3,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\scabies-187.jpg,not_recognised,Darker,5,2.5,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\90_FU-ringworm (32).jpg,ringworm,Light,2,32.1,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-122_jpg.rf.89b91f36485f66d49d64f5dabd6ebcfb.jpg,not_recognised,Light,2,40.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\41de318af9accb010052b3acf32edbd5.jpg,vitiligo,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\864ec9490d1452c684109547a04b968c.jpg,vitiligo,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\t-scabies-182_jpg.rf.d5fa41b52b56e24db4abc909d98c1feb.jpg,not_recognised,Light,2,66.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a199b3d2956018f8d8bf6c57fb2fca59.jpg,vitiligo,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-122_jpg.rf.89b91f36485f66d49d64f5dabd6ebcfb.jpg,not_recognised,Light,2,40.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\chloasma_136372852.jpg,melasma,Light,3,46.3,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\t-scabies-120_jpg.rf.6edca6c6d7a1bba8328f5785dacb2913.jpg,not_recognised,Light,2,45.4,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\0_FU-ringworm (38).jpg,ringworm,Darker,5,14.2,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\f1635b879578ac9b09dd6ade5c1d7c13.jpg,vitiligo,Light,3,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\t-scabies-193_jpg.rf.28c2689409204639d906f39c5724f342.jpg,not_recognised,Darker,5,6.2,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\c0b33afa3f600236bbfc16b90c54dd00.jpg,vitiligo,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\869441e659af2ac80d571f97d45f40c0.jpg,psoriasis,Light,1,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-100_jpg.rf.afc597979169f256171eee25e994f1f6.jpg,not_recognised,Darker,5,-43.4,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a199b3d2956018f8d8bf6c57fb2fca59.jpg,vitiligo,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-122_jpg.rf.89b91f36485f66d49d64f5dabd6ebcfb.jpg,not_recognised,Light,2,40.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\user_mel_3_upper_cheek.jpg,melasma,Light,3,39.4,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\9597f9e1b2ea22af2298b93fe7dfede7.jpg,psoriasis,Light,3,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\1c935ecbf8ffd548502a7f70efd84550.jpg,vitiligo,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\f228b0ed53a49770f269da5f3ee131c5.jpg,vitiligo,Darker,6,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a1eb1ad0342b04aa3ccf759916a4feb3.jpg,psoriasis,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\336ccc2591b581a02fa3468e4a7f885d.jpg,vitiligo,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a199b3d2956018f8d8bf6c57fb2fca59.jpg,vitiligo,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\100_FU-ringworm (59).jpg,ringworm,Light,2,35.9,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\9012eb7f65f6bb3af58bd66479e45421.jpg,psoriasis,Light,1,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\78f3ed48d6d52a06aec85e3b884f988c.jpg,psoriasis,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a199b3d2956018f8d8bf6c57fb2fca59.jpg,vitiligo,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\e6a143a021b5e367c633bd7aae792a65.jpg,vitiligo,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\d8194545dff1a3a3950e607c29c64894.jpg,vitiligo,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a2314e281d529c2ca7e4058bdee394f8.jpg,vitiligo,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\t-scabies-116_jpg.rf.e2e37ab05a64651da7765dc2074ce617.jpg,not_recognised,Darker,5,-5.3,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\481921fff5012b3c61608cfb14689343.jpg,vitiligo,Light,3,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\f228b0ed53a49770f269da5f3ee131c5.jpg,vitiligo,Darker,6,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\90e8d09f2e9eddb4b70b8937f12efdd4.jpg,vitiligo,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\t-scabies-16_jpg.rf.5d9e7f8806df50cd45eb9066df0105f8.jpg,not_recognised,Light,2,34.0,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\142c168ae1b8aaf9109dea4f47bd29cd.jpg,vitiligo,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\scabies-97_jpg.rf.d19cc925767515c8206bb08cf1fc9206.jpg,not_recognised,Darker,5,-39.9,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\scabies-150_jpg.rf.f5db9da796a719ff75c6bae106c09c23.jpg,not_recognised,Darker,5,0.4,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\t-scabies-117_jpg.rf.3ce4241e521e45db09d4b2013a72fab3.jpg,not_recognised,Darker,5,24.5,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\0d487d127a573bc6010cd0ab3b9620d3.jpg,psoriasis,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\d82ce47bdbe6898aaa9da667620956be.jpg,psoriasis,Light,1,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\100_FU-ringworm (59).jpg,ringworm,Light,2,35.9,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-150_jpg.rf.f5db9da796a719ff75c6bae106c09c23.jpg,not_recognised,Darker,5,0.4,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\memi_ds\29_L.jpg,melasma,Darker,5,15.0,MEMI-DS Figshare (Zhai 2025),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\3fd188d7375afe75d0d1f8f9949f3c5b.jpg,psoriasis,Light,1,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\memi_ds\35_R.jpg,melasma,Darker,5,15.0,MEMI-DS Figshare (Zhai 2025),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\ringworm-sample-2-300x225-1-Copy_jpg.rf.9745363f4495b38e49ed67f71627dfa9.jpg,ringworm,Darker,5,-37.6,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a199b3d2956018f8d8bf6c57fb2fca59.jpg,vitiligo,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\0_FU-ringworm (38).jpg,ringworm,Darker,5,14.2,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\memi_ds\17_F.jpg,melasma,Darker,5,15.0,MEMI-DS Figshare (Zhai 2025),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\11_FU-ringworm (10).jpeg,ringworm,Darker,5,8.7,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\memi_ds\22_R.jpg,melasma,Darker,5,15.0,MEMI-DS Figshare (Zhai 2025),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\0_FU-ringworm (38).jpg,ringworm,Darker,5,14.2,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\76ccdae12e73a656a92b8dad157c1b53.jpg,psoriasis,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\t-scabies-134_jpg.rf.81bac49b159cab10b2a145285ee12bb7.jpg,not_recognised,Darker,5,13.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\8c2c49b2c62cd5a5757b20d26323a79c.jpg,vitiligo,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\user_mel_2_forehead_temple.jpg,melasma,Darker,5,18.9,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\15f72d09beb3cc1d689b496aecac3120.jpg,acne,Light,1,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\100_FU-ringworm (59).jpg,ringworm,Light,2,35.9,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\memi_ds\31_F.jpg,melasma,Darker,5,15.0,MEMI-DS Figshare (Zhai 2025),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a199b3d2956018f8d8bf6c57fb2fca59.jpg,vitiligo,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\6b62a18d8a12c054705d68f81ee7e8f0.jpg,psoriasis,Light,3,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\bb7dd975b765819e7d4a015e57fd3229.jpg,psoriasis,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-122_jpg.rf.89b91f36485f66d49d64f5dabd6ebcfb.jpg,not_recognised,Light,2,40.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\f228b0ed53a49770f269da5f3ee131c5.jpg,vitiligo,Darker,6,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\e8c11fd1e044960c8964f47a0297b7c8.jpg,psoriasis,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-122_jpg.rf.89b91f36485f66d49d64f5dabd6ebcfb.jpg,not_recognised,Light,2,40.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\100_FU-ringworm (59).jpg,ringworm,Light,2,35.9,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a85b61c5f6a321fe1da028b18586fc4b.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\chloasma_136372852.jpg,melasma,Light,3,46.3,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a40c0bfbf2604b87bd2a9ba2c5e610c6.jpg,psoriasis,Darker,6,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\4e0139c836cf84e31bd6cd098e826ec9.jpg,psoriasis,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\chloasma_136372852.jpg,melasma,Light,3,46.3,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\13ea4c41d5fa88057f42ff2b9c538e97.jpg,psoriasis,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-165_jpg.rf.b9fbcb43a33558a5b91639a072a4fbb6.jpg,not_recognised,Darker,5,-6.1,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\b9cec81134ffa9dbe8f586ace90111c1.jpg,vitiligo,Light,3,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\100_FU-ringworm (59).jpg,ringworm,Light,2,35.9,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\97e07450f81ac1e10417003c650011d4.jpg,psoriasis,Light,1,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\scabies-130_jpg.rf.43b905d7c9462f72aaeea74eaf09fc7a.jpg,not_recognised,Darker,5,9.0,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\27205d913454aab62cde8b6456050155.jpg,psoriasis,Light,3,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\ringworm\aug_0_natural-treatment-Daad-khaj-khujli-ringworm-home-treatment-home-remedies-fungal-infection-treatment-symptom-pictures-diagnosis-hindi-gimtrend.blogspot.com.jpeg,ringworm,Light,2,67.8,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-122_jpg.rf.89b91f36485f66d49d64f5dabd6ebcfb.jpg,not_recognised,Light,2,40.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\10dbea94409f7da7c12bb2ffeddd11fd.jpg,psoriasis,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\5fa42e9ab996ca4c7b7adc7b57215a1a.jpg,psoriasis,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\4939dbd19567a70eeccffb1f7515b034.jpg,acne,Light,1,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\9419e8f752e60a6006274a6b923a940a.jpg,psoriasis,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-122_jpg.rf.89b91f36485f66d49d64f5dabd6ebcfb.jpg,not_recognised,Light,2,40.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\chloasma_136372852.jpg,melasma,Light,3,46.3,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\memi_ds\105_F.jpg,melasma,Darker,5,15.0,MEMI-DS Figshare (Zhai 2025),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\2_FU-ringworm (24).jpg,ringworm,Darker,5,-0.4,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\10_FU-ringworm (70).jpg,ringworm,Darker,5,24.3,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\54_FU-ringworm (42).jpg,ringworm,Light,2,47.3,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\f2fc1714d53f806603228724a49fd1e7.jpg,psoriasis,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\cfb51fd27bab94b28a12980861909750.jpg,acne,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\610238a9511e0242eac20a58568dff9b.jpg,acne,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\101_FU-ringworm (6).jpg,ringworm,Darker,5,-2.7,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\72e9246c83fe4ce50d2d99018043ccc2.jpg,acne,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\100_FU-ringworm (59).jpg,ringworm,Light,2,35.9,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\6372c52836107dd23cff2f8c972353ef.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\scabies-19.jpg,not_recognised,Light,2,63.2,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\chloasma_136372852.jpg,melasma,Light,3,46.3,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\d1fb87ee7ee50f997cd6497dd90d6bbb.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\chloasma_136372852.jpg,melasma,Light,3,46.3,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\chloasma_136372852.jpg,melasma,Light,3,46.3,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\memi_ds\51_R.jpg,melasma,Darker,5,15.0,MEMI-DS Figshare (Zhai 2025),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\t-scabies-120_jpg.rf.cc2ef20fe4b66275a2b5063d5265c449.jpg,not_recognised,Light,2,37.2,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\0_FU-ringworm (38).jpg,ringworm,Darker,5,14.2,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\5_FU-ringworm (38).jpg,ringworm,Darker,5,14.2,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\f228b0ed53a49770f269da5f3ee131c5.jpg,vitiligo,Darker,6,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a555e568fa20fa217feefd91bc4ed7b0.jpg,psoriasis,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\0_FU-ringworm (38).jpg,ringworm,Darker,5,14.2,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\04338180758cbbbcb6f1aee1d3465c27.jpg,vitiligo,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\memi_ds\15_R.jpg,melasma,Darker,5,15.0,MEMI-DS Figshare (Zhai 2025),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\bda3a4932fc1ac8de4c8a4fd146bb503.jpg,acne,Light,1,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\90fee053dd8d3d2fea0fbf8b569fc6f1.jpg,acne,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\0_FU-ringworm (38).jpg,ringworm,Darker,5,14.2,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\19_FU-ringworm (68).jpg,ringworm,Darker,5,24.4,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\wiki_12267487_Melasmablemish.jpg.jpg,melasma,Darker,5,10.7,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\chloasma_136372852.jpg,melasma,Light,3,46.3,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\aa12b85688f72fe27c19e83ce01194d6.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\9d6d8fccfd0a283071a3d29053037be3.jpg,psoriasis,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\0a98804e701f5766d72c441398df4755.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\8f85be4e0565defb019ae4c7e34cab02.jpg,psoriasis,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\43_FU-ringworm (73).jpg,ringworm,Darker,5,24.6,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\36f7ad16f505b41e198daa4f711a4115.jpg,psoriasis,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\chloasma_136372852.jpg,melasma,Light,3,46.3,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\73c9b9a7b50a7d4ce59328f43e3391d9.jpg,psoriasis,Light,3,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\d1fb87ee7ee50f997cd6497dd90d6bbb.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\100_FU-ringworm (59).jpg,ringworm,Light,2,35.9,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a199b3d2956018f8d8bf6c57fb2fca59.jpg,vitiligo,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\f228b0ed53a49770f269da5f3ee131c5.jpg,vitiligo,Darker,6,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\chloasma_179442496.jpg,melasma,Darker,5,-82.8,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\t-scabies-139_jpg.rf.b532a7249d9803196ad4e1dffcc1b6da.jpg,not_recognised,Darker,5,13.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\b4366860193f5999b8d452fb642f4afc.jpg,psoriasis,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\d1fb87ee7ee50f997cd6497dd90d6bbb.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\100_FU-ringworm (59).jpg,ringworm,Light,2,35.9,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\bd27866258b495353f55cb679b052479.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\824f54263cae766a9439e4db5f257d05.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-122_jpg.rf.89b91f36485f66d49d64f5dabd6ebcfb.jpg,not_recognised,Light,2,40.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\20d48d54e3c4378dbe0b571a992869b9.jpg,psoriasis,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\chloasma_136372852.jpg,melasma,Light,3,46.3,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\05d1465da56dcc60780b8d1bcbed88ae.jpg,psoriasis,Light,3,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-122_jpg.rf.89b91f36485f66d49d64f5dabd6ebcfb.jpg,not_recognised,Light,2,40.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\0_FU-ringworm (38).jpg,ringworm,Darker,5,14.2,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\memi_ds\31_R.jpg,melasma,Darker,5,15.0,MEMI-DS Figshare (Zhai 2025),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\9fa8c8c65bd472f7c4719f358af84138.jpg,vitiligo,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\100_FU-ringworm (59).jpg,ringworm,Light,2,35.9,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\100_FU-ringworm (59).jpg,ringworm,Light,2,35.9,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\86d6a688edf86ba95fefdffc2b8650f0.jpg,vitiligo,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-122_jpg.rf.89b91f36485f66d49d64f5dabd6ebcfb.jpg,not_recognised,Light,2,40.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\95_FU-ringworm (29).jpg,ringworm,Darker,5,5.6,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\3e01f243986c7b75c3ebe6fb66d0cab2.jpg,acne,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\5ca3b50fa0ef7e6cf047d3abd45460f1.jpg,acne,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\ebc9cd2cede24ba6c26a190010a51897.jpg,psoriasis,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\memi_ds\11_R.jpg,melasma,Darker,5,15.0,MEMI-DS Figshare (Zhai 2025),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\02ef834259643e111eb608c129584ceb.jpg,vitiligo,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\f228b0ed53a49770f269da5f3ee131c5.jpg,vitiligo,Darker,6,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\t-scabies-124_jpg.rf.38caa6d7fe9d77a23a341d9245719276.jpg,not_recognised,Darker,5,19.9,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\43872a2cbcb0c51c12a7430c34368e69.jpg,vitiligo,Darker,6,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\dd93fd24793795b2ead2131453c95356.jpg,acne,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\373f31f8f6b0245faab72b9972db2312.jpg,vitiligo,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a09323dec3002dbbb039e9cf06dcdb1f.jpg,psoriasis,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\memi_ds\31_L.jpg,melasma,Darker,5,15.0,MEMI-DS Figshare (Zhai 2025),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\0309cd4572fa43ead616f58397701a71.jpg,vitiligo,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\5224a8107a7b9ea7064efebc27b92b3b.jpg,psoriasis,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\7b368ac2a6689e254c02884b9d589a7c.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\c26cfe58bbd48bbdc2542d2a0fe3fbf0.jpg,acne,Light,3,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\user_mel_3_full.jpg,melasma,Light,3,33.8,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\0a94359e7eaacd7178e06b2823777789.jpg,psoriasis,Light,1,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\chloasma_136372852.jpg,melasma,Light,3,46.3,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a199b3d2956018f8d8bf6c57fb2fca59.jpg,vitiligo,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\38475c3b08e55f3c7a3813893b40e244.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\e41d4c460e93657f4f5a5143ec19088c.jpg,psoriasis,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\fa57573afd04db4c44dd3ec5465964cc.jpg,acne,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\f324cfac3a6426796560af0fa38f35f3.jpg,psoriasis,Light,3,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\scabies-128_jpg.rf.69941d5f6d71441754ae6b4025b687d0.jpg,not_recognised,Light,2,89.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\0_FU-ringworm (38).jpg,ringworm,Darker,5,14.2,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\t-scabies-129_jpg.rf.e3408d5cb28f6b188295fbd34a368e03.jpg,not_recognised,Light,2,38.6,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\be7213c0d890d791dddbeca927783387.jpg,psoriasis,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a199b3d2956018f8d8bf6c57fb2fca59.jpg,vitiligo,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-122_jpg.rf.89b91f36485f66d49d64f5dabd6ebcfb.jpg,not_recognised,Light,2,40.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\memi_ds\30_L.jpg,melasma,Darker,5,15.0,MEMI-DS Figshare (Zhai 2025),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\t-scabies-116_jpg.rf.1330f1040a4b7f5e324b8e1e495c460e.jpg,not_recognised,Darker,5,29.3,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\4051e20d2007653364d8bbe6f121053b.jpg,psoriasis,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\ringworm_mark-93486007-1-Copy_jpg.rf.8f6886605c0156a91a13048477883947.jpg,ringworm,Light,2,31.7,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\29b551f8ae4b694e43409123a8601dfa.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\100_FU-ringworm (59).jpg,ringworm,Light,2,35.9,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\fe6f700d3279c4ba122ca38075b38aad.jpg,psoriasis,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\f228b0ed53a49770f269da5f3ee131c5.jpg,vitiligo,Darker,6,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\scabies-15.jpg,not_recognised,Darker,5,-2.3,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\memi_ds\12_L.jpg,melasma,Darker,5,15.0,MEMI-DS Figshare (Zhai 2025),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\53_FU-ringworm (60).jpg,ringworm,Darker,5,20.5,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\user_facial_melasma_patch_c0.jpg,melasma,Darker,5,-9.7,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-122_jpg.rf.89b91f36485f66d49d64f5dabd6ebcfb.jpg,not_recognised,Light,2,40.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a5c26a700c02cd194761f72d84b9bc78.jpg,psoriasis,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\4d0b19bb22cc951c9e3d4460a0e3d956.jpg,psoriasis,Light,3,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\d1fb87ee7ee50f997cd6497dd90d6bbb.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a9ec397cb5c5fd7006ad8fd4e58579f8.jpg,acne,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a199b3d2956018f8d8bf6c57fb2fca59.jpg,vitiligo,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\chloasma_64002694.jpg,melasma,Darker,5,-12.8,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\0_FU-ringworm (38).jpg,ringworm,Darker,5,14.2,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\d1fb87ee7ee50f997cd6497dd90d6bbb.jpg,acne,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\M2700152-Close-up_of_ringworm_infection_on_gir-width-320-1-Copy_jpg.rf.83eedab640a515c9447908a2e0f10633.jpg,ringworm,Light,2,61.4,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a97f8326fba9815285ca39d804e1bce9.jpg,vitiligo,Light,3,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\chloasma_136372852.jpg,melasma,Light,3,46.3,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\0b84b453dc9c779e4131ec24f9c1f9a5.jpg,psoriasis,Darker,6,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a55163e02c96d175434c8f0a2d479545.jpg,vitiligo,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\t-scabies-114_jpg.rf.276e4a055a76da629f12eeb8ec9bf8ee.jpg,not_recognised,Light,2,47.3,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\chloasma_136372852.jpg,melasma,Light,3,46.3,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\d05fcb14b5d9b8d4bbad922eca07dea2.jpg,psoriasis,Darker,6,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a199b3d2956018f8d8bf6c57fb2fca59.jpg,vitiligo,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\v-scabies-85_jpg.rf.54cc5307ba7edde5f912c8ffa4dd1b24.jpg,not_recognised,Darker,5,-13.9,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\c01fbc5996baf26b3ba5db9c785c9436.jpg,acne,Light,3,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\scabies-100_jpg.rf.afc597979169f256171eee25e994f1f6.jpg,not_recognised,Darker,5,-43.4,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\2ed8dcb2fd174a89aef24384e60c68e7.jpg,psoriasis,Darker,5,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\0_FU-ringworm (38).jpg,ringworm,Darker,5,14.2,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\0cdd4a4c049f415306cfb38f3cbc46c7.jpg,vitiligo,Darker,4,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\499bd2ad16c8a5c1652e6582133e7d5a.jpg,acne,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\f228b0ed53a49770f269da5f3ee131c5.jpg,vitiligo,Darker,6,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\wiki_44016533_Photographic_atlas_of_the_diseases_.jpg,melasma,Light,3,69.5,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\c267f61067f754a410cc103f52951bdf.jpg,vitiligo,Light,3,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\melasma_verified\user_cheek_melasma_patch_c1.jpg,melasma,Darker,5,-1.6,Atlas Dermatologico (Freire da Silva),Academic Research Use
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\11c8d1839a362fdb5e02150d0421c1a4.jpg,acne,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\scabies\scabies-122_jpg.rf.89b91f36485f66d49d64f5dabd6ebcfb.jpg,not_recognised,Light,2,40.7,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\100_FU-ringworm (59).jpg,ringworm,Light,2,35.9,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\train\scabies\scabies-83.jpg,not_recognised,Darker,5,11.0,Figshare Scabies Confounder,CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\79_FU-ringworm (33).jpg,ringworm,Darker,5,28.0,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\0_FU-ringworm (38).jpg,ringworm,Darker,5,14.2,Figshare Ringworm (Biswas 2024),CC BY 4.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\a199b3d2956018f8d8bf6c57fb2fca59.jpg,vitiligo,Light,2,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\9c0434b24f24f41956944a2ea4bccad7.jpg,psoriasis,Darker,6,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\Downloads\fitzpatrick17k\data\finalfitz17k\f228b0ed53a49770f269da5f3ee131c5.jpg,vitiligo,Darker,6,-999.0,Fitzpatrick 17k (CVPR 2021),CC BY-NC-SA 3.0
+C:\Users\nikit\OneDrive\Desktop\DERMTRUST\ml\external_datasets\figshare_ringworm\extracted\SkinDiseaseDataset_2100\test\ringworm\0_FU-ringworm (38).jpg,ringworm,Darker,5,14.2,Figshare Ringworm (Biswas 2024),CC BY 4.0

@@ -44,6 +44,7 @@ ml/external_datasets/skindiseasebd/extracted/
 ml/external_datasets/melasma_verified/
 ml/external_datasets/figshare_ringworm/
 ml/external_datasets/scin_melasma/
+ml/external_datasets/memi_ds/
 ml/models/
 
 # Android

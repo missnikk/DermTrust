@@ -36,14 +36,18 @@ class SafetyBanner extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 8),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E1B4B).withOpacity(0.4),
+        color: AppTheme.surfaceElevated.withOpacity(0.6),
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: const Color(0xFF4338CA).withOpacity(0.5)),
+        border: Border.all(color: AppTheme.surfaceBorder),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Icon(Icons.info_outline, color: Color(0xFF818CF8), size: 18),
+          const Icon(
+            Icons.info_outline_rounded,
+            color: AppTheme.primaryBlue,
+            size: 18,
+          ),
           const SizedBox(width: 10),
           Expanded(
             child: Column(
@@ -52,7 +56,7 @@ class SafetyBanner extends StatelessWidget {
                 const Text(
                   'Clinical Decision Support Disclaimer',
                   style: TextStyle(
-                    color: Color(0xFFC7D2FE),
+                    color: AppTheme.textPrimary,
                     fontWeight: FontWeight.w600,
                     fontSize: 12,
                   ),
@@ -61,7 +65,7 @@ class SafetyBanner extends StatelessWidget {
                 Text(
                   AppConstants.medicalDisclaimer,
                   style: const TextStyle(
-                    color: Color(0xFFA5B4FC),
+                    color: AppTheme.textSecondary,
                     fontSize: 11,
                     height: 1.35,
                   ),

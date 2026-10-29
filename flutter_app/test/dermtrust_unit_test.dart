@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:image/image.dart' as img;
 import 'package:dermtrust/models/disease_info.dart';
 import 'package:dermtrust/models/diagnosis_result.dart';
+import 'package:dermtrust/models/history_item.dart';
 import 'package:dermtrust/services/image_processor.dart';
 import 'package:dermtrust/utils/constants.dart';
 
@@ -243,6 +244,92 @@ void main() {
       expect(blurRej.isRecognized, isFalse);
       expect(blurRej.rejectionReason, contains('blurry'));
       expect(blurRej.predictedDiseaseId, isNull);
+    });
+
+    test('8. Individual Typology Angle (ITA) skin tone estimator categorizes light vs darker skin (B3, B4)', () {
+      // Create a fair skin synthetic patch: R=230, G=195, B=170
+      final lightImg = img.Image(width: 128, height: 128);
+      for (int y = 0; y < 128; y++) {
+        for (int x = 0; x < 128; x++) {
+          lightImg.setPixelRgb(x, y, 230, 195, 170);
+        }
+      }
+
+      final lightEstimate = ImageProcessor.estimateSkinTone(lightImg);
+      expect(lightEstimate.itaAngle >= 31.0, isTrue);
+      expect(lightEstimate.toneGroup, contains('Light'));
+
+      // Create a deep dark skin synthetic patch: R=95, G=65, B=45
+      final darkImg = img.Image(width: 128, height: 128);
+      for (int y = 0; y < 128; y++) {
+        for (int x = 0; x < 128; x++) {
+          darkImg.setPixelRgb(x, y, 95, 65, 45);
+        }
+      }
+
+      final darkEstimate = ImageProcessor.estimateSkinTone(darkImg);
+      expect(darkEstimate.itaAngle < 31.0, isTrue);
+      expect(darkEstimate.toneGroup, contains('Dark'));
+    });
+
+    test('9. DiagnosisResult supports skin tone, acne severity, and clinical subtype (D4, D6, B4)', () {
+      final res = DiagnosisResult(
+        isRecognized: true,
+        predictedDiseaseId: 'acne',
+        predictedDisplayName: 'Acne',
+        confidence: 0.88,
+        entropy: 0.45,
+        classProbabilities: {'acne': 0.88, 'melasma': 0.03, 'psoriasis': 0.05, 'ringworm': 0.02, 'vitiligo': 0.02},
+        originalImagePath: 'acne.jpg',
+        acneSeverity: 'Moderate (Hayashi Grade 1: Papulopustular)',
+        detectedSkinTone: 'Light Skin (FST I–III)',
+        itaAngle: 42.5,
+        clinicalSubtype: 'Papulopustular Acne (Erythematous papules & pustules)',
+        timestamp: DateTime.now(),
+      );
+
+      expect(res.acneSeverity, contains('Grade 1'));
+      expect(res.detectedSkinTone, contains('Light Skin'));
+      expect(res.formattedItaAngle, equals('42.5°'));
+      expect(res.clinicalSubtype, contains('Papulopustular'));
+    });
+
+    test('10. DiagnosisHistoryItem serializes, deserializes and preserves user clinical feedback', () {
+      final historyItem = DiagnosisHistoryItem(
+        id: 'hist_123',
+        timestamp: DateTime(2026, 10, 27, 2, 0),
+        isRecognized: true,
+        predictedDiseaseId: 'melasma',
+        predictedDisplayName: 'Melasma',
+        confidence: 0.85,
+        entropy: 0.50,
+        originalImagePath: '/data/user/0/com.vesit.dermtrust.dermtrust/cache/test.jpg',
+        classProbabilities: {'melasma': 0.85, 'acne': 0.10, 'psoriasis': 0.02, 'ringworm': 0.01, 'vitiligo': 0.02},
+        detectedSkinTone: 'Darker Skin (FST IV–VI)',
+        itaAngle: 18.4,
+        isUserVerifiedCorrect: true,
+      );
+
+      final jsonMap = historyItem.toJson();
+      final roundTrip = DiagnosisHistoryItem.fromJson(jsonMap);
+
+      expect(roundTrip.id, equals('hist_123'));
+      expect(roundTrip.predictedDisplayName, equals('Melasma'));
+      expect(roundTrip.isUserVerifiedCorrect, isTrue);
+      expect(roundTrip.detectedSkinTone, contains('Darker Skin'));
+
+      // Check conversion to DiagnosisResult
+      final result = roundTrip.toDiagnosisResult();
+      expect(result.isRecognized, isTrue);
+      expect(result.predictedDisplayName, equals('Melasma'));
+      expect(result.confidence, equals(0.85));
+    });
+
+    test('11. Baseline production model assets verification', () {
+      expect(AppConstants.classifierModelAsset, equals('assets/models/dermtrust_classifier.tflite'));
+      expect(AppConstants.camModelAsset, equals('assets/models/dermtrust_cam.tflite'));
+      expect(AppConstants.camWeightsAsset, equals('assets/models/cam_weights.json'));
+      expect(AppConstants.metadataAsset, equals('assets/models/model_metadata.json'));
     });
   });
 }

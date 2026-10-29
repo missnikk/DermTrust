@@ -61,9 +61,7 @@ class _ImagePrepScreenState extends State<ImagePrepScreen> {
 
     return Scaffold(
       backgroundColor: AppTheme.background,
-      appBar: AppBar(
-        title: const Text('Image Preparation'),
-      ),
+      appBar: AppBar(title: const Text('Image Preparation')),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         child: Column(
@@ -76,7 +74,10 @@ class _ImagePrepScreenState extends State<ImagePrepScreen> {
                 color: Colors.black,
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(
-                  color: isValid ? AppTheme.primaryBlue.withOpacity(0.5) : AppTheme.dangerRose,
+                  color:
+                      isValid
+                          ? AppTheme.primaryBlue.withOpacity(0.5)
+                          : AppTheme.dangerRose,
                   width: 2,
                 ),
               ),
@@ -88,9 +89,7 @@ class _ImagePrepScreenState extends State<ImagePrepScreen> {
                   if (_isValidating)
                     Container(
                       color: Colors.black54,
-                      child: const Center(
-                        child: CircularProgressIndicator(),
-                      ),
+                      child: const Center(child: CircularProgressIndicator()),
                     ),
                 ],
               ),
@@ -123,21 +122,26 @@ class _ImagePrepScreenState extends State<ImagePrepScreen> {
               Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: isValid
-                      ? AppTheme.successGreen.withOpacity(0.12)
-                      : AppTheme.dangerRose.withOpacity(0.12),
+                  color:
+                      isValid
+                          ? AppTheme.successGreen.withOpacity(0.12)
+                          : AppTheme.dangerRose.withOpacity(0.12),
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: isValid
-                        ? AppTheme.successGreen.withOpacity(0.4)
-                        : AppTheme.dangerRose.withOpacity(0.4),
+                    color:
+                        isValid
+                            ? AppTheme.successGreen.withOpacity(0.4)
+                            : AppTheme.dangerRose.withOpacity(0.4),
                   ),
                 ),
                 child: Row(
                   children: [
                     Icon(
-                      isValid ? Icons.check_circle_outline : Icons.error_outline,
-                      color: isValid ? AppTheme.successGreen : AppTheme.dangerRose,
+                      isValid
+                          ? Icons.check_circle_outline
+                          : Icons.error_outline,
+                      color:
+                          isValid ? AppTheme.successGreen : AppTheme.dangerRose,
                       size: 20,
                     ),
                     const SizedBox(width: 10),
@@ -145,9 +149,13 @@ class _ImagePrepScreenState extends State<ImagePrepScreen> {
                       child: Text(
                         isValid
                             ? 'Image quality verified (Sharpness: ${_validationResult!.blurScore.toStringAsFixed(1)})'
-                            : _validationResult!.errorMessage ?? 'Image validation failed',
+                            : _validationResult!.errorMessage ??
+                                'Image validation failed',
                         style: TextStyle(
-                          color: isValid ? AppTheme.successGreen : AppTheme.dangerRose,
+                          color:
+                              isValid
+                                  ? AppTheme.successGreen
+                                  : AppTheme.dangerRose,
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
                         ),
@@ -180,9 +188,18 @@ class _ImagePrepScreenState extends State<ImagePrepScreen> {
                     ),
                   ),
                   SizedBox(height: 8),
-                  _GuidelineItem(text: 'Uniform, diffuse lighting without direct flash glare.'),
-                  _GuidelineItem(text: 'Lesion in sharp focus with adjacent normal skin for contrast.'),
-                  _GuidelineItem(text: 'Avoid beauty filters, extreme zoom, or digital artifacts.'),
+                  _GuidelineItem(
+                    text:
+                        'Uniform, diffuse lighting without direct flash glare.',
+                  ),
+                  _GuidelineItem(
+                    text:
+                        'Lesion in sharp focus with adjacent normal skin for contrast.',
+                  ),
+                  _GuidelineItem(
+                    text:
+                        'Avoid beauty filters, extreme zoom, or digital artifacts.',
+                  ),
                 ],
               ),
             ),
@@ -191,15 +208,17 @@ class _ImagePrepScreenState extends State<ImagePrepScreen> {
 
             // Analyze Action Button
             ElevatedButton(
-              onPressed: (!isValid || _isValidating)
-                  ? null
-                  : () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (_) => AnalysisScreen(imageFile: _currentFile),
-                        ),
-                      );
-                    },
+              onPressed:
+                  (!isValid || _isValidating)
+                      ? null
+                      : () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder:
+                                (_) => AnalysisScreen(imageFile: _currentFile),
+                          ),
+                        );
+                      },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 16),
               ),
@@ -229,7 +248,10 @@ class _GuidelineItem extends StatelessWidget {
           Expanded(
             child: Text(
               text,
-              style: const TextStyle(color: AppTheme.textSecondary, fontSize: 12),
+              style: const TextStyle(
+                color: AppTheme.textSecondary,
+                fontSize: 12,
+              ),
             ),
           ),
         ],

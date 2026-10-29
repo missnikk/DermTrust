@@ -12,7 +12,8 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _animController;
   late Animation<double> _fadeAnim;
   String _statusText = 'Initializing Offline AI Engine...';
@@ -44,7 +45,8 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     Navigator.of(context).pushReplacement(
       PageRouteBuilder(
         pageBuilder: (_, __, ___) => const HomeScreen(),
-        transitionsBuilder: (_, anim, __, child) => FadeTransition(opacity: anim, child: child),
+        transitionsBuilder:
+            (_, anim, __, child) => FadeTransition(opacity: anim, child: child),
         transitionDuration: const Duration(milliseconds: 500),
       ),
     );
@@ -74,7 +76,10 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                   decoration: BoxDecoration(
                     color: AppTheme.primaryBlueDark.withOpacity(0.3),
                     shape: BoxShape.circle,
-                    border: Border.all(color: AppTheme.primaryBlue.withOpacity(0.5), width: 2),
+                    border: Border.all(
+                      color: AppTheme.primaryBlue.withOpacity(0.5),
+                      width: 2,
+                    ),
                     boxShadow: [
                       BoxShadow(
                         color: AppTheme.primaryBlue.withOpacity(0.2),
@@ -117,7 +122,9 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                   height: 24,
                   child: CircularProgressIndicator(
                     strokeWidth: 2.5,
-                    valueColor: AlwaysStoppedAnimation<Color>(AppTheme.accentCyan),
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      AppTheme.accentCyan,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 16),

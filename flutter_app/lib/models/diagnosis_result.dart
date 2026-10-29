@@ -12,6 +12,9 @@ class DiagnosisResult {
   final String originalImagePath;
   final Uint8List? gradCamOverlayBytes;
   final String? acneSeverity;
+  final String? detectedSkinTone;
+  final double? itaAngle;
+  final String? clinicalSubtype;
   final DateTime timestamp;
 
   const DiagnosisResult({
@@ -25,14 +28,21 @@ class DiagnosisResult {
     required this.originalImagePath,
     this.gradCamOverlayBytes,
     this.acneSeverity,
+    this.detectedSkinTone,
+    this.itaAngle,
+    this.clinicalSubtype,
     required this.timestamp,
   });
 
   DiseaseInfo? get diseaseInfo =>
-      predictedDiseaseId != null ? DiseaseInfo.getById(predictedDiseaseId!) : null;
+      predictedDiseaseId != null
+          ? DiseaseInfo.getById(predictedDiseaseId!)
+          : null;
 
   String get formattedConfidence => '${(confidence * 100).toStringAsFixed(1)}%';
   String get formattedEntropy => '${entropy.toStringAsFixed(2)} bits';
+  String get formattedItaAngle =>
+      itaAngle != null ? '${itaAngle!.toStringAsFixed(1)}°' : '--';
 
   factory DiagnosisResult.rejection({
     required String reason,
@@ -40,16 +50,23 @@ class DiagnosisResult {
     double confidence = 0.0,
     double entropy = 0.0,
     Map<String, double> classProbabilities = const {},
+    String? detectedSkinTone,
+    double? itaAngle,
+    Uint8List? gradCamOverlayBytes,
+    String? predictedDiseaseId,
   }) {
     return DiagnosisResult(
       isRecognized: false,
-      predictedDiseaseId: null,
+      predictedDiseaseId: predictedDiseaseId,
       predictedDisplayName: 'Non-Target / Uncertain',
       confidence: confidence,
       entropy: entropy,
       classProbabilities: classProbabilities,
       rejectionReason: reason,
       originalImagePath: originalImagePath,
+      detectedSkinTone: detectedSkinTone,
+      itaAngle: itaAngle,
+      gradCamOverlayBytes: gradCamOverlayBytes,
       timestamp: DateTime.now(),
     );
   }

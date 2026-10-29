@@ -43,7 +43,11 @@ class _GradCamViewerState extends State<GradCamViewer> {
               children: [
                 const Row(
                   children: [
-                    Icon(Icons.remove_red_eye_outlined, color: AppTheme.accentCyan, size: 16),
+                    Icon(
+                      Icons.remove_red_eye_outlined,
+                      color: AppTheme.accentCyan,
+                      size: 16,
+                    ),
                     SizedBox(width: 6),
                     Text(
                       'EXPLAINABLE AI (GRAD-CAM)',
@@ -86,15 +90,9 @@ class _GradCamViewerState extends State<GradCamViewer> {
               child: Stack(
                 fit: StackFit.expand,
                 children: [
-                  Image.file(
-                    File(widget.originalImagePath),
-                    fit: BoxFit.cover,
-                  ),
+                  Image.file(File(widget.originalImagePath), fit: BoxFit.cover),
                   if (hasCam && _showHeatmap)
-                    Image.memory(
-                      widget.gradCamBytes!,
-                      fit: BoxFit.cover,
-                    ),
+                    Image.memory(widget.gradCamBytes!, fit: BoxFit.cover),
                 ],
               ),
             ),
@@ -112,11 +110,16 @@ class _GradCamViewerState extends State<GradCamViewer> {
                       borderRadius: BorderRadius.circular(4),
                       gradient: const LinearGradient(
                         colors: [
-                          Color(0xFF0000FF), // Blue
-                          Color(0xFF00FFFF), // Cyan
-                          Color(0xFF00FF00), // Green
-                          Color(0xFFFFFF00), // Yellow
-                          Color(0xFFFF0000), // Red
+                          Color(
+                            0xFF32CD32,
+                          ), // Lime Green (Sub-lesion threshold)
+                          Color(
+                            0xFFFFD700,
+                          ), // Vibrant Yellow (Perilesional zone)
+                          Color(
+                            0xFFFF8C00,
+                          ), // Amber Orange (High morphological saliency)
+                          Color(0xFFFF0000), // Fiery Red (Peak pathology focus)
                         ],
                       ),
                     ),
@@ -125,8 +128,21 @@ class _GradCamViewerState extends State<GradCamViewer> {
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Low Influence (Healthy / BG)', style: TextStyle(color: AppTheme.textMuted, fontSize: 10)),
-                      Text('High Activation (Lesion Focus)', style: TextStyle(color: AppTheme.dangerRose, fontSize: 10, fontWeight: FontWeight.bold)),
+                      Text(
+                        'Perilesional Margin',
+                        style: TextStyle(
+                          color: AppTheme.textMuted,
+                          fontSize: 10,
+                        ),
+                      ),
+                      Text(
+                        'Active Lesion Focus',
+                        style: TextStyle(
+                          color: AppTheme.dangerRose,
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ],
                   ),
                 ],

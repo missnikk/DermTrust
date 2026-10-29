@@ -1,10 +1,12 @@
 class AppConstants {
   static const String appName = 'DermTrust';
-  static const String appTagline = 'Fairness-Evaluated, Explainable AI Skin Decision Support';
+  static const String appTagline =
+      'Fairness-Evaluated, Explainable AI Skin Decision Support';
   static const String appVersion = '1.0.0 (Final-Year Major Project)';
 
   // Assets
-  static const String classifierModelAsset = 'assets/models/dermtrust_classifier.tflite';
+  static const String classifierModelAsset =
+      'assets/models/dermtrust_classifier.tflite';
   static const String camModelAsset = 'assets/models/dermtrust_cam.tflite';
   static const String camWeightsAsset = 'assets/models/cam_weights.json';
   static const String metadataAsset = 'assets/models/model_metadata.json';
@@ -15,7 +17,7 @@ class AppConstants {
 
   // Rejection & Uncertainty Thresholds (DWH Tier 2)
   static const double minConfidenceThreshold = 0.60; // 60%
-  static const double maxEntropyBits = 1.40;          // Shannon entropy
+  static const double maxEntropyBits = 1.40; // Shannon entropy
   static const double minBlurLaplacianVariance = 30.0;
 
   // Supported Disease Classes (The 5 Target Clinical Classes)

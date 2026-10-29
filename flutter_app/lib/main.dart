@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'screens/splash_screen.dart';
+import 'services/history_service.dart';
 import 'services/inference_service.dart';
 import 'utils/app_theme.dart';
 import 'utils/constants.dart';
@@ -38,6 +39,9 @@ class DermTrustApp extends StatelessWidget {
         Provider<InferenceService>(
           create: (_) => InferenceService(),
           dispose: (_, service) => service.dispose(),
+        ),
+        ChangeNotifierProvider<HistoryService>(
+          create: (_) => HistoryService()..loadHistory(),
         ),
       ],
       child: MaterialApp(

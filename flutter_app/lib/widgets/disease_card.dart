@@ -5,8 +5,18 @@ import '../utils/app_theme.dart';
 class DiseaseCard extends StatelessWidget {
   final DiseaseInfo info;
   final String? acneSeverity;
+  final String? detectedSkinTone;
+  final double? itaAngle;
+  final String? clinicalSubtype;
 
-  const DiseaseCard({super.key, required this.info, this.acneSeverity});
+  const DiseaseCard({
+    super.key,
+    required this.info,
+    this.acneSeverity,
+    this.detectedSkinTone,
+    this.itaAngle,
+    this.clinicalSubtype,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -42,26 +52,109 @@ class DiseaseCard extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              if (acneSeverity != null) ...[
+              if (detectedSkinTone != null) ...[
                 const SizedBox(height: 8),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
-                    color: AppTheme.warningAmber.withOpacity(0.15),
+                    color: AppTheme.accentCyan.withOpacity(0.12),
                     borderRadius: BorderRadius.circular(6),
-                    border: Border.all(color: AppTheme.warningAmber.withOpacity(0.4)),
+                    border: Border.all(
+                      color: AppTheme.accentCyan.withOpacity(0.4),
+                    ),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Icon(Icons.assessment_outlined, color: AppTheme.warningAmber, size: 14),
+                      const Icon(
+                        Icons.palette_outlined,
+                        color: AppTheme.accentCyan,
+                        size: 14,
+                      ),
                       const SizedBox(width: 6),
                       Text(
-                        'Severity: $acneSeverity',
+                        'Assessed Skin Tone: $detectedSkinTone ${itaAngle != null ? "(${itaAngle!.toStringAsFixed(1)}°)" : ""}',
                         style: const TextStyle(
-                          color: AppTheme.warningAmber,
+                          color: AppTheme.accentCyan,
                           fontSize: 11,
                           fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+              if (clinicalSubtype != null) ...[
+                const SizedBox(height: 8),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 4,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppTheme.primaryBlue.withOpacity(0.15),
+                    borderRadius: BorderRadius.circular(6),
+                    border: Border.all(
+                      color: AppTheme.primaryBlue.withOpacity(0.4),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(
+                        Icons.biotech_outlined,
+                        color: AppTheme.primaryBlue,
+                        size: 14,
+                      ),
+                      const SizedBox(width: 6),
+                      Flexible(
+                        child: Text(
+                          'Subtype: $clinicalSubtype',
+                          style: const TextStyle(
+                            color: AppTheme.primaryBlue,
+                            fontSize: 11,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+              if (acneSeverity != null) ...[
+                const SizedBox(height: 8),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 4,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppTheme.warningAmber.withOpacity(0.15),
+                    borderRadius: BorderRadius.circular(6),
+                    border: Border.all(
+                      color: AppTheme.warningAmber.withOpacity(0.4),
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(
+                        Icons.assessment_outlined,
+                        color: AppTheme.warningAmber,
+                        size: 14,
+                      ),
+                      const SizedBox(width: 6),
+                      Flexible(
+                        child: Text(
+                          'Severity: $acneSeverity',
+                          style: const TextStyle(
+                            color: AppTheme.warningAmber,
+                            fontSize: 11,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ],
@@ -89,9 +182,16 @@ class DiseaseCard extends StatelessWidget {
           icon: Icons.checklist_rtl_rounded,
           iconColor: AppTheme.primaryBlue,
           content: Column(
-            children: info.visualHallmarks
-                .map((h) => _buildBulletPoint(h, Icons.circle, AppTheme.primaryBlue))
-                .toList(),
+            children:
+                info.visualHallmarks
+                    .map(
+                      (h) => _buildBulletPoint(
+                        h,
+                        Icons.circle,
+                        AppTheme.primaryBlue,
+                      ),
+                    )
+                    .toList(),
           ),
         ),
 
@@ -107,11 +207,20 @@ class DiseaseCard extends StatelessWidget {
             children: [
               const Text(
                 'Subtypes must be clinically confirmed via in-person dermatological examination:',
-                style: TextStyle(color: AppTheme.textMuted, fontSize: 11, fontStyle: FontStyle.italic),
+                style: TextStyle(
+                  color: AppTheme.textMuted,
+                  fontSize: 11,
+                  fontStyle: FontStyle.italic,
+                ),
               ),
               const SizedBox(height: 6),
-              ...info.clinicallyRecognizedSubtypes
-                  .map((s) => _buildBulletPoint(s, Icons.arrow_right_rounded, AppTheme.accentCyan)),
+              ...info.clinicallyRecognizedSubtypes.map(
+                (s) => _buildBulletPoint(
+                  s,
+                  Icons.arrow_right_rounded,
+                  AppTheme.accentCyan,
+                ),
+              ),
             ],
           ),
         ),
@@ -125,7 +234,11 @@ class DiseaseCard extends StatelessWidget {
           iconColor: AppTheme.successGreen,
           content: Text(
             info.firstLineAdvice,
-            style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13, height: 1.45),
+            style: const TextStyle(
+              color: AppTheme.textSecondary,
+              fontSize: 13,
+              height: 1.45,
+            ),
           ),
         ),
 
@@ -141,7 +254,11 @@ class DiseaseCard extends StatelessWidget {
             child: const Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(Icons.lightbulb_outline_rounded, color: AppTheme.warningAmber, size: 16),
+                Icon(
+                  Icons.lightbulb_outline_rounded,
+                  color: AppTheme.warningAmber,
+                  size: 16,
+                ),
                 SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -170,7 +287,11 @@ class DiseaseCard extends StatelessWidget {
             child: const Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(Icons.lightbulb_outline_rounded, color: AppTheme.warningAmber, size: 16),
+                Icon(
+                  Icons.lightbulb_outline_rounded,
+                  color: AppTheme.warningAmber,
+                  size: 16,
+                ),
                 SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -199,7 +320,11 @@ class DiseaseCard extends StatelessWidget {
             child: const Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(Icons.lightbulb_outline_rounded, color: AppTheme.warningAmber, size: 16),
+                Icon(
+                  Icons.lightbulb_outline_rounded,
+                  color: AppTheme.warningAmber,
+                  size: 16,
+                ),
                 SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -228,7 +353,11 @@ class DiseaseCard extends StatelessWidget {
             child: const Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(Icons.lightbulb_outline_rounded, color: AppTheme.warningAmber, size: 16),
+                Icon(
+                  Icons.lightbulb_outline_rounded,
+                  color: AppTheme.warningAmber,
+                  size: 16,
+                ),
                 SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -253,9 +382,16 @@ class DiseaseCard extends StatelessWidget {
           icon: Icons.warning_amber_rounded,
           iconColor: AppTheme.dangerRose,
           content: Column(
-            children: info.redFlags
-                .map((r) => _buildBulletPoint(r, Icons.priority_high_rounded, AppTheme.dangerRose))
-                .toList(),
+            children:
+                info.redFlags
+                    .map(
+                      (r) => _buildBulletPoint(
+                        r,
+                        Icons.priority_high_rounded,
+                        AppTheme.dangerRose,
+                      ),
+                    )
+                    .toList(),
           ),
         ),
       ],

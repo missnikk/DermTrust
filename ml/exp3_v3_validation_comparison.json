@@ -1,0 +1,192 @@
+{
+  "baseline": {
+    "name": "Baseline",
+    "acc": 0.7142857142857143,
+    "macro_f1": 0.6312375720599255,
+    "weighted_f1": 0.6840882176606199,
+    "report": {
+      "acne": {
+        "precision": 0.7326732673267327,
+        "recall": 0.9866666666666667,
+        "f1-score": 0.8409090909090909,
+        "support": 75.0
+      },
+      "melasma": {
+        "precision": 0.6666666666666666,
+        "recall": 0.5,
+        "f1-score": 0.5714285714285714,
+        "support": 8.0
+      },
+      "psoriasis": {
+        "precision": 0.680327868852459,
+        "recall": 0.8736842105263158,
+        "f1-score": 0.7649769585253456,
+        "support": 95.0
+      },
+      "ringworm": {
+        "precision": 0.8095238095238095,
+        "recall": 0.34,
+        "f1-score": 0.4788732394366197,
+        "support": 50.0
+      },
+      "vitiligo": {
+        "precision": 0.7391304347826086,
+        "recall": 0.37777777777777777,
+        "f1-score": 0.5,
+        "support": 45.0
+      },
+      "accuracy": 0.7142857142857143,
+      "macro avg": {
+        "precision": 0.7256644094304553,
+        "recall": 0.6156257309941521,
+        "f1-score": 0.6312375720599255,
+        "support": 273.0
+      },
+      "weighted avg": {
+        "precision": 0.7276631354037719,
+        "recall": 0.7142857142857143,
+        "f1-score": 0.6840882176606199,
+        "support": 273.0
+      }
+    },
+    "cm": [
+      [
+        74,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        4,
+        2,
+        0,
+        1
+      ],
+      [
+        8,
+        1,
+        83,
+        0,
+        3
+      ],
+      [
+        9,
+        1,
+        21,
+        17,
+        2
+      ],
+      [
+        9,
+        0,
+        15,
+        4,
+        17
+      ]
+    ],
+    "rejection": {
+      "rejected": 63,
+      "accepted": 210,
+      "accepted_correct": 167,
+      "accepted_incorrect": 43,
+      "accepted_accuracy": 0.7952380952380952
+    }
+  },
+  "exp3": {
+    "name": "Exp 3 Balanced Sampling",
+    "acc": 0.6813186813186813,
+    "macro_f1": 0.5799178116569422,
+    "weighted_f1": 0.63502341918491,
+    "report": {
+      "acne": {
+        "precision": 0.7326732673267327,
+        "recall": 0.9866666666666667,
+        "f1-score": 0.8409090909090909,
+        "support": 75.0
+      },
+      "melasma": {
+        "precision": 0.5,
+        "recall": 0.625,
+        "f1-score": 0.5555555555555556,
+        "support": 8.0
+      },
+      "psoriasis": {
+        "precision": 0.6148148148148148,
+        "recall": 0.8736842105263158,
+        "f1-score": 0.7217391304347827,
+        "support": 95.0
+      },
+      "ringworm": {
+        "precision": 0.875,
+        "recall": 0.28,
+        "f1-score": 0.42424242424242425,
+        "support": 50.0
+      },
+      "vitiligo": {
+        "precision": 0.9090909090909091,
+        "recall": 0.2222222222222222,
+        "f1-score": 0.35714285714285715,
+        "support": 45.0
+      },
+      "accuracy": 0.6813186813186813,
+      "macro avg": {
+        "precision": 0.7263157982464914,
+        "recall": 0.597514619883041,
+        "f1-score": 0.5799178116569422,
+        "support": 273.0
+      },
+      "weighted avg": {
+        "precision": 0.7399889866886566,
+        "recall": 0.6813186813186813,
+        "f1-score": 0.63502341918491,
+        "support": 273.0
+      }
+    },
+    "cm": [
+      [
+        74,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        5,
+        2,
+        0,
+        0
+      ],
+      [
+        9,
+        1,
+        83,
+        1,
+        1
+      ],
+      [
+        8,
+        4,
+        24,
+        14,
+        0
+      ],
+      [
+        9,
+        0,
+        25,
+        1,
+        10
+      ]
+    ],
+    "rejection": {
+      "rejected": 49,
+      "accepted": 224,
+      "accepted_correct": 175,
+      "accepted_incorrect": 49,
+      "accepted_accuracy": 0.78125
+    }
+  }
+}

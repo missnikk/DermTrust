@@ -1,11 +1,24 @@
 # DermTrust - One-Click APK Installer and Phone Launcher
 $AdbPath = "C:\Users\nikit\AppData\Local\Android\Sdk\platform-tools\adb.exe"
-$ApkPath = "flutter_app\build\app\outputs\flutter-apk\app-arm64-v8a-release.apk"
 $PackageName = "com.vesit.dermtrust.dermtrust"
 
+# Identify the release APK path
+$ReleaseApk = "$PSScriptRoot\releases\app-release.apk"
+$BuildApk = "$PSScriptRoot\flutter_app\build\app\outputs\flutter-apk\app-release.apk"
+
+if (Test-Path $ReleaseApk) {
+    $ApkPath = $ReleaseApk
+} elseif (Test-Path $BuildApk) {
+    $ApkPath = $BuildApk
+} else {
+    Write-Host "[ERROR] No release APK found at $ReleaseApk or $BuildApk" -ForegroundColor Red
+    exit 1
+}
+
 Write-Host "==================================================" -ForegroundColor Cyan
-Write-Host "DermTrust Phone Deployment Tool" -ForegroundColor Cyan
+Write-Host "DermTrust Phone Deployment Tool (Production Prototype)" -ForegroundColor Cyan
 Write-Host "Target APK: $ApkPath" -ForegroundColor Gray
+Write-Host "Package:    $PackageName" -ForegroundColor Gray
 Write-Host "==================================================" -ForegroundColor Cyan
 
 Write-Host "Checking for connected Android devices via ADB..." -ForegroundColor Yellow

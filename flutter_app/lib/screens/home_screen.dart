@@ -4,10 +4,9 @@ import 'package:image_picker/image_picker.dart';
 import '../models/disease_info.dart';
 import '../utils/app_theme.dart';
 import '../utils/constants.dart';
-import '../widgets/safety_banner.dart';
 import 'about_screen.dart';
+import 'history_screen.dart';
 import 'image_prep_screen.dart';
-import 'privacy_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -46,235 +45,473 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppTheme.background,
       appBar: AppBar(
-        title: const Row(
-          mainAxisSize: MainAxisSize.min,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        titleSpacing: 20,
+        centerTitle: false,
+        title: Row(
           children: [
-            Icon(Icons.health_and_safety_rounded, color: AppTheme.primaryBlue, size: 20),
-            SizedBox(width: 8),
-            Text(AppConstants.appName),
+            Container(
+              padding: const EdgeInsets.all(7),
+              decoration: BoxDecoration(
+                color: AppTheme.primaryBlue.withOpacity(0.15),
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(
+                  color: AppTheme.primaryBlue.withOpacity(0.35),
+                ),
+              ),
+              child: const Icon(
+                Icons.health_and_safety_rounded,
+                color: AppTheme.primaryBlue,
+                size: 20,
+              ),
+            ),
+            const SizedBox(width: 10),
+            const Text(
+              AppConstants.appName,
+              style: TextStyle(
+                color: AppTheme.textPrimary,
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+                letterSpacing: -0.3,
+              ),
+            ),
           ],
         ),
         actions: [
+          // Single consolidated Information & Safety button
           IconButton(
-            icon: const Icon(Icons.info_outline, size: 20),
-            tooltip: 'About DermTrust',
+            icon: const Icon(
+              Icons.info_outline_rounded,
+              color: AppTheme.textPrimary,
+              size: 22,
+            ),
+            tooltip: 'About DermTrust & Safety Policy',
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const AboutScreen()),
-              );
+              Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (_) => const AboutScreen()));
             },
           ),
-          IconButton(
-            icon: const Icon(Icons.privacy_tip_outlined, size: 20),
-            tooltip: 'Privacy & Offline Guarantee',
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const PrivacyScreen()),
-              );
-            },
+          const SizedBox(width: 12),
+        ],
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // 1. Brief Research Project Introduction
+              _buildIntroductionHeader(),
+
+              const SizedBox(height: 18),
+
+              // 2. Compact Target Disease Chips
+              _buildTargetConditionsSection(),
+
+              const SizedBox(height: 20),
+
+              // 3. Primary Image Selection Section (Take Photo & Choose from Gallery)
+              _buildImageSelectionSection(context),
+
+              const SizedBox(height: 20),
+
+              // 4. Three Key Feature Claims (Bias Mitigation, Offline Analysis, Explainable AI)
+              _buildKeyFeaturesSection(),
+
+              const SizedBox(height: 18),
+
+              // 5. History Navigation Button
+              _buildHistoryButton(context),
+
+              const SizedBox(height: 18),
+
+              // 6. Clinical Research Disclaimer
+              _buildDisclaimer(),
+
+              const SizedBox(height: 12),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  // 1. Brief Research Project Introduction
+  Widget _buildIntroductionHeader() {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+      decoration: BoxDecoration(
+        color: AppTheme.surface,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: AppTheme.surfaceBorder),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                width: 7,
+                height: 7,
+                decoration: const BoxDecoration(
+                  color: AppTheme.accentCyan,
+                  shape: BoxShape.circle,
+                ),
+              ),
+              const SizedBox(width: 8),
+              const Text(
+                'ACADEMIC RESEARCH INITIATIVE',
+                style: TextStyle(
+                  color: AppTheme.accentCyan,
+                  fontSize: 10.5,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 0.8,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 6),
+          const Text(
+            'DermTrust investigates edge-deployed deep learning and visual explainability for dermatological lesion assessment without cloud dependence.',
+            style: TextStyle(
+              color: AppTheme.textSecondary,
+              fontSize: 12.5,
+              height: 1.45,
+            ),
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+    );
+  }
+
+  // 2. Compact Target Disease Chips
+  Widget _buildTargetConditionsSection() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            // Offline Status Indicator Pill
-            Center(
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
-                decoration: BoxDecoration(
-                  color: AppTheme.successGreen.withOpacity(0.12),
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: AppTheme.successGreen.withOpacity(0.3)),
-                ),
-                child: const Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(Icons.wifi_off_rounded, color: AppTheme.successGreen, size: 14),
-                    SizedBox(width: 6),
-                    Text(
-                      '100% Offline Clinical Runtime Active',
-                      style: TextStyle(
-                        color: AppTheme.successGreen,
-                        fontSize: 11,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
-                ),
+            Text(
+              'SUPPORTED CONDITIONS',
+              style: TextStyle(
+                color: AppTheme.textMuted,
+                fontSize: 11,
+                fontWeight: FontWeight.w700,
+                letterSpacing: 0.8,
               ),
             ),
-
-            const SizedBox(height: 18),
-
-            // Main Hero Card
-            Container(
-              padding: const EdgeInsets.all(18),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    AppTheme.surface,
-                    const Color(0xFF1E293B).withOpacity(0.7),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: AppTheme.primaryBlue.withOpacity(0.3)),
+            Text(
+              '5 Target Classes',
+              style: TextStyle(
+                color: AppTheme.textSecondary,
+                fontSize: 11,
+                fontWeight: FontWeight.w500,
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Clinical Skin Lesion Analysis',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: AppTheme.textPrimary,
-                    ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        Wrap(
+          spacing: 7,
+          runSpacing: 7,
+          children:
+              AppConstants.targetClasses.map((clsId) {
+                final info = DiseaseInfo.getById(clsId);
+                final displayName = info?.displayName ?? clsId;
+                return Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 5,
                   ),
-                  const SizedBox(height: 6),
-                  const Text(
-                    'Evaluate skin images for 5 target conditions with on-device Grad-CAM visual explanations and responsible non-target rejection.',
-                    style: TextStyle(
-                      fontSize: 13,
-                      color: AppTheme.textSecondary,
-                      height: 1.45,
-                    ),
+                  decoration: BoxDecoration(
+                    color: AppTheme.surfaceElevated,
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: AppTheme.surfaceBorder),
                   ),
-                  const SizedBox(height: 18),
-                  Row(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      Expanded(
-                        child: ElevatedButton.icon(
-                          onPressed: () => _pickImage(context, ImageSource.gallery),
-                          icon: const Icon(Icons.photo_library_outlined, size: 18),
-                          label: const Text('From Gallery'),
+                      Container(
+                        width: 5,
+                        height: 5,
+                        decoration: const BoxDecoration(
+                          color: AppTheme.primaryBlue,
+                          shape: BoxShape.circle,
                         ),
                       ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: OutlinedButton.icon(
-                          onPressed: () => _pickImage(context, ImageSource.camera),
-                          icon: const Icon(Icons.camera_alt_outlined, size: 18),
-                          label: const Text('Take Photo'),
+                      const SizedBox(width: 6),
+                      Text(
+                        displayName,
+                        style: const TextStyle(
+                          color: AppTheme.textPrimary,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ],
                   ),
-                ],
-              ),
+                );
+              }).toList(),
+        ),
+      ],
+    );
+  }
+
+  // 3. Primary Image Selection Section
+  Widget _buildImageSelectionSection(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        // Action 1: Take Photo (Primary Accent)
+        ElevatedButton(
+          onPressed: () => _pickImage(context, ImageSource.camera),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppTheme.primaryBlue,
+            foregroundColor: Colors.white,
+            elevation: 1.5,
+            padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 18),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
             ),
-
-            const SizedBox(height: 22),
-
-            // Supported Target Diseases Section
-            const Text(
-              'TARGET CONDITIONS & REJECTION LOGIC',
-              style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 0.8,
-                color: AppTheme.textMuted,
+          ),
+          child: const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.camera_alt_rounded, size: 20, color: Colors.white),
+              SizedBox(width: 10),
+              Text(
+                'Take Photo',
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 0.2,
+                ),
               ),
+            ],
+          ),
+        ),
+
+        const SizedBox(height: 10),
+
+        // Action 2: Choose from Gallery (Harmonious Blue Accent)
+        OutlinedButton(
+          onPressed: () => _pickImage(context, ImageSource.gallery),
+          style: OutlinedButton.styleFrom(
+            backgroundColor: AppTheme.galleryBlueSurface,
+            foregroundColor: AppTheme.textPrimary,
+            side: const BorderSide(
+              color: AppTheme.galleryBlueBorder,
+              width: 1.2,
             ),
-            const SizedBox(height: 10),
-
-            ...AppConstants.targetClasses.map((clsId) {
-              final info = DiseaseInfo.getById(clsId);
-              if (info == null) return const SizedBox.shrink();
-              return Container(
-                margin: const EdgeInsets.only(bottom: 8),
-                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-                decoration: BoxDecoration(
-                  color: AppTheme.surface,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: AppTheme.surfaceBorder),
+            padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 18),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+          ),
+          child: const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.photo_library_outlined,
+                size: 20,
+                color: AppTheme.accentBlueLight,
+              ),
+              SizedBox(width: 10),
+              Text(
+                'Choose from Gallery',
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 0.2,
                 ),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 8,
-                      height: 8,
-                      decoration: const BoxDecoration(
-                        color: AppTheme.accentCyan,
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            info.displayName,
-                            style: const TextStyle(
-                              color: AppTheme.textPrimary,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          Text(
-                            info.category,
-                            style: const TextStyle(
-                              color: AppTheme.textMuted,
-                              fontSize: 11,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const Icon(Icons.chevron_right, color: AppTheme.textMuted, size: 18),
-                  ],
-                ),
-              );
-            }),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
 
-            // Rejection / Uncertainty Outcome 6 Card
+  // 4. Three Key Feature Claims
+  Widget _buildKeyFeaturesSection() {
+    return Container(
+      decoration: BoxDecoration(
+        color: AppTheme.surface,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: AppTheme.surfaceBorder),
+      ),
+      child: Column(
+        children: [
+          _buildFeatureRow(
+            title: 'Bias Mitigation',
+            description:
+                'Works toward more reliable performance across different skin tones.',
+            icon: Icons.balance_rounded,
+          ),
+          Divider(
+            color: AppTheme.surfaceBorder.withOpacity(0.6),
+            height: 1,
+            indent: 16,
+            endIndent: 16,
+          ),
+          _buildFeatureRow(
+            title: 'Offline Analysis',
+            description:
+                'Processes images on your device without requiring an internet connection for inference.',
+            icon: Icons.wifi_off_rounded,
+          ),
+          Divider(
+            color: AppTheme.surfaceBorder.withOpacity(0.6),
+            height: 1,
+            indent: 16,
+            endIndent: 16,
+          ),
+          _buildFeatureRow(
+            title: 'Explainable AI',
+            description:
+                'Highlights image regions that help show what influenced the model\'s prediction.',
+            icon: Icons.visibility_outlined,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildFeatureRow({
+    required String title,
+    required String description,
+    required IconData icon,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    color: AppTheme.textPrimary,
+                    fontSize: 13.5,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                const SizedBox(height: 3),
+                Text(
+                  description,
+                  style: const TextStyle(
+                    color: AppTheme.textSecondary,
+                    fontSize: 11.5,
+                    height: 1.35,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(width: 14),
+          Icon(icon, color: AppTheme.primaryBlue, size: 20),
+        ],
+      ),
+    );
+  }
+
+  // 5. History Navigation Button
+  Widget _buildHistoryButton(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.of(
+          context,
+        ).push(MaterialPageRoute(builder: (_) => const HistoryScreen()));
+      },
+      borderRadius: BorderRadius.circular(12),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 13),
+        decoration: BoxDecoration(
+          color: AppTheme.surface,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: AppTheme.surfaceBorder),
+        ),
+        child: Row(
+          children: [
             Container(
-              margin: const EdgeInsets.only(bottom: 8),
-              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+              padding: const EdgeInsets.all(7),
               decoration: BoxDecoration(
-                color: AppTheme.surfaceElevated,
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: AppTheme.warningAmber.withOpacity(0.3)),
+                color: AppTheme.primaryBlue.withOpacity(0.12),
+                borderRadius: BorderRadius.circular(8),
               ),
-              child: const Row(
+              child: const Icon(
+                Icons.history_rounded,
+                color: AppTheme.primaryBlue,
+                size: 18,
+              ),
+            ),
+            const SizedBox(width: 12),
+            const Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(Icons.shield_outlined, color: AppTheme.warningAmber, size: 16),
-                  SizedBox(width: 12),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Outcome 6: Rejection / Non-Target',
-                          style: TextStyle(
-                            color: AppTheme.warningAmber,
-                            fontSize: 13,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          'Rejects out-of-distribution rashes, non-skin images, and ambiguous inputs.',
-                          style: TextStyle(
-                            color: AppTheme.textSecondary,
-                            fontSize: 11,
-                          ),
-                        ),
-                      ],
+                  Text(
+                    'History',
+                    style: TextStyle(
+                      color: AppTheme.textPrimary,
+                      fontSize: 13.5,
+                      fontWeight: FontWeight.w600,
                     ),
+                  ),
+                  SizedBox(height: 1),
+                  Text(
+                    'Review past analyses and diagnostic logs',
+                    style: TextStyle(color: AppTheme.textMuted, fontSize: 11),
                   ),
                 ],
               ),
             ),
-
-            const SizedBox(height: 16),
-            const SafetyBanner(),
+            const Icon(
+              Icons.chevron_right_rounded,
+              color: AppTheme.textMuted,
+              size: 20,
+            ),
           ],
         ),
+      ),
+    );
+  }
+
+  // 6. Clinical Research Disclaimer
+  Widget _buildDisclaimer() {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: AppTheme.surface.withOpacity(0.5),
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: AppTheme.surfaceBorder.withOpacity(0.6)),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Icon(
+            Icons.info_outline_rounded,
+            color: AppTheme.textMuted,
+            size: 15,
+          ),
+          const SizedBox(width: 9),
+          Expanded(
+            child: Text(
+              AppConstants.medicalDisclaimer,
+              style: const TextStyle(
+                color: AppTheme.textMuted,
+                fontSize: 10.5,
+                height: 1.4,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

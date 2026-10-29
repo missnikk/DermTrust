@@ -1,7 +1,7 @@
 name: dermtrust
 description: "DermTrust: Offline-First, Explainable and Fairness-Aware Mobile Skin Analysis System"
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.0+2004
 
 environment:
   sdk: ^3.7.0

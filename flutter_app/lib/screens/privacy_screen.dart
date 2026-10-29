@@ -8,9 +8,7 @@ class PrivacyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.background,
-      appBar: AppBar(
-        title: const Text('Privacy & Safety Policy'),
-      ),
+      appBar: AppBar(title: const Text('Privacy & Safety Policy')),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         child: Column(
@@ -21,11 +19,17 @@ class PrivacyScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 color: AppTheme.successGreen.withOpacity(0.12),
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: AppTheme.successGreen.withOpacity(0.4)),
+                border: Border.all(
+                  color: AppTheme.successGreen.withOpacity(0.4),
+                ),
               ),
               child: const Row(
                 children: [
-                  Icon(Icons.lock_outline_rounded, color: AppTheme.successGreen, size: 28),
+                  Icon(
+                    Icons.lock_outline_rounded,
+                    color: AppTheme.successGreen,
+                    size: 28,
+                  ),
                   SizedBox(width: 14),
                   Expanded(
                     child: Column(

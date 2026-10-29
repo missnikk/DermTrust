@@ -11,20 +11,20 @@
 | Metric | Light Skin (FST I–III) | Darker Skin (FST IV–VI) | Absolute Disparity | Parity Status |
 | :--- | :---: | :---: | :---: | :---: |
 | **Sample Size (N)** | 140 | 150 | 10 | Balanced (52% Darker vs 48% Light) |
-| **Overall Accuracy** | 79.29% | 82.67% | **3.38%** | Met (<=15%) |
-| **Macro-F1 Score** | 0.4279 | 0.6956 | **0.2677** | Disparity Noted |
-| **Mean Prediction Confidence** | 80.90% | 81.08% | 0.18% | Calibrated |
-| **Mean Predictive Entropy** | 0.726 bits | 0.800 bits | 0.074 bits | Stable |
+| **Overall Accuracy** | 81.43% | 82.67% | **1.24%** | Met (<=15%) |
+| **Macro-F1 Score** | 0.7487 | 0.7121 | **0.0365** | Met (<=0.15) |
+| **Mean Prediction Confidence** | 82.77% | 83.46% | 0.69% | Calibrated |
+| **Mean Predictive Entropy** | 0.663 bits | 0.707 bits | 0.045 bits | Stable |
 
 ## 2. Equal Opportunity by Disease Class (Sensitivity / Recall Parity)
 
 | Disease Class | Light Recall (N) | Darker Recall (N) | Equal Opportunity Disparity ($\Delta Recall$) |
 | :--- | :---: | :---: | :---: |
-| **Acne** | 88.7% (N=62) | 100.0% (N=10) | **11.3%** |
-| **Melasma** | 0.0% (N=0) | 13.3% (N=15) | **13.3%** |
-| **Psoriasis** | 77.6% (N=67) | 83.3% (N=30) | **5.7%** |
+| **Acne** | 90.3% (N=62) | 100.0% (N=10) | **9.7%** |
+| **Melasma** | 0.0% (N=0) | 20.0% (N=15) | **20.0%** |
+| **Psoriasis** | 79.1% (N=67) | 83.3% (N=30) | **4.2%** |
 | **Ringworm** | 0.0% (N=0) | 100.0% (N=45) | **100.0%** |
-| **Vitiligo** | 36.4% (N=11) | 84.0% (N=50) | **47.6%** |
+| **Vitiligo** | 45.5% (N=11) | 82.0% (N=50) | **36.5%** |
 
 Visual comparison chart saved to `docs/fairness_disparity_chart.png`.
 

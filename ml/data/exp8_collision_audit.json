@@ -1,0 +1,54 @@
+{
+  "audit_version": "3.1.0",
+  "audit_status": "PASSED",
+  "remediation_summary": {
+    "scin_case_3986995536806137754_leakage": "RESOLVED (Image -5195598708424329883.png removed from Train V3.1)",
+    "figshare_afp20080515p1415_derivative_leakage": "RESOLVED (Image aug_0_afp20080515p1415-f2.jpg removed from Train V3.1)",
+    "leakage_group_hash_suffix": "RESOLVED (Stripped arbitrary md5 suffixes, restored true case grouping)"
+  },
+  "manifest_hashes": {
+    "train_5class_manifest_v3_1.csv": "82ee1dc3e15391535343d863ec709570499509605d6b6520004ece355196915c",
+    "val_5class_manifest_v3_1.csv": "5d94cdae0a1f994e161ae1d94d5359d686388e1e9fd5660f6bbe83c385dfa86c",
+    "test_5class_manifest.csv": "2253ef6ab4db66369573d1f343eacf30d4febec0e3c9c4e584d9f9a9d52814bc"
+  },
+  "row_counts": {
+    "train_v3_1": {
+      "total": 2473,
+      "natural": 1440,
+      "pre_augmented": 1033,
+      "per_class": {
+        "ringworm": 962,
+        "psoriasis": 611,
+        "acne": 443,
+        "vitiligo": 433,
+        "melasma": 24
+      }
+    },
+    "val_v3_1": {
+      "total": 273,
+      "natural": 273,
+      "pre_augmented": 0,
+      "per_class": {
+        "psoriasis": 95,
+        "acne": 75,
+        "ringworm": 50,
+        "vitiligo": 45,
+        "melasma": 8
+      }
+    }
+  },
+  "collision_audit": {
+    "cross_split_content_sha_collisions": 0,
+    "cross_split_patient_group_collisions": 0,
+    "scin_patient_overlap": 0,
+    "figshare_derivative_overlap": 0,
+    "test_overlap_with_train_v3_1": 247,
+    "test_overlap_with_val_v3_1": 37
+  },
+  "protected_artifacts_intact": true,
+  "provenance_limitations": {
+    "fitzpatrick17k": "Lacks patient identifiers in upstream metadata. Grouping is discrete image-level hash.",
+    "skindiseasebd": "Authors supplied only pre-augmented variations without source patient mapping. Confined 100% to training.",
+    "figshare": "Natural images lack explicit clinical case metadata. Grouped by file stem."
+  }
+}

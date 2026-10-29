@@ -58,7 +58,9 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
       Navigator.of(context).pushReplacement(
         PageRouteBuilder(
           pageBuilder: (_, __, ___) => ResultsScreen(result: result),
-          transitionsBuilder: (_, anim, __, child) => FadeTransition(opacity: anim, child: child),
+          transitionsBuilder:
+              (_, anim, __, child) =>
+                  FadeTransition(opacity: anim, child: child),
           transitionDuration: const Duration(milliseconds: 400),
         ),
       );
@@ -90,11 +92,15 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                   decoration: BoxDecoration(
                     color: AppTheme.surfaceElevated,
                     shape: BoxShape.circle,
-                    border: Border.all(color: AppTheme.primaryBlue.withOpacity(0.4)),
+                    border: Border.all(
+                      color: AppTheme.primaryBlue.withOpacity(0.4),
+                    ),
                   ),
                   child: const CircularProgressIndicator(
                     strokeWidth: 3,
-                    valueColor: AlwaysStoppedAnimation<Color>(AppTheme.accentCyan),
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      AppTheme.accentCyan,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 28),
@@ -122,11 +128,17 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                     value: _progress,
                     minHeight: 5,
                     backgroundColor: AppTheme.surfaceBorder,
-                    valueColor: const AlwaysStoppedAnimation<Color>(AppTheme.primaryBlue),
+                    valueColor: const AlwaysStoppedAnimation<Color>(
+                      AppTheme.primaryBlue,
+                    ),
                   ),
                 ),
               ] else ...[
-                const Icon(Icons.error_outline, size: 48, color: AppTheme.dangerRose),
+                const Icon(
+                  Icons.error_outline,
+                  size: 48,
+                  color: AppTheme.dangerRose,
+                ),
                 const SizedBox(height: 16),
                 const Text(
                   'Analysis Error',
@@ -140,7 +152,10 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                 Text(
                   _errorMessage,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 13, color: AppTheme.textSecondary),
+                  style: const TextStyle(
+                    fontSize: 13,
+                    color: AppTheme.textSecondary,
+                  ),
                 ),
                 const SizedBox(height: 24),
                 ElevatedButton(

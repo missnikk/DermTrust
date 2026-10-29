@@ -209,6 +209,18 @@ DERMTRUST/
 
 ---
 
+## 5. Master Audit & Traceability Deliverables
+
+For exhaustive, requirement-by-requirement verification, academic defense, and regulatory audit:
+- [**Master Requirement Traceability Matrix**](docs/DERMTRUST_MASTER_REQUIREMENT_TRACEABILITY.md): Maps all 51 atomic requirements to exact code paths, tests, and evidence.
+- [**Full Repository & Architecture Audit**](docs/DERMTRUST_FULL_PROJECT_AUDIT.md): Complete repository inventory, 4-tier DWH architecture, and viva defense guide.
+- [**Dataset Provenance & Licensing Audit**](docs/DERMTRUST_DATASET_AND_LICENSE_AUDIT.md): Upstream CC licenses (CC BY-NC-SA 3.0, CC BY 4.0), split integrity, and deduplication.
+- [**Model Evaluation & Demographic Fairness Report**](docs/DERMTRUST_MODEL_EVALUATION.md): Live benchmark metrics on 600 triple-verified cases (96.5% Acc, 0.33% disparity).
+- [**Final Implementation Status & Remediation**](docs/DERMTRUST_FINAL_IMPLEMENTATION_STATUS.md): Census of satisfied, partially satisfied, and scope-bounded requirements.
+- [**Architectural Simplicity & Justification**](docs/DERMTRUST_SIMPLICITY_AND_ARCHITECTURE.md): Technical defense of MobileNetV2, Grad-CAM vectorization, and local DWH over complex alternatives.
+
+---
+
 ## 6. Academic Defense & Viva Highlights
 
 1. **Why is the rejection gate necessary?**

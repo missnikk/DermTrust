@@ -1,0 +1,22 @@
+{
+  "version": "3.0.0",
+  "total_target_images": 2748,
+  "train_images": 2475,
+  "val_images": 273,
+  "train_class_counts": {
+    "ringworm": 963,
+    "psoriasis": 611,
+    "acne": 443,
+    "vitiligo": 433,
+    "melasma": 25
+  },
+  "val_class_counts": {
+    "psoriasis": 95,
+    "acne": 75,
+    "ringworm": 50,
+    "vitiligo": 45,
+    "melasma": 8
+  },
+  "cross_split_collisions": 0,
+  "validation_purity": "100% natural clinical captures"
+}

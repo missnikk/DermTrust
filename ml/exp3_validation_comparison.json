@@ -1,0 +1,194 @@
+{
+  "validation_manifest": "ml/data/val_5class_manifest.csv",
+  "samples": 293,
+  "baseline": {
+    "name": "Baseline",
+    "acc": 0.8225255972696246,
+    "macro_f1": 0.7324405221264305,
+    "weighted_f1": 0.8121647211520139,
+    "report": {
+      "acne": {
+        "precision": 0.696078431372549,
+        "recall": 0.9594594594594594,
+        "f1-score": 0.8068181818181818,
+        "support": 74.0
+      },
+      "melasma": {
+        "precision": 1.0,
+        "recall": 0.15384615384615385,
+        "f1-score": 0.26666666666666666,
+        "support": 13.0
+      },
+      "psoriasis": {
+        "precision": 0.8666666666666667,
+        "recall": 0.78,
+        "f1-score": 0.8210526315789474,
+        "support": 100.0
+      },
+      "ringworm": {
+        "precision": 0.9166666666666666,
+        "recall": 0.9777777777777777,
+        "f1-score": 0.946236559139785,
+        "support": 45.0
+      },
+      "vitiligo": {
+        "precision": 0.9019607843137255,
+        "recall": 0.7540983606557377,
+        "f1-score": 0.8214285714285714,
+        "support": 61.0
+      },
+      "accuracy": 0.8225255972696246,
+      "macro avg": {
+        "precision": 0.8762745098039215,
+        "recall": 0.7250363503478258,
+        "f1-score": 0.7324405221264305,
+        "support": 293.0
+      },
+      "weighted avg": {
+        "precision": 0.84452586495349,
+        "recall": 0.8225255972696246,
+        "f1-score": 0.8121647211520139,
+        "support": 293.0
+      }
+    },
+    "cm": [
+      [
+        71,
+        0,
+        3,
+        0,
+        0
+      ],
+      [
+        10,
+        2,
+        0,
+        0,
+        1
+      ],
+      [
+        14,
+        0,
+        78,
+        4,
+        4
+      ],
+      [
+        1,
+        0,
+        0,
+        44,
+        0
+      ],
+      [
+        6,
+        0,
+        9,
+        0,
+        46
+      ]
+    ],
+    "rejection": {
+      "rejected": 34,
+      "accepted": 259,
+      "accepted_correct": 222,
+      "accepted_incorrect": 37,
+      "accepted_accuracy": 0.8571428571428571
+    }
+  },
+  "exp3": {
+    "name": "Exp 3 Balanced Sampling",
+    "acc": 0.8122866894197952,
+    "macro_f1": 0.8137039644495705,
+    "weighted_f1": 0.8046257038096222,
+    "report": {
+      "acne": {
+        "precision": 0.7227722772277227,
+        "recall": 0.9864864864864865,
+        "f1-score": 0.8342857142857143,
+        "support": 74.0
+      },
+      "melasma": {
+        "precision": 1.0,
+        "recall": 0.6923076923076923,
+        "f1-score": 0.8181818181818182,
+        "support": 13.0
+      },
+      "psoriasis": {
+        "precision": 0.7757009345794392,
+        "recall": 0.83,
+        "f1-score": 0.8019323671497585,
+        "support": 100.0
+      },
+      "ringworm": {
+        "precision": 0.9767441860465116,
+        "recall": 0.9333333333333333,
+        "f1-score": 0.9545454545454546,
+        "support": 45.0
+      },
+      "vitiligo": {
+        "precision": 0.9393939393939394,
+        "recall": 0.5081967213114754,
+        "f1-score": 0.6595744680851063,
+        "support": 61.0
+      },
+      "accuracy": 0.8122866894197952,
+      "macro avg": {
+        "precision": 0.8829222674495225,
+        "recall": 0.7900648466877975,
+        "f1-score": 0.8137039644495705,
+        "support": 293.0
+      },
+      "weighted avg": {
+        "precision": 0.8372415039178114,
+        "recall": 0.8122866894197952,
+        "f1-score": 0.8046257038096222,
+        "support": 293.0
+      }
+    },
+    "cm": [
+      [
+        73,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        4,
+        9,
+        0,
+        0,
+        0
+      ],
+      [
+        14,
+        0,
+        83,
+        1,
+        2
+      ],
+      [
+        1,
+        0,
+        2,
+        42,
+        0
+      ],
+      [
+        9,
+        0,
+        21,
+        0,
+        31
+      ]
+    ],
+    "rejection": {
+      "rejected": 56,
+      "accepted": 237,
+      "accepted_correct": 209,
+      "accepted_incorrect": 28,
+      "accepted_accuracy": 0.8818565400843882
+    }
+  }
+}

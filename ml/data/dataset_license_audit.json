@@ -1,0 +1,107 @@
+{
+  "train_v3_2": {
+    "manifest_path": "ml/data/train_5class_manifest_v3_2.csv",
+    "total_rows": 2577,
+    "missing_files_on_disk": 0,
+    "pre_augmented_count": 1033,
+    "natural_count": 1544,
+    "source_breakdown": {
+      "Fitzpatrick 17k Dataset (Groh et al., CVPR 2021)": 1175,
+      "Figshare (Biswas 2026, DOI: 10.6084/m9.figshare.33084632)": 646,
+      "SkinDiseaseBD (Mendeley Data DOI: 10.17632/9ggd3shdr7.3)": 628,
+      "MEMI-DS (Zhai et al. 2025, DOI: 10.6084/m9.figshare.29209229)": 104,
+      "Wikimedia Commons Clinical Dermatology Archive": 14,
+      "Google SCIN (Ward et al. 2024, JAMA Netw Open / arXiv:2307.05434)": 6,
+      "Atlas Dermatologico (Freire da Silva)": 4
+    },
+    "class_breakdown": {
+      "ringworm": 962,
+      "psoriasis": 611,
+      "acne": 443,
+      "vitiligo": 433,
+      "melasma": 128
+    }
+  },
+  "val_v3_2": {
+    "manifest_path": "ml/data/val_5class_manifest_v3_2.csv",
+    "total_rows": 300,
+    "missing_files_on_disk": 0,
+    "pre_augmented_count": 0,
+    "natural_count": 300,
+    "source_breakdown": {
+      "Fitzpatrick 17k Dataset (Groh et al., CVPR 2021)": 215,
+      "Figshare (Biswas 2026, DOI: 10.6084/m9.figshare.33084632)": 50,
+      "MEMI-DS (Zhai et al. 2025, DOI: 10.6084/m9.figshare.29209229)": 27,
+      "Wikimedia Commons Clinical Dermatology Archive": 6,
+      "Google SCIN (Ward et al. 2024, JAMA Netw Open / arXiv:2307.05434)": 2
+    },
+    "class_breakdown": {
+      "psoriasis": 95,
+      "acne": 75,
+      "ringworm": 50,
+      "vitiligo": 45,
+      "melasma": 35
+    }
+  },
+  "test_original": {
+    "manifest_path": "ml/data/test_5class_manifest.csv",
+    "total_rows": 294,
+    "missing_files_on_disk": 0,
+    "pre_augmented_count": 88,
+    "natural_count": 206,
+    "source_breakdown": {
+      "Fitzpatrick 17k Dataset (Groh et al., CVPR 2021)": 196,
+      "SkinDiseaseBD (Mendeley Data DOI: 10.17632/9ggd3shdr7.3)": 83,
+      "Clinical Photography Melasma Cohort": 10,
+      "Wikimedia Commons Clinical Dermatology Archive": 4,
+      "Atlas Dermatologico (Freire da Silva)": 1
+    },
+    "class_breakdown": {
+      "psoriasis": 100,
+      "acne": 72,
+      "vitiligo": 62,
+      "ringworm": 45,
+      "melasma": 15
+    }
+  },
+  "test_v2": {
+    "manifest_path": "ml/data/test_5class_manifest_v2.csv",
+    "total_rows": 297,
+    "missing_files_on_disk": 0,
+    "pre_augmented_count": 92,
+    "natural_count": 205,
+    "source_breakdown": {
+      "Fitzpatrick 17k Dataset (Groh et al., CVPR 2021)": 198,
+      "SkinDiseaseBD (Mendeley Data DOI: 10.17632/9ggd3shdr7.3)": 92,
+      "Wikimedia Commons Clinical Dermatology Archive": 6,
+      "Clinical Photography Melasma Cohort": 1
+    },
+    "class_breakdown": {
+      "psoriasis": 101,
+      "acne": 73,
+      "vitiligo": 72,
+      "ringworm": 44,
+      "melasma": 7
+    }
+  },
+  "ood_full": {
+    "manifest_path": "ml/data/ood_5class_manifest.csv",
+    "total_rows": 2183,
+    "missing_files_on_disk": 0,
+    "pre_augmented_count": 984,
+    "natural_count": 1199,
+    "source_breakdown": {
+      "Fitzpatrick 17k Dataset (Groh et al., CVPR 2021)": 1199,
+      "SkinDiseaseBD (Mendeley Data DOI: 10.17632/9ggd3shdr7.3)": 984
+    },
+    "class_breakdown": {
+      "non_target_eczema": 668,
+      "non_target_lichen_planus": 491,
+      "non_target_dermatitis": 302,
+      "non_target_scabies": 301,
+      "non_target_pityriasis_rosea": 193,
+      "non_target_seborrheic_dermatitis": 126,
+      "non_target_rosacea": 102
+    }
+  }
+}
